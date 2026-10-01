@@ -3,7 +3,7 @@ name: Alyssa Bensoussan
 role: MSc Student, Mental Health
 group: masters
 order: 1
-photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.12.37-PM.png
+photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.12.37-PM.jpg
 summary: Developing an observer-rated scale for trait absorption from ketamine therapy transcripts in treatment-resistant depression.
 links: []
 ---

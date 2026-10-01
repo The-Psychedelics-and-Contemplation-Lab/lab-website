@@ -3,7 +3,7 @@ name: Sara Gloeckler
 role: PhD Candidate
 group: phd
 order: 2
-photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.08.32-PM.png
+photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.08.32-PM.jpg
 summary: Music and mindfulness in psychedelic-assisted therapy; patient choice, cultural identity and treatment expectations in treatment-resistant depression.
 links: []
 ---

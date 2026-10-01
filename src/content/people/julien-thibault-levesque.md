@@ -3,7 +3,7 @@ name: Julien Thibault Lévesque
 role: Social Worker and Ph.D. Student
 group: postdocs
 order: 4
-photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.03.19-PM.png
+photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.03.19-PM.jpg
 summary: Narrative identity, therapeutic frames and recovery in addiction and depression; manages the Ketamine for Psychiatric Disorders Databank.
 links: []
 ---

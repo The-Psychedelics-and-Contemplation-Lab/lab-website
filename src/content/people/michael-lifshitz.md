@@ -3,7 +3,7 @@ name: Michael Lifshitz
 role: Lab Director
 group: directors
 order: 2
-photo: /uploads/2025/04/Screen-Shot-2025-04-17-at-1.13.22-AM.png
+photo: /uploads/2025/04/Screen-Shot-2025-04-17-at-1.13.22-AM.jpg
 summary: Combines phenomenology, neuroscience and anthropology to study how brain plasticity and social context shape subjective experience.
 links: []
 ---

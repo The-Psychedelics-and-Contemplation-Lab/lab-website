@@ -3,7 +3,7 @@ name: Elizabeth Misener
 role: MSc Student, Integrated Program in Neuroscience
 group: masters
 order: 2
-photo: /uploads/2025/04/Screen-Shot-2025-04-17-at-1.34.46-AM.png
+photo: /uploads/2025/04/Screen-Shot-2025-04-17-at-1.34.46-AM.jpg
 summary: How music can support mental and physical well-being, combining musical and scientific backgrounds.
 links: []
 ---
