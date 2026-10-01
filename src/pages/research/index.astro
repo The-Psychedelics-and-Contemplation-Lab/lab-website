@@ -13,14 +13,19 @@ const strands = [
 <Layout site={site} page={{ title: 'Research — The Psychedelics & Contemplation Lab', description: 'Two strands of research at the lab: psychedelic research (ketamine, psilocybin, music, methods) and contemplative research (meditation, prayer, imagination, nature).', path: '/research/' }} nav={navFor('/research/')}>
   <main id="main">
     <PageHeader eyebrow="Research" title="Psychedelics & Contemplation" lead="The lab’s work runs along two strands. Each theme below opens the full description of the project." />
-    <Section>
-      <div class="grid grid--2">
+    <Section watermark="rings" watermarkPosition="left" watermarkInk>
+      <div class="grid grid--2 strands reveal-group">
         {strands.map((s) => (
           <div class="strand">
-            <div>
-              <h2>{s.title}</h2>
-              <p class="muted">{s.entry.data.lead}</p>
-            </div>
+            {/* Same markup as <MediaCard>, with the strand title as the section's h2 */}
+            <a class={`media-card no-icon ${s.entry.data.cardImage ? 'project-card--diagram' : ''}`} href={u(s.path)}>
+              <img src={u(s.entry.data.cardImage ?? s.entry.data.image!)} alt={s.entry.data.imageAlt ?? ''} loading="lazy" decoding="async" />
+              <span class="media-card__body">
+                <span class="media-card__eyebrow">{s.entry.data.title}</span>
+                <h2 class="media-card__title">{s.title}</h2>
+                <span class="media-card__text">{s.entry.data.lead}</span>
+              </span>
+            </a>
             <ul class="strand__list">
               {s.entry.data.sections.map((sec) => <li><a href={u(`${s.path}#${sec.id}`)}>{sec.label}</a></li>)}
             </ul>

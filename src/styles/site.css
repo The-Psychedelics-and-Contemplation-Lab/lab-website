@@ -11,10 +11,22 @@
 /* --- Home ------------------------------------------------------------------ */
 .hero--lab { padding-block: var(--s-16) var(--s-16); border-bottom: 1px solid var(--rule); }
 .hero--lab .lead { color: var(--ink); }
-.home-section__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-3) var(--s-6); margin-bottom: var(--s-8); }
-.home-section__head p { max-width: var(--measure); }
+/* Split hero: the figure sits at the right over the phyllotaxis watermark, which peeks out around it. */
+.hero--lab .watermark--right { right: -10%; top: -22%; }
+.hero--lab .hero__figure { max-width: 26rem; margin-inline: auto; width: 100%; }
+@media (min-width: 60em) { .hero--lab .hero__figure { margin-inline: 0 0; justify-self: end; } }
+@media (max-width: 59.99em) { .hero--lab .hero__inner { gap: var(--s-12); } }
+.home-section__head { text-align: center; margin: 0 auto var(--s-8); max-width: var(--measure); }
+.home-section__head > * + * { margin-top: var(--s-3); }
 .home-section__head h2 { font-size: var(--fs-h2); }
-.project-card .card__link { font-size: var(--fs-h3); }
+.home-section__more { margin-top: var(--s-6); }
+/* Design-system 0.2.0: `a.no-icon::after { content: none !important }` in base.css cancels the
+   MediaCard gradient (MediaCard adds .no-icon itself). Restore it here; remove once fixed upstream. */
+a.media-card::after { content: "" !important; display: block; margin: 0; opacity: 1; font-size: 0; }
+/* Project cards: the Montreal Model schematic is text-heavy, so it gets a heavier gradient and sits
+   so that the six coloured session circles are under the title. */
+.project-card--diagram img { object-position: center top; }
+a.project-card--diagram::after { background: linear-gradient(to top, rgba(28, 27, 25, 0.94) 0%, rgba(28, 27, 25, 0.8) 55%, rgba(28, 27, 25, 0.55) 100%); }
 .pub-list { list-style: none; padding: 0; margin: 0; max-width: 60rem; }
 .pub-list > li { padding-block: var(--s-4); border-top: 1px solid var(--rule); }
 .pub-list > li:last-child { border-bottom: 1px solid var(--rule); }
@@ -43,7 +55,7 @@
 
 /* --- People ----------------------------------------------------------------- */
 .people-group + .people-group { margin-top: var(--s-16); }
-.people-group > h2 { margin-bottom: var(--s-6); padding-bottom: var(--s-3); border-bottom: 1px solid var(--rule); }
+.people-group > h2 { text-align: center; margin-bottom: var(--s-8); }
 .person { display: grid; grid-template-columns: 5.5rem 1fr; gap: var(--s-4) var(--s-6); align-items: start; }
 .person > * + * { margin-top: 0; }
 .person__body { min-width: 0; }
@@ -61,11 +73,28 @@
   border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   font-family: var(--font-serif); font-weight: 600; font-size: 1.5rem; letter-spacing: 0.02em;
 }
-.person--director .portrait { width: 7rem; height: 7rem; }
-.person--director { grid-template-columns: 7rem 1fr; }
-.person--director .portrait--initials { font-size: 1.875rem; }
+/* 112 px portraits on desktop (art-direction pass); 88 px on phones where the card is narrow. */
+@media (min-width: 48em) {
+  .person { grid-template-columns: 7rem 1fr; }
+  .portrait { width: 7rem; height: 7rem; }
+  .portrait--initials { font-size: 1.875rem; }
+}
 
 /* --- Research pages ------------------------------------------------------------- */
+.research-header .page-header { background: transparent; border-bottom: 1px solid var(--rule); }
+.research-header .watermark--right { top: -30%; right: -12%; --wm-size: 48rem; }
+.research-figure { margin-bottom: var(--s-12); }
+/* Design-system 0.2.0 gives drifting images 12 % overscan, but the parallax script moves them by up to
+   120 px, which exposes the frame background on wide figures. More overscan hides it; remove once fixed upstream. */
+@media (prefers-reduced-motion: no-preference) and (min-width: 60em) {
+  html.js .figure--drift .figure__frame img { height: 134%; margin-top: -17%; }
+}
+.research-layout { display: grid; gap: var(--s-12); align-items: start; }
+.research-aside { max-width: 30rem; }
+@media (min-width: 64em) {
+  .research-layout { grid-template-columns: minmax(0, var(--measure)) minmax(14rem, 1fr); gap: var(--s-16); }
+  .research-aside { padding-top: var(--s-2); }
+}
 .research-nav { list-style: none; padding: 0; margin: var(--s-6) 0 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
 .research-nav a { display: inline-block; padding: 6px 14px; border: 1px solid var(--rule); border-radius: var(--radius-chip); font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 500; text-decoration: none; background: var(--card); color: var(--ink); }
 .research-nav a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
@@ -81,9 +110,10 @@
 .playlists { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
 .playlists iframe { width: 100%; border: 0; border-radius: 12px; background: var(--paper-deep); }
 
-/* Research index: two strands */
-.strand { display: grid; gap: var(--s-6); }
-.strand h2 { font-size: var(--fs-h2); }
+/* Research index: two strands, each a large image card with the strand title */
+.strands { gap: var(--s-12); }
+.strand { display: grid; gap: var(--s-6); align-content: start; }
+.strand .media-card__title { font-size: var(--fs-h2); }
 .strand__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
 .strand__list a { display: block; padding: var(--s-3) var(--s-4); border: 1px solid var(--rule); border-radius: var(--radius-button); background: var(--card); text-decoration: none; color: var(--ink); font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 500; }
 .strand__list a:hover { border-color: var(--accent); color: var(--accent); }
@@ -95,6 +125,9 @@
 .press-list > li > * + * { margin-top: var(--s-1); }
 .press-list__title { font-weight: 600; }
 .press-list__meta { font-family: var(--font-sans); font-size: var(--fs-ui); color: var(--ink-muted); }
+
+/* --- Contact ------------------------------------------------------------------- */
+.contact-sections > section + section { margin-top: var(--s-12); }
 
 /* --- Redirect pages -------------------------------------------------------------- */
 .redirect { text-align: left; }

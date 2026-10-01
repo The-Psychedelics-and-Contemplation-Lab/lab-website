@@ -1,6 +1,6 @@
 ---
 /** Renders one entry of the `research` collection as a long-form page with an in-page section nav. */
-import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { Layout, PageHeader, Section, Figure, Watermark } from '@pcl/design-system';
 import { getEntry, render } from 'astro:content';
 import { site, navFor } from '../site.config';
 import { u } from '../lib/url';
@@ -13,15 +13,31 @@ const d = entry.data;
 ---
 <Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path }} nav={navFor(path)}>
   <main id="main">
-    <PageHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead}>
-      <nav aria-label="Sections of this page">
-        <ul class="research-nav">
-          {d.sections.map((s) => <li><a href={`#${s.id}`}>{s.label}</a></li>)}
-        </ul>
-      </nav>
-    </PageHeader>
+    <div class="has-watermark research-header">
+      <Watermark motif="rings" position="right" ink />
+      <PageHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead}>
+        <nav aria-label="Sections of this page">
+          <ul class="research-nav">
+            {d.sections.map((s) => <li><a href={`#${s.id}`}>{s.label}</a></li>)}
+          </ul>
+        </nav>
+      </PageHeader>
+    </div>
     <Section>
-      <div class="prose research-prose"><Content /></div>
+      {d.image && (
+        <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--scale research-figure" />
+      )}
+      <div class="research-layout">
+        <div class="prose research-prose"><Content /></div>
+        {d.pullquote && (
+          <aside class="research-aside reveal reveal--fade" style="--reveal-delay: 160ms">
+            <blockquote class="pullquote">
+              {d.pullquote}
+              {d.pullquoteCite && <cite>{d.pullquoteCite}</cite>}
+            </blockquote>
+          </aside>
+        )}
+      </div>
       <p style="margin-top: var(--s-12)"><a class="btn btn--quiet" href={u('/research/')}>← Back to all research</a></p>
     </Section>
   </main>

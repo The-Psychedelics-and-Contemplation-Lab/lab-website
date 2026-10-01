@@ -20,9 +20,15 @@ const prefix = base.replace(/\/$/, '');
 const siteLinks = defineHastPlugin({
   name: 'pcl-site-links',
   element: {
-    filter: ['a', 'img'],
+    filter: ['a', 'img', 'h2'],
     visit(node, ctx) {
       const p = node.properties ?? {};
+      // Section headings of long Markdown pages reveal on scroll (art-direction pass).
+      if (node.tagName === 'h2') {
+        const cls = Array.isArray(p.className) ? p.className : typeof p.className === 'string' ? p.className.split(/\s+/) : [];
+        if (!cls.includes('reveal')) ctx.setProperty(node, 'className', [...cls, 'reveal']);
+        return;
+      }
       if (node.tagName === 'a' && typeof p.href === 'string') {
         if (/^https?:\/\//.test(p.href)) { ctx.setProperty(node, 'target', '_blank'); ctx.setProperty(node, 'rel', 'noopener noreferrer'); }
         else if (p.href.startsWith('/')) ctx.setProperty(node, 'href', prefix + p.href);

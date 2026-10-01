@@ -9,6 +9,13 @@ const research = defineCollection({
     eyebrow: z.string(),
     description: z.string().max(160),
     lead: z.string(),
+    image: z.string().optional(),        // "/uploads/…" — the strand image, shown as a Figure at the top of the page
+    imageAlt: z.string().optional(),
+    imageCaption: z.string().optional(),
+    imageRatio: z.enum(['wide', 'cinema', 'square', 'tall']).default('wide'),  // 'cinema' = shown whole, no drift (schematics)
+    cardImage: z.string().optional(),    // tighter crop for the research-index card; defaults to `image`
+    pullquote: z.string().optional(),    // a sentence taken verbatim from the page text
+    pullquoteCite: z.string().optional(),
     sections: z.array(z.object({ id: z.string(), label: z.string() })),
   }),
 });

@@ -3,6 +3,13 @@ title: Psychedelic research
 eyebrow: Research
 description: Ketamine for refractory depression, psychedelics and music, research methodologies and real-world psilocybin therapy at the Psychedelics & Contemplation Lab.
 lead: How context, music, relationships and culture shape the experience and the outcomes of psychedelic and ketamine therapies.
+image: /uploads/2025/10/montreal-model-pic.jpg
+imageAlt: Schematic of the Montreal Model ketamine therapy programme — psychiatric assessment, initial preparation, six ketamine treatment sessions with rolling preparation and integration over four weeks, then maintenance, alongside concomitant conventional psychotherapy.
+imageRatio: cinema
+cardImage: /images/montreal-model-card.webp
+imageCaption: The Montreal Model of Ketamine Therapy — six treatment sessions over four weeks, with rolling preparation and integration.
+pullquote: Psychedelic science has long emphasized the importance of “set and setting”, that is, the patient’s mindset and the environment in which a psychedelic is taken, yet these factors are rarely reported in clinical trials.
+pullquoteCite: ReSPCT Guidelines — Psychedelic Research Methodologies
 sections:
   - { id: depression, label: Ketamine for Refractory Depression }
   - { id: music, label: Psychedelics & Music }
@@ -10,13 +17,11 @@ sections:
   - { id: realworld, label: Real-World Psilocybin Therapy }
 ---
 
-<h2 id="depression">Ketamine for Refractory Depression</h2>
+<h2 class="reveal" id="depression">Ketamine for Refractory Depression</h2>
 
 ### The Montreal Model
 
 The Montreal Model of Ketamine Therapy is an intensive, evidence-based program that combines low-dose ketamine treatments with psychological support and behavioural changes to help patients recover from treatment-resistant depression (TRD). It aims to use the rapid but often temporary antidepressant effects of ketamine as a window of opportunity that, in synergistic combination with psychotherapy and psychedelic-like treatment settings, can facilitate lasting psychological growth and recovery.
-
-![A ketamine treatment room of the Montreal Model program](/uploads/2025/10/montreal-model-pic.jpg)
 
 <p class="cta"><span class="cta__label">Learn more</span> <a class="btn btn--secondary btn--small" target="_blank" rel="noopener noreferrer" href="https://montrealmodelketaminetherapy.com/">Montreal Model website<span class="btn__icon" aria-hidden="true"></span></a></p>
 
@@ -32,7 +37,7 @@ Can the media we consume shape our psychedelic journeys? Yes! Through “imprint
 
 - Garel, N., Thibault-Levesque, J., Sandra, D., Solomonova, E., Lifshitz, M., Richard-Devantoy, S., & Greenway, K. T. (2023). Imprinting: Expanding the extra-pharmacological model of psychedelic drug action to incorporate delayed influences of sets and settings. *Frontiers in Human Neuroscience, 17*, 1200393. <https://doi.org/10.3389/fnhum.2023.1200393>
 
-<h2 id="music">Psychedelics & Music</h2>
+<h2 class="reveal" id="music">Psychedelics & Music</h2>
 
 ### Canadian & Global Psychedelic Survey
 
@@ -58,7 +63,7 @@ For more playlists, check out our [**Spotify page!**](https://open.spotify.com/u
 <iframe title="Spotify playlist 3 — Psychedelics & Contemplation Lab" src="https://open.spotify.com/embed/playlist/5ZD7UPUoXn4FZjXTy8wKjy" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 
-<h2 id="methods">Psychedelic Research Methodologies</h2>
+<h2 class="reveal" id="methods">Psychedelic Research Methodologies</h2>
 
 ### ReSPCT Guidelines
 
@@ -84,7 +89,7 @@ As clinical care and research in psychedelic therapy expand rapidly, inconsisten
 
 The therapeutic relationship has long been recognized as a central ingredient of psychotherapy. To date, it has rarely been studied in depth in psychedelics-assisted psychotherapy. Our research therefore incorporates measuring this relationship as well as more subtle interpersonal dynamics that unfold within it: **interpersonal synchrony**, i.e. the spontaneous coordination of rhythms between two or more people, from language patterns to physiological signals such as heart rate variability. Using wearable sensors and computational analysis of dialogue, we aim to capture how patients and clinicians align such rhythms in real time during treatment sessions. These methods allow us to quantify aspects of the therapeutic encounter that are typically described only qualitatively, offering new precision in studying patient-clinician dynamics in psychedelic therapy.
 
-<h2 id="realworld">Real-World Psilocybin Therapy</h2>
+<h2 class="reveal" id="realworld">Real-World Psilocybin Therapy</h2>
 
 ### Compassionate access study
 

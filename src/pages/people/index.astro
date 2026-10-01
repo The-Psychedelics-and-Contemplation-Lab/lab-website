@@ -1,5 +1,5 @@
 ---
-import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { Layout, PageHeader, Section, SectionMark } from '@pcl/design-system';
 import { getCollection, render } from 'astro:content';
 import { site, navFor } from '../../site.config';
 import Portrait from '../../components/Portrait.astro';
@@ -22,8 +22,9 @@ const rendered = await Promise.all(people.map(async (p) => ({ ...p, Content: (aw
         const members = rendered.filter((p) => p.data.group === g.key);
         return members.length > 0 && (
           <div class="people-group" id={g.key}>
-            <h2>{g.label}</h2>
-            <div class={g.key === 'directors' ? 'grid grid--2' : 'grid grid--2'}>
+            <SectionMark label={`${members.length} ${members.length === 1 ? 'member' : 'members'}`} accent={g.key === 'directors'} />
+            <h2 class="reveal">{g.label}</h2>
+            <div class="grid grid--2 reveal-group">
               {members.map((p) => { const Bio = p.Content; return (
                 <article class={`card person${g.key === 'directors' ? ' person--director' : ''}`} id={p.id}>
                   <Portrait name={p.data.name} photo={p.data.photo} />

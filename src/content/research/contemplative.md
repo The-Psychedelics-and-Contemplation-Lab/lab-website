@@ -3,6 +3,11 @@ title: Contemplative research
 eyebrow: Research
 description: Meditation and the sense of self, imagination and invisible presence, interpersonal transmission and contemplative practice in ecological context.
 lead: How meditation, prayer and imagination reshape the sense of self — studied with phenomenology, ethnography, neurophysiology and computational modelling.
+image: /uploads/2025/10/jhana-pic-1.jpg
+imageAlt: Two meditators wearing EEG caps sit in a small chapel while a laptop records their brain activity during jhāna practice.
+imageCaption: EEG recording during jhāna meditation.
+pullquote: Prayer may calm the mind either by gently releasing intrusive thoughts or by generating a mental “white noise” that displaces them.
+pullquoteCite: Prayer — Imagination & Invisible Presence
 sections:
   - { id: meditation, label: Meditation & Plasticity of Self }
   - { id: imagination, label: Imagination & Invisible Presence }
@@ -10,7 +15,7 @@ sections:
   - { id: ecological, label: In Ecological Context }
 ---
 
-<h2 id="meditation">Meditation &amp; the Plasticity of the Self</h2>
+<h2 class="reveal" id="meditation">Meditation &amp; the Plasticity of the Self</h2>
 
 ### Meditation and the Sense of Self
 
@@ -24,15 +29,13 @@ Meditation practitioners, historically and today, sometimes report experiencing 
 
 We use computational modeling and EEG neurophysiological measures to investigate advanced states of concentration, focusing on jhāna meditation—a canonical Buddhist practice involving deep absorption and sensory withdrawal. By combining subjective reports with neural complexity metrics and prediction error signals, we bridge phenomenology and neurophysiology to understand how consciousness deconstructs under conditions of high attentional stability. Our findings show that jhāna induces sensory fading while increasing neural entropy and enhancing early sensory prediction errors (MMN), suggesting a unique state of high entropy with preserved precision. This research is conducted in close collaboration with meditation teacher Shaila Catherine and involves some of her most advanced students. It is part of an ongoing effort to study expert contemplative practice, with additional retreat-based data collection planned to expand this work.
 
-![EEG recording during jhāna meditation](/uploads/2025/10/jhana-pic-1.jpg)
-
 ### Mechanisms of Mindfulness-Based Cognitive Therapy
 
 Mindfulness-based interventions have emerged as efficacious and cost-effective non-pharmacological treatments for depression; however, the psychological mechanisms remain unclear. A reduction of self-related processing has been proposed as a key mechanism of mindfulness-based interventions, given that negatively valenced self-concept is one of the most robust cognitive signatures of clinical depression. However, the “self” is a complex, multifaceted construct, and the various self-related processes targeted in mindfulness interventions—e.g., “decentering”, “self-concept”, “narrative self”— often remain underspecified in mindfulness research.
 
 Inspired by the Buddhist idea that self-grasping causes suffering, researchers commonly suggest that mindfulness-based interventions may differ from other treatments by “prioritizing disidentification and reduction in all forms of SRP [self-related processing], positive as well as negative” (Alejandre-Lara et al 2022, p. 3). Others, however, have challenged this perspective (Britton et al. 2021). Though strong evidence supports the clinical benefit of disidentifying from negative self-evaluative thoughts, it is far from clear that disidentifying from positive self-related processes is also clinically beneficial. In fact, the strengthening of some self-related processes such as positive self-concept and narrative coherence may actually be the most critical mechanisms in mindfulness-based interventions for depression. In this study we are examining this hypothesis by disentangling the role of different self-processes in a clinical trial of mindfulness-based cognitive therapy (MBCT) for late-life depression.
 
-<h2 id="imagination">Imagination &amp; Invisible Presence</h2>
+<h2 class="reveal" id="imagination">Imagination &amp; Invisible Presence</h2>
 
 ### Tulpamancy
 
@@ -46,13 +49,13 @@ Prayer is often viewed in contemplative science as analogous to mindfulness—a 
 
 We use computational modeling—specifically the Active Inference framework—to explore the structure of phenomenal experience. This work contributes to a growing effort to formalize phenomenology within neuroscience by modeling how hierarchical, precision-weighted inference can generate altered states of consciousness. As part of this broader endeavor, we are currently co-editing a special issue on computational approaches to phenomenology for the Neuroscience of Consciousness, led by Jonas Mago. In our contribution, we apply this framework to understand the experience of encountering seemingly autonomous entities, as often reported under the influence of psychedelics.
 
-<h2 id="interpersonal">Interpersonal Transmission of Contemplative States</h2>
+<h2 class="reveal" id="interpersonal">Interpersonal Transmission of Contemplative States</h2>
 
 ### Dyadic studies of prayer and meditation
 
 Coming soon...
 
-<h2 id="ecological">Contemplative Practice in Ecological Context</h2>
+<h2 class="reveal" id="ecological">Contemplative Practice in Ecological Context</h2>
 
 ### How Nature Tunes the Mind
 
