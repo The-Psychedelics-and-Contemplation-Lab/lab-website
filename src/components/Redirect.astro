@@ -1,6 +1,7 @@
 ---
 /** A meta-refresh page kept for an old WordPress URL (/services/ → /people/, /about/ → /research/). */
-import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { Layout, Section } from '@pcl/design-system';
+import BandHeader from './BandHeader.astro';
 import { site, navFor } from '../site.config';
 import { u } from '../lib/url';
 import '../styles/site.css';
@@ -10,7 +11,7 @@ const { from, to, label } = Astro.props;
 <Layout site={site} page={{ title: `Redirecting to ${label} — The Psychedelics & Contemplation Lab`, description: `This page has moved. You are being redirected to the ${label} page of the Psychedelics & Contemplation Lab website.`, path: to, noindex: true }} nav={navFor(to)}>
   <meta slot="head" http-equiv="refresh" content={`0; url=${u(to)}`} />
   <main id="main">
-    <PageHeader eyebrow="Moved" title="Redirecting…" lead={`The page ${from} is now at ${to}.`} />
+    <BandHeader eyebrow="Moved" title="Redirecting…" lead={`The page ${from} is now at ${to}.`} />
     <Section><p class="prose">If you are not redirected automatically, <a href={u(to)}>continue to {label}</a>.</p></Section>
   </main>
 </Layout>

@@ -1,7 +1,8 @@
 ---
-import { Layout, PageHeader, Section, SectionMark } from '@pcl/design-system';
+import { Layout, Section } from '@pcl/design-system';
 import { getCollection, render } from 'astro:content';
 import { site, navFor } from '../../site.config';
+import BandHeader from '../../components/BandHeader.astro';
 import Portrait from '../../components/Portrait.astro';
 import '../../styles/site.css';
 
@@ -16,32 +17,37 @@ const rendered = await Promise.all(people.map(async (p) => ({ ...p, Content: (aw
 ---
 <Layout site={site} page={{ title: 'People — The Psychedelics & Contemplation Lab', description: 'Lab directors Kyle Greenway and Michael Lifshitz, postdoctoral fellows, PhD and masters students of the Psychedelics & Contemplation Lab at McGill.', path: '/people/' }} nav={navFor('/people/')}>
   <main id="main">
-    <PageHeader eyebrow="People" title="Lab members" lead="Psychiatrists, neuroscientists, anthropologists, social workers and students working across psychedelic and contemplative research." />
+    <BandHeader eyebrow="People" title="Lab members" lead="Psychiatrists, neuroscientists, anthropologists, social workers and students working across psychedelic and contemplative research." />
     <Section>
       {groups.map((g) => {
         const members = rendered.filter((p) => p.data.group === g.key);
+        const directors = g.key === 'directors';
         return members.length > 0 && (
           <div class="people-group" id={g.key}>
-            <SectionMark label={`${members.length} ${members.length === 1 ? 'member' : 'members'}`} accent={g.key === 'directors'} />
-            <h2 class="reveal">{g.label}</h2>
-            <div class="grid grid--2 reveal-group">
-              {members.map((p) => { const Bio = p.Content; return (
-                <article class={`card person${g.key === 'directors' ? ' person--director' : ''}`} id={p.id}>
-                  <Portrait name={p.data.name} photo={p.data.photo} />
+            {/* The original's "LAB DIRECTORS" band label: a small uppercase label between two rules */}
+            <div class="group-label reveal reveal--fade"><h2>{g.label}</h2></div>
+            <div class={`people-grid reveal-group${!directors && members.length > 2 ? ' people-grid--3' : ''}`}>
+              {members.map((p, i) => { const Bio = p.Content; return (
+                <article class={`person${directors ? ' person--director' : ''}${i % 2 === 1 ? ' person--olive' : ''}`} id={p.id}>
                   <div class="person__body">
                     <h3>{p.data.name}</h3>
                     <p class="person__role">{p.data.role}</p>
-                    <p class="person__summary">{p.data.summary}</p>
+                    {!directors && <p class="person__summary">{p.data.summary}</p>}
                     {p.data.links.length > 0 && (
                       <ul class="person__links">
                         {p.data.links.map((l) => <li><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>)}
                       </ul>
                     )}
                   </div>
-                  <details class="person__bio">
-                    <summary>Full biography</summary>
-                    <div class="prose"><Bio /></div>
-                  </details>
+                  <Portrait name={p.data.name} photo={p.data.photo} />
+                  {directors ? (
+                    <div class="person__bio"><div class="prose"><Bio /></div></div>
+                  ) : (
+                    <details class="person__bio">
+                      <summary>Full biography</summary>
+                      <div class="prose"><Bio /></div>
+                    </details>
+                  )}
                 </article>
               ); })}
             </div>

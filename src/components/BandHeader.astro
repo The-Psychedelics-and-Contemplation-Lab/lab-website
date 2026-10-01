@@ -1,0 +1,20 @@
+---
+/**
+ * <BandHeader title eyebrow? lead? back? backLabel?> — the inner pages' marbled header band, as on the
+ * original site: the purple texture under a dark veil, the page's ONLY <h1> in white serif, an optional
+ * "← Back to all research" quiet link, and a slot at the bottom edge for the category tab row.
+ */
+import Marble from './Marble.astro';
+export interface Props { title: string; eyebrow?: string; lead?: string; back?: string; backLabel?: string; tabs?: boolean }
+const { title, eyebrow, lead, back, backLabel = '← Back', tabs = false } = Astro.props;
+---
+<div class={`page-header band-header marble marble--deep${tabs ? ' band-header--tabs' : ''}`}>
+  <Marble parallax={0.1} />
+  <div class="container">
+    {back && <a class="btn btn--quiet btn--small band-header__back" href={back}>{backLabel}</a>}
+    {eyebrow && <p class="eyebrow reveal reveal--fade">{eyebrow}</p>}
+    <h1 class="reveal">{title}</h1>
+    {lead && <p class="lead reveal" style="--reveal-delay: 100ms">{lead}</p>}
+    <slot />
+  </div>
+</div>

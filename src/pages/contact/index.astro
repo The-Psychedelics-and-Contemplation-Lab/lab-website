@@ -1,11 +1,12 @@
 ---
-import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { Layout, Section } from '@pcl/design-system';
+import BandHeader from '../../components/BandHeader.astro';
 import { site, navFor, contactEmail } from '../../site.config';
 import '../../styles/site.css';
 ---
 <Layout site={site} page={{ title: 'Contact — The Psychedelics & Contemplation Lab', description: 'How to reach the Psychedelics & Contemplation Lab at McGill University and the Lady Davis Institute — study participation, prospective students and other inquiries.', path: '/contact/' }} nav={navFor('/contact/')}>
   <main id="main">
-    <PageHeader eyebrow="Get in touch" title="Contact" lead="The lab is based at the Lady Davis Institute for Medical Research, Jewish General Hospital, and the Department of Psychiatry, McGill University, Montréal." />
+    <BandHeader eyebrow="Get in touch" title="Contact" lead="The lab is based at the Lady Davis Institute for Medical Research, Jewish General Hospital, and the Department of Psychiatry, McGill University, Montréal." />
     <Section>
       <div class="prose contact-sections reveal-group">
         <section>

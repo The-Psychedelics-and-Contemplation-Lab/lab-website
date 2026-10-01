@@ -1,44 +1,35 @@
 ---
-import { Layout, Section, Figure, MediaCard, SectionMark, Watermark } from '@pcl/design-system';
+import { Layout, Section, MediaCard, SectionMark } from '@pcl/design-system';
 import { getCollection } from 'astro:content';
-import { site, navFor, projects, contactEmail } from '../site.config';
+import { site, navFor, projects } from '../site.config';
 import { u } from '../lib/url';
+import Marble from '../components/Marble.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import '../styles/site.css';
 
 const latest = (await getCollection('publications')).map((e) => e.data).sort((a, b) => b.year - a.year || a.order - b.order).slice(0, 5);
 
-/** Images for the project cards. StaMPS is a tool, not a picture: a screenshot of its table under a
- *  dark gradient was unreadable (tried public/images/stamps-tool-1200.webp), so it gets the accent card. */
+/** Images for the project cards. StaMPS is a tool and the Montreal Model's only picture is a text-heavy
+ *  schematic (unreadable under a card gradient, tried twice), so those two get the original site's
+ *  flat panels — brand purple and olive — and only ReSPCT carries its illustration. */
 const projectImages: Record<string, { src: string; alt: string }> = {
   'The ReSPCT Guidelines': { src: u('/images/respct-illustration-800.webp'), alt: 'Line illustration of a psychedelic dosing room: an armchair, a lamp, a plant and a window, drawn in one continuous stroke.' },
-  'The Montreal Model': { src: u('/images/montreal-model-card.webp'), alt: 'Schematic of the Montreal Model ketamine therapy programme: assessment, preparation, six treatment sessions over four weeks, then maintenance.' },
 };
+const projectClass: Record<string, string> = { 'StaMPS Data Framework': 'project-card--purple', 'The Montreal Model': 'project-card--olive' };
 ---
-<Layout site={site} page={{ title: 'The Psychedelics & Contemplation Lab — McGill University, Montréal', description: 'A multidisciplinary lab at McGill University and the Lady Davis Institute exploring non-ordinary states of consciousness, spiritual practices and novel clinical interventions.', path: '/' }} nav={navFor('/')}>
+<Layout site={site} page={{ title: 'The Psychedelics & Contemplation Lab — McGill University, Montréal', description: 'A multidisciplinary lab at McGill University and the Lady Davis Institute exploring non-ordinary states of consciousness, spiritual practices and novel clinical interventions.', path: '/', bodyClass: 'home' }} nav={navFor('/')}>
   <main id="main">
-    <div class="hero hero--lab hero--split has-watermark">
-      <Watermark motif="phyllotaxis" position="right" ink />
-      <div class="container hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow reveal reveal--fade">McGill University · Lady Davis Institute</p>
-          <h1 class="reveal" style="--reveal-delay: 80ms">The Psychedelics &amp; Contemplation Lab</h1>
-          <p class="lead reveal" style="--reveal-delay: 160ms">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions. Our work spans two strands — psychedelic and contemplative research — from ketamine and psilocybin therapies for refractory depression to meditation, prayer and the plasticity of the self.</p>
-          <div class="cluster reveal" style="--reveal-delay: 240ms">
-            <a class="btn btn--primary" href={u('/research/')}>Our research</a>
-            <a class="btn btn--secondary" href={u('/people/')}>People</a>
-          </div>
+    {/* The original home page: the purple marbled texture filling the viewport, the lab name huge, bottom-left. */}
+    <div class="hero hero--marble marble">
+      <Marble parallax={0.12} />
+      <div class="hero__inner">
+        <p class="eyebrow hero__eyebrow reveal reveal--fade">McGill University · Lady Davis Institute</p>
+        <h1 class="reveal" style="--reveal-delay: 80ms">The Psychedelics &amp; Contemplation Lab</h1>
+        <p class="lead reveal" style="--reveal-delay: 160ms">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions.</p>
+        <div class="cluster reveal" style="--reveal-delay: 240ms">
+          <a class="btn btn--primary" href={u('/research/')}>Our research</a>
+          <a class="btn btn--secondary" href={u('/people/')}>People</a>
         </div>
-        <Figure
-          src={u('/images/jhana-hero-tall.webp')}
-          alt="Two meditators wearing EEG caps sit in a small chapel while a laptop records their brain activity during jhāna practice."
-          ratio="tall"
-          drift
-          loading="eager"
-          width={768}
-          height={960}
-          class="hero__figure reveal reveal--scale"
-        />
       </div>
     </div>
 
@@ -50,12 +41,12 @@ const projectImages: Record<string, { src: string; alt: string }> = {
       </div>
       <div class="grid grid--3 reveal-group">
         {projects.map((p) => (
-          <MediaCard href={p.href} external eyebrow={p.eyebrow} title={p.name} text={p.description} src={projectImages[p.name]?.src} alt={projectImages[p.name]?.alt} class={`project-card project-card--${p.name === 'The Montreal Model' ? 'diagram' : 'image'}`} />
+          <MediaCard href={p.href} external eyebrow={p.eyebrow} title={p.name} text={p.description} src={projectImages[p.name]?.src} alt={projectImages[p.name]?.alt} class={`project-card ${projectClass[p.name] ?? 'project-card--image'}`} />
         ))}
       </div>
     </Section>
 
-    <Section band ariaLabelledby="latest-h">
+    <Section band tight ariaLabelledby="latest-h">
       <SectionMark label="Research output" />
       <div class="home-section__head reveal">
         <h2 id="latest-h">Latest publications</h2>
@@ -64,20 +55,6 @@ const projectImages: Record<string, { src: string; alt: string }> = {
         {latest.map((pub) => <PublicationItem pub={pub} />)}
       </ul>
       <p class="home-section__more reveal"><a class="btn btn--quiet" href={u('/publications/')}>All publications →</a></p>
-    </Section>
-
-    <Section ariaLabelledby="join-h">
-      <SectionMark label="Join / Contact" />
-      <div class="card contact-card reveal">
-        <div>
-          <h2 id="join-h">Working with the lab</h2>
-          <p class="sans muted">At this time, we invite students with external funding to apply to our lab. For study participation, media and all other inquiries, write to us by email.</p>
-        </div>
-        <div class="cluster">
-          <a class="btn btn--primary" href={`mailto:${contactEmail}`}>Email the lab</a>
-          <a class="btn btn--secondary" href={u('/contact/')}>Contact page</a>
-        </div>
-      </div>
     </Section>
   </main>
 </Layout>

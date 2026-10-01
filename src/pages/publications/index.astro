@@ -1,5 +1,6 @@
 ---
-import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { Layout, Section } from '@pcl/design-system';
+import BandHeader from '../../components/BandHeader.astro';
 import { getCollection } from 'astro:content';
 import { site, navFor } from '../../site.config';
 import PublicationItem from '../../components/PublicationItem.astro';
@@ -17,11 +18,11 @@ const schema = {
 ---
 <Layout site={site} page={{ title: 'Publications — The Psychedelics & Contemplation Lab', description: `${pubs.length} peer-reviewed publications of the lab, ${years[years.length - 1]}–${years[0]}, on ketamine and psilocybin therapy, music, set and setting, and contemplative science.`, path: '/publications/', schema }} nav={navFor('/publications/')}>
   <main id="main">
-    <PageHeader eyebrow="Publications" title="Publications" lead={`${pubs.length} peer-reviewed articles by members of the lab, grouped by year. Each entry links to the publisher’s page through its DOI.`}>
-      <nav aria-label="Jump to year" style="margin-top: var(--s-6)">
-        <ul class="pub-nav">{years.map((y) => <li><a href={`#y${y}`}>{y}</a></li>)}</ul>
+    <BandHeader eyebrow="Publications" title="Publications" lead={`${pubs.length} peer-reviewed articles by members of the lab, grouped by year. Each entry links to the publisher’s page through its DOI.`} tabs>
+      <nav aria-label="Jump to year">
+        <ul class="tab-row reveal-group">{years.map((y) => <li><a href={`#y${y}`}>{y}</a></li>)}</ul>
       </nav>
-    </PageHeader>
+    </BandHeader>
     <Section>
       {years.map((y) => (
         <section class="year-group" id={`y${y}`} aria-labelledby={`y${y}-h`}>

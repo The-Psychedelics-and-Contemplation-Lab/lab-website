@@ -151,3 +151,32 @@ on the live page referenced a PDF, so no PDF links were created. (Add a `"pdf": 
   `volume`/`issue`/`pages`, `doi` and optionally `pdf`).
 - Research text: `src/content/research/psychedelic.md`, `contemplative.md` (Markdown; `<h2 id="…">` keep the anchors).
 - Media list: `src/content/pages/media.md`. Site name, e-mail, nav, footer links, projects: `src/site.config.ts`.
+
+## Version 2.0 pass (original identity, polished)
+
+Rebuilt the visuals as "version 2.0 of the original site" (`V2-BRIEF.md`). Content unchanged.
+
+- **Texture**: `public/images/marble-1920.webp` (160 KB) and `marble-960.webp` (56 KB, under 60em) from
+  `uploads/2025/04/oilslick_1.webp`, upscaled with Lanczos and desaturated to 45 % so that, under the
+  CSS veil (`rgba(74,52,86,.58)` on the home hero, `rgba(50,34,60,.74)` on inner bands), it reads as the
+  original's muted purple marble. No dithered PNG. `<Marble>` renders the two layers (texture with
+  `data-parallax`, veil); `<BandHeader>` is the inner pages' marbled header with the page's only `<h1>`.
+- **Local tokens** in `src/styles/site.css`: `--brand-purple #5A4466`, `--brand-olive #55624F`;
+  the design-system accent `#4B6A8A` stays for links and UI on white.
+- **Home**: full-viewport marbled hero, lab name in Source Serif 4 `clamp(3rem, 9vw, 8.5rem)` bottom-left,
+  first sentence of the lead, white primary + outlined secondary buttons; header transparent over the hero
+  (logos on cream pills). Below: the three project cards (ReSPCT illustration; StaMPS purple, Montreal
+  Model olive — its schematic is unreadable under a card gradient) and the five latest publications.
+  The "Working with the lab" card moved off the home page (its text is on /contact/).
+- **Research pages**: marbled band, "← Back to all research", category tab-row (white pill = the category
+  on screen, tracked by a small IntersectionObserver). **Research index**: two marbled panels.
+- **People**: "LAB DIRECTORS" label between rules, directors as purple / olive panels with the full bio
+  and a square photo, other groups in 2–3-column purple/olive panels with the biography disclosure.
+- **Publications / Media / Contact**: marbled band + unchanged lists; year tabs in the band.
+- **Measured contrast** (white text vs the 5 % brightest background pixels under it, Playwright at 1400):
+  home h1 5.8:1, home lead 7.9:1, band h1 ≥ 7.6:1, band lead ≥ 7.6:1, tab pills 7.7:1, strand panel
+  title 5.7:1 / text 7.1:1, purple panel text 8.6:1, olive panel text 6.5:1.
+- Build OK, `npm run check:html` 0 problems, no console errors. Screenshots: `screenshots/*-1400-top.png`,
+  `*-1400.png`, `*-390-top.png`, `*-390.png` for home, research, psychedelic, contemplative, people,
+  publications, media, contact; `home-1400-reduced-motion.png`, `people-1400-reduced-motion.png`,
+  `psychedelic-print.png`. Script: `scripts/screenshots.mjs`.
