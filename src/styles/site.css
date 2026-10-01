@@ -48,6 +48,11 @@
 .marble .btn--quiet { color: #fff; background: rgba(40, 26, 48, 0.42); }
 .marble .btn--quiet:hover { background: rgba(40, 26, 48, 0.68); }
 
+/* Overscanned textures and watermarks overflow their box; `overflow: hidden` makes that box a scroll container,
+   which scrollIntoView / keyboard focus on a card can scroll sideways (the Projects row shifted 196 px in a
+   test). `clip` clips without creating a scroll container. */
+.marble, .has-watermark { overflow: clip; }
+
 /* --- Design-system 0.3 workaround: clip-path reveals never fire ---------------------------------- */
 /* Chromium (tested 141) applies clip-path when computing IntersectionObserver rectangles: an element clipped
    to nothing (`inset(100% 0 0 0)`) has an intersection ratio of 0 and never reaches the script's 0.08

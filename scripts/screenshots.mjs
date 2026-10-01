@@ -89,6 +89,18 @@ for (const [name, path] of pages) {
   await page.screenshot({ path: `${out}/home-1400-hover-card.png` });
   await ctx.close();
 }
+// The Projects section (three cards centred in the container) at both widths, clipped to the section
+for (const width of [1400, 390]) {
+  const ctx = await browser.newContext({ viewport: { width, height: width === 1400 ? 900 : 844 } });
+  const page = await ctx.newPage();
+  await page.goto(base + '/', { waitUntil: 'networkidle' });
+  const sec = page.locator('section[aria-labelledby="projects-h"]');
+  await sec.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(2200);
+  const box = await sec.boundingBox();
+  await page.screenshot({ path: `${out}/home-${width}-projects.png`, fullPage: true, clip: { x: 0, y: box.y + (await page.evaluate(() => window.scrollY)), width, height: box.height } });
+  await ctx.close();
+}
 // Reduced motion: everything visible without any animation
 {
   const ctx = await browser.newContext({ viewport: { width: 1400, height: 900 }, reducedMotion: 'reduce' });

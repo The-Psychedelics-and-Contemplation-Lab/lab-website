@@ -15,7 +15,7 @@ const latest = (await getCollection('publications')).map((e) => e.data).sort((a,
  *  wordmark (Source Serif outlines, cream) on the StaMPS orange — so the card evokes the site at once. */
 const projectArt: Record<string, { src?: string; alt?: string; mark?: string; markAlt?: string; cls: string }> = {
   'The ReSPCT Guidelines': { src: u('/images/respct-illustration-800.webp'), alt: 'Line illustration of a psychedelic dosing room: an armchair, a lamp, a plant and a window, drawn in one continuous stroke.', cls: 'project-card--image' },
-  'StaMPS Data Framework': { mark: u('/images/stamps-mark.svg'), markAlt: 'StaMPS wordmark — Standardizing Measures and Practices in Psychedelic Science, the acronym letters in bold', cls: 'project-card--stamps' },
+  'StaMPS Data Framework': { mark: u('/images/stamps-mark.svg'), markAlt: 'StaMPS wordmark — Standardizing Measures in Psychedelic Science, the acronym letters in bold', cls: 'project-card--stamps' },
   'The Montreal Model': { mark: u('/images/montreal-model-mark.webp'), markAlt: 'Montreal Model logo: two heart-shaped clouds, red to blue', cls: 'project-card--montreal' },
 };
 ---
