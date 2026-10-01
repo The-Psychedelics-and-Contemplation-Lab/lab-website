@@ -22,22 +22,20 @@ const d = entry.data;
         </ul>
       </nav>
     </BandHeader>
-    <Section>
+    <Section watermark="rings" watermarkPosition="left" watermarkInk>
       {d.image && (
-        <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--scale research-figure" />
+        <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--mask research-figure" />
       )}
-      <div class="research-layout">
+      {d.pullquote && (
+        <blockquote class="pullquote pullquote--epigraph reveal reveal--rise-lg">
+          {d.pullquote}
+          {d.pullquoteCite && <cite>{d.pullquoteCite}</cite>}
+        </blockquote>
+      )}
+      <div class="container--reading">
         <div class="prose research-prose"><Content /></div>
-        {d.pullquote && (
-          <aside class="research-aside reveal reveal--fade" style="--reveal-delay: 160ms">
-            <blockquote class="pullquote">
-              {d.pullquote}
-              {d.pullquoteCite && <cite>{d.pullquoteCite}</cite>}
-            </blockquote>
-          </aside>
-        )}
+        <p style="margin-top: var(--s-12)"><a class="btn btn--quiet" href={u('/research/')}>← Back to all research</a></p>
       </div>
-      <p style="margin-top: var(--s-12)"><a class="btn btn--quiet" href={u('/research/')}>← Back to all research</a></p>
     </Section>
   </main>
 </Layout>

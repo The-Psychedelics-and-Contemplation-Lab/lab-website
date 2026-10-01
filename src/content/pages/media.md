@@ -5,7 +5,7 @@ description: Podcasts and news coverage featuring the Psychedelics & Contemplati
 lead: Podcast conversations and news coverage of the lab’s work.
 ---
 
-## Podcasts
+<h2 class="reveal reveal--wipe">Podcasts</h2>
 
 <ul class="reveal-group">
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.thecarlatreport.com/blogs/2-the-carlat-psychiatry-podcast/post/4743-ketamine-assisted-therapy-part-i">The Carlat Psychiatry Podcast — Ketamine Therapy Part 1</a></li>
@@ -13,7 +13,7 @@ lead: Podcast conversations and news coverage of the lab’s work.
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.everand.com/podcast/664361917/065-Ketamine-101-Ketamine-Assisted-Psychotherapy-Making-Treatment-Accessible-with-Dr-Kyle-Greenway-It-s-the-ketamine-episode-you-ve-been-waitin">Modern Psychedelics – 065 | Ketamine 101: Ketamine-Assisted Psychotherapy &amp; Making Treatment Accessible with Dr. Kyle Greenway</a></li>
 </ul>
 
-## In the news
+<h2 class="reveal reveal--wipe">In the news</h2>
 
 <ul class="press-list reveal-group">
 <li><p class="press-list__title">“Le bon et le mauvais de la kétamine”</p><p class="press-list__meta">La Presse – June 20, 2025</p><p><a target="_blank" rel="noopener noreferrer" href="https://www.lapresse.ca/actualites/sciences/2025-06-20/traitement-de-la-depression/le-bon-et-le-mauvais-de-la-ketamine.php">Read article</a></p></li>

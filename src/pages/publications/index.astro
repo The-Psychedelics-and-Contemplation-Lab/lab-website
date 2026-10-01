@@ -26,7 +26,7 @@ const schema = {
     <Section>
       {years.map((y) => (
         <section class="year-group" id={`y${y}`} aria-labelledby={`y${y}-h`}>
-          <h2 class="year-group__year" id={`y${y}-h`}>{y}</h2>
+          <h2 class="year-group__year reveal reveal--wipe" id={`y${y}-h`}>{y}</h2>
           <ul class="pub-list reveal-group">
             {pubs.filter((p) => p.year === y).map((pub) => <PublicationItem pub={pub} />)}
           </ul>

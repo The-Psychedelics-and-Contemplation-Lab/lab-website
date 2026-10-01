@@ -30,7 +30,12 @@
   background-size: cover; background-position: center; background-repeat: no-repeat;
   pointer-events: none;
 }
-@media (max-width: 59.99em) { .marble__img { top: 0; bottom: 0; background-image: var(--marble-url-small, var(--marble-url)); } }
+/* Round 3: the home hero and the band headers run their texture faster than the page (-0.25 / -0.2, measured
+   from the page top). The texture only ever travels UP, by 0.25 × (its own top offset + the hero height) before
+   the hero has left the viewport, so the box is 160 % tall with the larger overscan at the bottom
+   (20 % above, 40 % below): 0.25 × (0.2 + 1) × H = 0.3 H < 0.4 H, no edge at any viewport height. */
+.hero--marble .marble__img, .band-header .marble__img { top: -20%; bottom: -40%; }
+@media (max-width: 59.99em) { .marble__img, .hero--marble .marble__img, .band-header .marble__img { top: 0; bottom: 0; background-image: var(--marble-url-small, var(--marble-url)); } }
 .marble__veil { position: absolute; inset: 0; z-index: -1; background: var(--marble-overlay); pointer-events: none; }
 .marble--deep .marble__veil { background: var(--marble-overlay-deep); }
 .marble h1, .marble h2, .marble h3, .marble p, .marble .lead, .marble .eyebrow { color: var(--on-marble); }
@@ -42,6 +47,21 @@
 .marble .btn--secondary:hover { background: rgba(255, 255, 255, 0.12); border-color: #fff; color: #fff; }
 .marble .btn--quiet { color: #fff; background: rgba(40, 26, 48, 0.42); }
 .marble .btn--quiet:hover { background: rgba(40, 26, 48, 0.68); }
+
+/* --- Design-system 0.3 workaround: clip-path reveals never fire ---------------------------------- */
+/* Chromium (tested 141) applies clip-path when computing IntersectionObserver rectangles: an element clipped
+   to nothing (`inset(100% 0 0 0)`) has an intersection ratio of 0 and never reaches the script's 0.08
+   threshold, so `reveal--wipe` and `reveal--mask` only ever appear through the 2.5 s above-the-fold safety
+   net and never below the fold. Same motion with a mask, which the observer ignores. Remove once fixed upstream. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal.reveal--wipe, html.js .reveal.reveal--mask {
+    clip-path: none;
+    -webkit-mask: linear-gradient(#000, #000) bottom / 100% 0% no-repeat; mask: linear-gradient(#000, #000) bottom / 100% 0% no-repeat;
+    transition: -webkit-mask-size var(--reveal-dur, 900ms) var(--ease), mask-size var(--reveal-dur, 900ms) var(--ease);
+  }
+  html.js .reveal.reveal--mask { -webkit-mask-position: top; mask-position: top; --reveal-dur: 1100ms; }
+  html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--mask.is-visible { clip-path: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
+}
 
 /* --- Home: the original's full-viewport hero ------------------------------------------------- */
 /* The header sits transparent over the hero (allowed by the V2 brief): absolute instead of sticky,
@@ -58,12 +78,16 @@ body.home .site-header .logo-lockup > .logo-lockup__partner { border-left: 0; ma
   body.home .site-header .site-nav__list a:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
   body.home .site-header .site-nav__list a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 #fff; }
 }
-.hero--marble {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  min-height: 100svh; padding: calc(var(--header-h) + var(--s-12)) 0 var(--s-12);
-}
-.hero--marble .hero__inner { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
-/* Extra darkening low in the hero, where the title and the lead sit */
+.hero--marble { min-height: 100svh; padding: 0; }
+/* Nested full-height layers so that every parallax layer starts at the top of the page (the script measures
+   "origin: top" from an element's natural top): .hero__inner (buttons), .hero__layer--lead (lead) and
+   .hero__title (eyebrow + h1), each a flex column pushing its content to the bottom. */
+/* Bottom padding of at least 12 svh: the reveal observer ignores the lowest 10 % of the viewport, so the
+   buttons must sit above it to rise with the rest of the entrance at any viewport height. */
+.hero--marble .hero__inner { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; min-height: 100svh; padding-bottom: max(var(--s-12), 12svh); }
+.hero--marble .hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
+.hero--marble .hero__layer--lead { flex: 1 1 auto; }
+.hero--marble .hero__title { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-end; padding-top: calc(var(--header-h) + var(--s-12)); }
 .hero--marble::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(32, 20, 40, 0.62) 0%, rgba(32, 20, 40, 0.28) 45%, transparent 75%); pointer-events: none; }
 .hero--marble h1 {
   font-size: clamp(3rem, 9vw, 8.5rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
@@ -72,31 +96,45 @@ body.home .site-header .logo-lockup > .logo-lockup__partner { border-left: 0; ma
 .hero--marble .lead { margin-top: var(--s-4); max-width: 46ch; font-size: clamp(1.1875rem, 1.6vw, 1.5rem); }
 .hero--marble .cluster { margin-top: var(--s-6); }
 .hero--marble .hero__eyebrow { color: var(--on-marble-muted); margin-bottom: var(--s-4); }
-@media (max-width: 40em) { .hero--marble { padding-bottom: var(--s-12); } .hero--marble h1 { font-size: clamp(2.75rem, 13vw, 4rem); } }
+@media (max-width: 40em) { .hero--marble h1 { font-size: clamp(2.75rem, 13vw, 4rem); } }
 
 .home-section__head { text-align: center; margin: 0 auto var(--s-8); max-width: var(--measure); }
 .home-section__head > * + * { margin-top: var(--s-3); }
 .home-section__head h2 { font-size: var(--fs-h2); }
 .home-section__more { margin-top: var(--s-6); text-align: center; }
-/* Design-system 0.2.0: `a.no-icon::after { content: none !important }` in base.css cancels the
-   MediaCard gradient (MediaCard adds .no-icon itself). Restore it here; remove once fixed upstream. */
-a.media-card::after { content: "" !important; display: block; margin: 0; opacity: 1; font-size: 0; }
-/* Project cards without a picture take the original's panel colours instead of the blue accent. */
-a.project-card--purple.media-card--accent { background: var(--brand-purple); }
-a.project-card--olive.media-card--accent { background: var(--brand-olive); }
-.pub-list { list-style: none; padding: 0; margin: 0 auto; max-width: 60rem; }
+/* Project cards: hover-reveal (design-system .media-card--hover). The two cards without a photo carry their
+   own site's mark on that site's brand colour: the Montreal Model plum (#77396E, white text 8.1:1) and the
+   StaMPS orange (#B5502F, white text 4.9:1). */
+a.project-card--montreal.media-card--accent { background: #77396E; }
+a.project-card--stamps.media-card--accent { background: #B5502F; }
+.project-card .media-card__mark { padding: 13% 14%; }
+.project-card--stamps .media-card__mark { padding: 16% 13%; }
+/* ROUND3 §3 — cards lift 2 px with a soft shadow (the lift is on the card, the reveal on its wrapper,
+   so the two transitions never fight). Images zoom over 1400 ms (media-card--hover does it). */
+.card-wrap { display: block; }
+.media-card, .person, .strand__panel { transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.media-card:hover, .media-card:focus-visible, .person:hover, .strand__panel:hover, .strand__panel:focus-visible { transform: translateY(-2px); box-shadow: var(--shadow-card), 0 16px 32px -20px rgba(43, 42, 39, 0.35); }
+.btn--secondary:hover { background: var(--paper-deep); }
+.pub-list { list-style: none; padding: 0; margin: 0 auto; max-width: var(--measure); }
 .pub-list > li { padding-block: var(--s-4); border-top: 1px solid var(--rule); }
 .pub-list > li:last-child { border-bottom: 1px solid var(--rule); }
 
 /* --- Inner pages: the marbled page-header band --------------------------------------------- */
-.band-header { min-height: 38vh; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--s-12) 0 var(--s-10, 2.5rem); border-bottom: 0; }
+.band-header { padding: 0; border-bottom: 0; }
+/* The text layer (parallax 0.2 from the page top) fills the band and holds the content at its bottom,
+   in a centred column of at most 68ch (Leo: reading columns centred on the screen). */
+.band-header__inner {
+  width: min(100% - 2 * var(--gutter), 68ch); margin-inline: auto;
+  min-height: 38vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
+  padding: var(--s-12) 0 var(--s-10, 2.5rem);
+}
 .band-header .band-header__back { display: inline-block; margin-bottom: var(--s-4); }
 .band-header .eyebrow { color: var(--on-marble-muted); }
 .band-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.015em; font-weight: 500; max-width: 18ch; text-wrap: balance; }
 .band-header .lead { margin-top: var(--s-4); max-width: var(--measure); }
-.band-header--tabs { padding-bottom: var(--s-6); }
+.band-header--tabs .band-header__inner { padding-bottom: var(--s-6); }
 /* Category tabs on the bottom edge of the band, like the original's row of dark buttons */
-.tab-row { list-style: none; margin: var(--s-8) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.tab-row { list-style: none; margin: var(--s-8) 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-2); }
 .tab-row a {
   display: inline-block; padding: 9px 16px; border-radius: var(--radius-chip);
   background: rgba(40, 26, 48, 0.55); color: #fff; border: 1px solid rgba(255, 255, 255, 0.22);
@@ -120,7 +158,8 @@ a.project-card--olive.media-card--accent { background: var(--brand-olive); }
 .year-group__year { font-family: var(--font-serif); font-size: var(--fs-h2); font-weight: 600; line-height: 1; color: var(--brand-purple); }
 .year-group .pub-list { max-width: none; }
 @media (min-width: 60em) {
-  .year-group { grid-template-columns: 7rem 1fr; }
+  /* year | centred reading column | empty balance column, so the references sit centred on the screen */
+  .year-group { grid-template-columns: 7rem minmax(0, var(--measure)) 7rem; justify-content: center; }
   .year-group__year { position: sticky; top: calc(var(--header-h) + var(--s-6)); }
 }
 
@@ -177,12 +216,11 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 @media (prefers-reduced-motion: no-preference) and (min-width: 60em) {
   html.js .figure--drift .figure__frame img { height: 134%; margin-top: -17%; }
 }
-.research-layout { display: grid; gap: var(--s-12); align-items: start; }
-.research-aside { max-width: 30rem; }
-@media (min-width: 64em) {
-  .research-layout { grid-template-columns: minmax(0, var(--measure)) minmax(14rem, 1fr); gap: var(--s-16); }
-  .research-aside { padding-top: var(--s-2); }
-}
+/* The pull quote opens the page as a centred epigraph between the figure and the reading column */
+.pullquote--epigraph { margin: 0 auto var(--s-16); max-width: 32ch; }
+.research-prose { max-width: none; }
+/* .container already pays the gutter; the reading column inside it must not pay it twice on phones */
+.container > .container--reading { width: min(100%, 64ch); }
 .research-prose > h2 { padding-top: var(--s-8); border-top: 1px solid var(--rule); margin-top: var(--s-16); }
 .research-prose > h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
 .research-prose > h3 { margin-top: var(--s-12); }
@@ -195,6 +233,7 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 .playlists { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
 .playlists iframe { width: 100%; border: 0; border-radius: 12px; background: var(--paper-deep); }
 .pullquote { border-left-color: var(--brand-purple); }
+.pullquote::before { color: var(--brand-purple); }
 
 /* Research index: the two strands as large marbled panels with white titles */
 .strands { gap: var(--s-8); }
@@ -210,12 +249,12 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 .strand__panel p { margin-top: var(--s-3); max-width: 40ch; color: var(--on-marble-muted); font-family: var(--font-sans); font-size: var(--fs-ui); line-height: 1.5; }
 a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(32, 20, 40, 0.55), transparent 60%); display: block; margin: 0; }
 @media (prefers-reduced-motion: no-preference) {
-  .strand__panel .marble__img { transition: transform 900ms var(--ease); }
+  .strand__panel .marble__img { transition: transform 1400ms var(--ease); }
   .strand__panel:hover .marble__img, .strand__panel:focus-visible .marble__img { transform: scale(1.03); }
 }
 .strand__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
 .strand__list a { display: block; padding: var(--s-3) var(--s-4); border: 1px solid var(--rule); border-radius: var(--radius-button); background: var(--card); text-decoration: none; color: var(--ink); font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 500; }
-.strand__list a:hover { border-color: var(--accent); color: var(--accent); }
+.strand__list a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
 /* --- Media ----------------------------------------------------------------------- */
 .press-list { list-style: none; padding: 0; margin: 0; }
@@ -227,6 +266,7 @@ a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z
 
 /* --- Contact ------------------------------------------------------------------- */
 .contact-sections > section + section { margin-top: var(--s-12); }
+.contact-sections h2:first-child { margin-top: 0; }
 
 /* --- Redirect pages -------------------------------------------------------------- */
 .redirect { text-align: left; }

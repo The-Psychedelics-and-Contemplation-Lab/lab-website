@@ -9,52 +9,64 @@ import '../styles/site.css';
 
 const latest = (await getCollection('publications')).map((e) => e.data).sort((a, b) => b.year - a.year || a.order - b.order).slice(0, 5);
 
-/** Images for the project cards. StaMPS is a tool and the Montreal Model's only picture is a text-heavy
- *  schematic (unreadable under a card gradient, tried twice), so those two get the original site's
- *  flat panels — brand purple and olive — and only ReSPCT carries its illustration. */
-const projectImages: Record<string, { src: string; alt: string }> = {
-  'The ReSPCT Guidelines': { src: u('/images/respct-illustration-800.webp'), alt: 'Line illustration of a psychedelic dosing room: an armchair, a lamp, a plant and a window, drawn in one continuous stroke.' },
+/** Project cards (hover-reveal: the text appears on hover, the picture zooms slowly).
+ *  ReSPCT keeps its line illustration; the Montreal Model and StaMPS have no usable photo, so each shows
+ *  its own mark on its own site's brand colour — the Montreal Model's cloud on plum, the StaMPS acrostic
+ *  wordmark (Source Serif outlines, cream) on the StaMPS orange — so the card evokes the site at once. */
+const projectArt: Record<string, { src?: string; alt?: string; mark?: string; markAlt?: string; cls: string }> = {
+  'The ReSPCT Guidelines': { src: u('/images/respct-illustration-800.webp'), alt: 'Line illustration of a psychedelic dosing room: an armchair, a lamp, a plant and a window, drawn in one continuous stroke.', cls: 'project-card--image' },
+  'StaMPS Data Framework': { mark: u('/images/stamps-mark.svg'), markAlt: 'StaMPS wordmark — Standardizing Measures and Practices in Psychedelic Science, the acronym letters in bold', cls: 'project-card--stamps' },
+  'The Montreal Model': { mark: u('/images/montreal-model-mark.webp'), markAlt: 'Montreal Model logo: two heart-shaped clouds, red to blue', cls: 'project-card--montreal' },
 };
-const projectClass: Record<string, string> = { 'StaMPS Data Framework': 'project-card--purple', 'The Montreal Model': 'project-card--olive' };
 ---
 <Layout site={site} page={{ title: 'The Psychedelics & Contemplation Lab — McGill University, Montréal', description: 'A multidisciplinary lab at McGill University and the Lady Davis Institute exploring non-ordinary states of consciousness, spiritual practices and novel clinical interventions.', path: '/', bodyClass: 'home' }} nav={navFor('/')}>
   <main id="main">
-    {/* The original home page: the purple marbled texture filling the viewport, the lab name huge, bottom-left. */}
+    {/* The original home page: the purple marbled texture filling the viewport, the lab name huge, bottom-left.
+        Parallax layers, all measured from the top of the page: the texture runs ahead of the page (-0.25, up to
+        500 px); the text lingers, the lower it sits the more — buttons 0.35, lead 0.28, title 0.2 — so the block
+        stretches gently as it leaves instead of the title running into the lead. Nested layers add their speeds:
+        0.35 outer, -0.07 for the lead's layer, -0.08 more for the title's. */}
     <div class="hero hero--marble marble">
-      <Marble parallax={0.12} />
-      <div class="hero__inner">
-        <p class="eyebrow hero__eyebrow reveal reveal--fade">McGill University · Lady Davis Institute</p>
-        <h1 class="reveal" style="--reveal-delay: 80ms">The Psychedelics &amp; Contemplation Lab</h1>
-        <p class="lead reveal" style="--reveal-delay: 160ms">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions.</p>
-        <div class="cluster reveal" style="--reveal-delay: 240ms">
+      <Marble parallax={-0.25} origin="top" max={500} />
+      <div class="hero__inner hero__layer" data-parallax="0.35" data-parallax-origin="top" data-parallax-max="400">
+        <div class="hero__layer hero__layer--lead" data-parallax="-0.07" data-parallax-origin="top" data-parallax-max="80">
+          <div class="hero__title" data-parallax="-0.08" data-parallax-origin="top" data-parallax-max="92">
+            <p class="eyebrow hero__eyebrow reveal reveal--wipe">McGill University · Lady Davis Institute</p>
+            <h1 class="reveal-words" style="--reveal-delay: 150ms">The Psychedelics &amp; Contemplation Lab</h1>
+          </div>
+          <p class="lead reveal reveal--blur" style="--reveal-delay: 450ms; --reveal-dur: 1000ms">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions.</p>
+        </div>
+        <div class="cluster reveal" style="--reveal-delay: 650ms; --reveal-dur: 900ms">
           <a class="btn btn--primary" href={u('/research/')}>Our research</a>
           <a class="btn btn--secondary" href={u('/people/')}>People</a>
         </div>
       </div>
     </div>
 
-    <Section ariaLabelledby="projects-h">
+    <Section ariaLabelledby="projects-h" watermark="phyllotaxis" watermarkPosition="right">
       <SectionMark label="Projects" accent />
-      <div class="home-section__head reveal">
-        <h2 id="projects-h">Projects</h2>
-        <p class="muted sans">Three initiatives of the lab with their own websites.</p>
+      <div class="home-section__head">
+        <h2 id="projects-h" class="reveal reveal--wipe">Projects</h2>
+        <p class="muted sans reveal reveal--blur" style="--reveal-delay: 150ms">Three initiatives of the lab with their own websites.</p>
       </div>
-      <div class="grid grid--3 reveal-group">
-        {projects.map((p) => (
-          <MediaCard href={p.href} external eyebrow={p.eyebrow} title={p.name} text={p.description} src={projectImages[p.name]?.src} alt={projectImages[p.name]?.alt} class={`project-card ${projectClass[p.name] ?? 'project-card--image'}`} />
-        ))}
+      <div class="grid grid--3 reveal-group reveal-group--slow">
+        {projects.map((p) => { const art = projectArt[p.name]; return (
+          <div class="card-wrap">
+            <MediaCard href={p.href} external eyebrow={p.eyebrow} title={p.name} text={p.description} src={art?.src} alt={art?.alt} mark={art?.mark} markAlt={art?.markAlt} class={`media-card--hover project-card ${art?.cls ?? ''}`} />
+          </div>
+        ); })}
       </div>
     </Section>
 
     <Section band tight ariaLabelledby="latest-h">
       <SectionMark label="Research output" />
-      <div class="home-section__head reveal">
-        <h2 id="latest-h">Latest publications</h2>
+      <div class="home-section__head">
+        <h2 id="latest-h" class="reveal reveal--wipe">Latest publications</h2>
       </div>
       <ul class="pub-list reveal-group">
         {latest.map((pub) => <PublicationItem pub={pub} />)}
       </ul>
-      <p class="home-section__more reveal"><a class="btn btn--quiet" href={u('/publications/')}>All publications →</a></p>
+      <p class="home-section__more reveal reveal--fade"><a class="btn btn--quiet" href={u('/publications/')}>All publications →</a></p>
     </Section>
   </main>
 </Layout>

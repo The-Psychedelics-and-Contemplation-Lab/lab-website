@@ -46,8 +46,20 @@ for (const [name, path] of pages) {
     page.on('console', (m) => { if (m.type() === 'error') errors.push(`${name}@${width}: ${m.text()}`); });
     page.on('pageerror', (e) => errors.push(`${name}@${width}: ${e.message}`));
     await page.goto(base + path, { waitUntil: 'networkidle' });
-    await page.waitForTimeout(600);
+    await page.waitForTimeout(1900);   // the entrance (wipe / words / blur / delayed buttons) has finished
     await page.screenshot({ path: `${out}/${name}-${width}-top.png` });
+    if (name === 'home' && width === 1400) {
+      // Round 3: the hero's layered parallax at three scroll positions, plus the layers' actual offsets
+      for (const y of [300, 700]) {
+        await page.evaluate((y) => window.scrollTo(0, y), y);
+        await page.waitForTimeout(500);
+        await page.screenshot({ path: `${out}/home-1400-scroll${y}.png` });
+        const t = await page.evaluate(() => ['.hero--marble .marble__img', '.hero__inner', '.hero__layer--lead', '.hero__title'].map((s) => `${s}: ${document.querySelector(s)?.style.transform || 'none'}`).join(' · '));
+        console.log(`home parallax @${y}: ${t}`);
+      }
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.waitForTimeout(300);
+    }
     if (width === 1400) {
       const checks = { home: ['.hero--marble h1', '.hero--marble .lead'], research: ['.band-header h1', '.strand__panel h2', '.strand__panel p'], psychedelic: ['.band-header h1', '.band-header .lead', '.tab-row a'], people: ['.band-header h1', '.person--director .person__bio', '.person--olive .person__summary'] };
       for (const sel of checks[name] ?? ['.band-header h1', '.band-header .lead']) {
@@ -60,10 +72,22 @@ for (const [name, path] of pages) {
     const h = await page.evaluate(() => document.body.scrollHeight);
     for (let y = 0; y < h; y += 600) { await page.evaluate((y) => window.scrollTo(0, y), y); await page.waitForTimeout(120); }
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(1500);
+    await page.waitForTimeout(2500);   // the last wipes (900 ms) start late in headless; let them finish
     await page.screenshot({ path: `${out}/${name}-${width}.png`, fullPage: true });
     await ctx.close();
   }
+}
+// Hover state of a project card (text appears, image zooms) and of a person card (lift)
+{
+  const ctx = await browser.newContext({ viewport: { width: 1400, height: 900 } });
+  const page = await ctx.newPage();
+  await page.goto(base + '/', { waitUntil: 'networkidle' });
+  await page.locator('.project-card').nth(2).scrollIntoViewIfNeeded();
+  await page.waitForTimeout(1200);
+  await page.locator('.project-card').nth(2).hover();
+  await page.waitForTimeout(1500);
+  await page.screenshot({ path: `${out}/home-1400-hover-card.png` });
+  await ctx.close();
 }
 // Reduced motion: everything visible without any animation
 {

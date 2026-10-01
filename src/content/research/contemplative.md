@@ -15,7 +15,7 @@ sections:
   - { id: ecological, label: In Ecological Context }
 ---
 
-<h2 class="reveal" id="meditation">Meditation &amp; the Plasticity of the Self</h2>
+<h2 class="reveal reveal--wipe" id="meditation">Meditation &amp; the Plasticity of the Self</h2>
 
 ### Meditation and the Sense of Self
 
@@ -35,7 +35,7 @@ Mindfulness-based interventions have emerged as efficacious and cost-effective n
 
 Inspired by the Buddhist idea that self-grasping causes suffering, researchers commonly suggest that mindfulness-based interventions may differ from other treatments by “prioritizing disidentification and reduction in all forms of SRP [self-related processing], positive as well as negative” (Alejandre-Lara et al 2022, p. 3). Others, however, have challenged this perspective (Britton et al. 2021). Though strong evidence supports the clinical benefit of disidentifying from negative self-evaluative thoughts, it is far from clear that disidentifying from positive self-related processes is also clinically beneficial. In fact, the strengthening of some self-related processes such as positive self-concept and narrative coherence may actually be the most critical mechanisms in mindfulness-based interventions for depression. In this study we are examining this hypothesis by disentangling the role of different self-processes in a clinical trial of mindfulness-based cognitive therapy (MBCT) for late-life depression.
 
-<h2 class="reveal" id="imagination">Imagination &amp; Invisible Presence</h2>
+<h2 class="reveal reveal--wipe" id="imagination">Imagination &amp; Invisible Presence</h2>
 
 ### Tulpamancy
 
@@ -49,13 +49,13 @@ Prayer is often viewed in contemplative science as analogous to mindfulness—a 
 
 We use computational modeling—specifically the Active Inference framework—to explore the structure of phenomenal experience. This work contributes to a growing effort to formalize phenomenology within neuroscience by modeling how hierarchical, precision-weighted inference can generate altered states of consciousness. As part of this broader endeavor, we are currently co-editing a special issue on computational approaches to phenomenology for the Neuroscience of Consciousness, led by Jonas Mago. In our contribution, we apply this framework to understand the experience of encountering seemingly autonomous entities, as often reported under the influence of psychedelics.
 
-<h2 class="reveal" id="interpersonal">Interpersonal Transmission of Contemplative States</h2>
+<h2 class="reveal reveal--wipe" id="interpersonal">Interpersonal Transmission of Contemplative States</h2>
 
 ### Dyadic studies of prayer and meditation
 
 Coming soon...
 
-<h2 class="reveal" id="ecological">Contemplative Practice in Ecological Context</h2>
+<h2 class="reveal reveal--wipe" id="ecological">Contemplative Practice in Ecological Context</h2>
 
 ### How Nature Tunes the Mind
 
