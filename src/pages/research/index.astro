@@ -1,0 +1,33 @@
+---
+import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { getCollection } from 'astro:content';
+import { site, navFor } from '../../site.config';
+import { u } from '../../lib/url';
+import '../../styles/site.css';
+const research = await getCollection('research');
+const strands = [
+  { slug: 'psychedelic', title: 'Psychedelics', path: '/psychedelic-research/' },
+  { slug: 'contemplative', title: 'Contemplation', path: '/contemplative-research/' },
+].map((s) => ({ ...s, entry: research.find((r) => r.id === s.slug)! }));
+---
+<Layout site={site} page={{ title: 'Research — The Psychedelics & Contemplation Lab', description: 'Two strands of research at the lab: psychedelic research (ketamine, psilocybin, music, methods) and contemplative research (meditation, prayer, imagination, nature).', path: '/research/' }} nav={navFor('/research/')}>
+  <main id="main">
+    <PageHeader eyebrow="Research" title="Psychedelics & Contemplation" lead="The lab’s work runs along two strands. Each theme below opens the full description of the project." />
+    <Section>
+      <div class="grid grid--2">
+        {strands.map((s) => (
+          <div class="strand">
+            <div>
+              <h2>{s.title}</h2>
+              <p class="muted">{s.entry.data.lead}</p>
+            </div>
+            <ul class="strand__list">
+              {s.entry.data.sections.map((sec) => <li><a href={u(`${s.path}#${sec.id}`)}>{sec.label}</a></li>)}
+            </ul>
+            <p><a class="btn btn--secondary" href={u(s.path)}>All {s.entry.data.title.toLowerCase()}</a></p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  </main>
+</Layout>

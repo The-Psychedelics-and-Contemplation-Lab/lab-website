@@ -1,0 +1,52 @@
+---
+import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { getCollection, render } from 'astro:content';
+import { site, navFor } from '../../site.config';
+import Portrait from '../../components/Portrait.astro';
+import '../../styles/site.css';
+
+const groups = [
+  { key: 'directors', label: 'Lab directors' },
+  { key: 'postdocs', label: 'Post-docs' },
+  { key: 'phd', label: 'PhD students' },
+  { key: 'masters', label: 'Masters students' },
+] as const;
+const people = (await getCollection('people')).sort((a, b) => a.data.order - b.data.order);
+const rendered = await Promise.all(people.map(async (p) => ({ ...p, Content: (await render(p)).Content })));
+---
+<Layout site={site} page={{ title: 'People — The Psychedelics & Contemplation Lab', description: 'Lab directors Kyle Greenway and Michael Lifshitz, postdoctoral fellows, PhD and masters students of the Psychedelics & Contemplation Lab at McGill.', path: '/people/' }} nav={navFor('/people/')}>
+  <main id="main">
+    <PageHeader eyebrow="People" title="Lab members" lead="Psychiatrists, neuroscientists, anthropologists, social workers and students working across psychedelic and contemplative research." />
+    <Section>
+      {groups.map((g) => {
+        const members = rendered.filter((p) => p.data.group === g.key);
+        return members.length > 0 && (
+          <div class="people-group" id={g.key}>
+            <h2>{g.label}</h2>
+            <div class={g.key === 'directors' ? 'grid grid--2' : 'grid grid--2'}>
+              {members.map((p) => { const Bio = p.Content; return (
+                <article class={`card person${g.key === 'directors' ? ' person--director' : ''}`} id={p.id}>
+                  <Portrait name={p.data.name} photo={p.data.photo} />
+                  <div class="person__body">
+                    <h3>{p.data.name}</h3>
+                    <p class="person__role">{p.data.role}</p>
+                    <p class="person__summary">{p.data.summary}</p>
+                    {p.data.links.length > 0 && (
+                      <ul class="person__links">
+                        {p.data.links.map((l) => <li><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>)}
+                      </ul>
+                    )}
+                  </div>
+                  <details class="person__bio">
+                    <summary>Full biography</summary>
+                    <div class="prose"><Bio /></div>
+                  </details>
+                </article>
+              ); })}
+            </div>
+          </div>
+        );
+      })}
+    </Section>
+  </main>
+</Layout>

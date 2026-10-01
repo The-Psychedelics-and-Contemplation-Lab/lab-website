@@ -1,0 +1,15 @@
+---
+import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { getEntry, render } from 'astro:content';
+import { site, navFor } from '../../site.config';
+import '../../styles/site.css';
+const entry = (await getEntry('pages', 'media'))!;
+const { Content } = await render(entry);
+const d = entry.data;
+---
+<Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path: '/media/' }} nav={navFor('/media/')}>
+  <main id="main">
+    <PageHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead} />
+    <Section><div class="prose"><Content /></div></Section>
+  </main>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { site, navFor, contactEmail } from '../../site.config';
+import '../../styles/site.css';
+---
+<Layout site={site} page={{ title: 'Contact — The Psychedelics & Contemplation Lab', description: 'How to reach the Psychedelics & Contemplation Lab at McGill University and the Lady Davis Institute — study participation, prospective students and other inquiries.', path: '/contact/' }} nav={navFor('/contact/')}>
+  <main id="main">
+    <PageHeader eyebrow="Get in touch" title="Contact" lead="The lab is based at the Lady Davis Institute for Medical Research, Jewish General Hospital, and the Department of Psychiatry, McGill University, Montréal." />
+    <Section>
+      <div class="prose">
+        <h2>Participating in our studies</h2>
+        <p>We are currently recruiting participants for the following studies:</p>
+        <p>TITLE OF STUDY -- Contact <a href={`mailto:${contactEmail}`}>{contactEmail}</a> for inquiries and sign up</p>
+        <p><em>Please note, The Psychedelics and Contemplation Lab does <u>not</u> offer medical services or recruit participants for medical trials.</em></p>
+        <h2>Prospective grad students</h2>
+        <p>At this time, we invite students with external funding to apply to our lab. Unfortunately, we are not considering students without external funding. Please check back at a later time as this is subject to change.</p>
+        <h2>All other inquiries</h2>
+        <p>Write to the lab by email and we will get back to you.</p>
+        <p><a class="btn btn--primary" href={`mailto:${contactEmail}`}>Email the lab</a></p>
+      </div>
+    </Section>
+  </main>
+</Layout>

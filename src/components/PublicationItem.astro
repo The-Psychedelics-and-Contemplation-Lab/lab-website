@@ -1,0 +1,22 @@
+---
+/** One reference, APA-like, with DOI link and ⤓ PDF link when a file is referenced. */
+import { u } from '../lib/url';
+export interface Props {
+  pub: { authors: string; year: number; title: string; journal: string; volume?: string; issue?: string; pages?: string; doi?: string; url?: string; pdf?: string; note?: string };
+  as?: 'li' | 'div';
+}
+const { pub, as: Tag = 'li' } = Astro.props;
+const href = pub.doi ? `https://doi.org/${pub.doi}` : pub.url;
+const where = [pub.volume ? `${pub.volume}${pub.issue ? `(${pub.issue})` : ''}` : '', pub.pages ?? ''].filter(Boolean).join(', ');
+---
+<Tag class="pub">
+  <span class="pub__authors">{pub.authors}</span> <span class="pub__year">({pub.year}).</span>
+  <span class="pub__title">{pub.title}.</span>
+  <span class="pub__journal"><i>{pub.journal}</i>{pub.note ? `. ${pub.note}` : where ? `, ${where}` : ''}.</span>
+  {(href || pub.pdf) && (
+    <span class="pub__links">
+      {href && <a href={href} target="_blank" rel="noopener noreferrer">{pub.doi ? `doi:${pub.doi}` : 'Link'}</a>}
+      {pub.pdf && <a href={u(pub.pdf)}>PDF</a>}
+    </span>
+  )}
+</Tag>

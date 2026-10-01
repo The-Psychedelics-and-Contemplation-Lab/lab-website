@@ -1,0 +1,36 @@
+---
+import { Layout, PageHeader, Section } from '@pcl/design-system';
+import { getCollection } from 'astro:content';
+import { site, navFor } from '../../site.config';
+import PublicationItem from '../../components/PublicationItem.astro';
+import '../../styles/site.css';
+
+const pubs = (await getCollection('publications')).map((e) => e.data).sort((a, b) => a.order - b.order);
+const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Publications — The Psychedelics & Contemplation Lab',
+  isPartOf: { '@type': 'WebSite', name: site.name, url: site.url },
+  hasPart: pubs.map((p) => ({ '@type': 'ScholarlyArticle', headline: p.title, datePublished: String(p.year), author: p.authors, isPartOf: { '@type': 'Periodical', name: p.journal }, ...(p.doi ? { sameAs: `https://doi.org/${p.doi}` } : {}) })),
+};
+---
+<Layout site={site} page={{ title: 'Publications — The Psychedelics & Contemplation Lab', description: `${pubs.length} peer-reviewed publications of the lab, ${years[years.length - 1]}–${years[0]}, on ketamine and psilocybin therapy, music, set and setting, and contemplative science.`, path: '/publications/', schema }} nav={navFor('/publications/')}>
+  <main id="main">
+    <PageHeader eyebrow="Publications" title="Publications" lead={`${pubs.length} peer-reviewed articles by members of the lab, grouped by year. Each entry links to the publisher’s page through its DOI.`}>
+      <nav aria-label="Jump to year" style="margin-top: var(--s-6)">
+        <ul class="pub-nav">{years.map((y) => <li><a href={`#y${y}`}>{y}</a></li>)}</ul>
+      </nav>
+    </PageHeader>
+    <Section>
+      {years.map((y) => (
+        <section class="year-group" id={`y${y}`} aria-labelledby={`y${y}-h`}>
+          <h2 class="year-group__year" id={`y${y}-h`}>{y}</h2>
+          <ul class="pub-list">
+            {pubs.filter((p) => p.year === y).map((pub) => <PublicationItem pub={pub} />)}
+          </ul>
+        </section>
+      ))}
+    </Section>
+  </main>
+</Layout>

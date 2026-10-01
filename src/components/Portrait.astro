@@ -1,0 +1,18 @@
+---
+/**
+ * <Portrait name photo?> — a member photo, or (while the photo is not in public/uploads yet)
+ * a soft accent-tinted block with the person's initials. Purely CSS, no external image.
+ */
+import { u } from '../lib/url';
+import { hasPublicFile, initials } from '../lib/media';
+export interface Props { name: string; photo?: string; class?: string }
+const { name, photo, class: cls = '' } = Astro.props;
+const ok = hasPublicFile(photo);
+---
+{ok ? (
+  <img class={`portrait ${cls}`} src={u(photo!)} alt={`Portrait of ${name}`} width="320" height="320" loading="lazy" decoding="async" />
+) : (
+  <div class={`portrait portrait--initials ${cls}`} role="img" aria-label={`${name} (photo to come)`}>
+    <span aria-hidden="true">{initials(name)}</span>
+  </div>
+)}

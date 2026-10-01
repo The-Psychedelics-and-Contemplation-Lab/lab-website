@@ -1,0 +1,63 @@
+---
+import { Layout, Section, Card } from '@pcl/design-system';
+import { getCollection } from 'astro:content';
+import { site, navFor, projects, contactEmail } from '../site.config';
+import { u } from '../lib/url';
+import PublicationItem from '../components/PublicationItem.astro';
+import '../styles/site.css';
+
+const latest = (await getCollection('publications')).map((e) => e.data).sort((a, b) => b.year - a.year || a.order - b.order).slice(0, 5);
+---
+<Layout site={site} page={{ title: 'The Psychedelics & Contemplation Lab — McGill University, Montréal', description: 'A multidisciplinary lab at McGill University and the Lady Davis Institute exploring non-ordinary states of consciousness, spiritual practices and novel clinical interventions.', path: '/' }} nav={navFor('/')}>
+  <main id="main">
+    <div class="hero hero--lab">
+      <div class="container hero__inner">
+        <p class="eyebrow">McGill University · Lady Davis Institute</p>
+        <h1>The Psychedelics &amp; Contemplation Lab</h1>
+        <p class="lead">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions. Our work spans two strands — psychedelic and contemplative research — from ketamine and psilocybin therapies for refractory depression to meditation, prayer and the plasticity of the self.</p>
+        <div class="cluster">
+          <a class="btn btn--primary" href={u('/research/')}>Our research</a>
+          <a class="btn btn--secondary" href={u('/people/')}>People</a>
+        </div>
+      </div>
+    </div>
+
+    <Section ariaLabelledby="projects-h">
+      <div class="home-section__head">
+        <h2 id="projects-h">Projects</h2>
+        <p class="muted sans">Three initiatives of the lab with their own websites.</p>
+      </div>
+      <div class="grid grid--3">
+        {projects.map((p) => (
+          <Card href={p.href} external eyebrow={p.eyebrow} title={p.name} as="h3" class="project-card">
+            <p class="sans muted">{p.description}</p>
+          </Card>
+        ))}
+      </div>
+    </Section>
+
+    <Section band ariaLabelledby="latest-h">
+      <div class="home-section__head">
+        <h2 id="latest-h">Latest publications</h2>
+        <a class="btn btn--quiet" href={u('/publications/')}>All publications →</a>
+      </div>
+      <ul class="pub-list">
+        {latest.map((pub) => <PublicationItem pub={pub} />)}
+      </ul>
+    </Section>
+
+    <Section ariaLabelledby="join-h">
+      <div class="card contact-card">
+        <div>
+          <p class="eyebrow">Join / Contact</p>
+          <h2 id="join-h">Working with the lab</h2>
+          <p class="sans muted">At this time, we invite students with external funding to apply to our lab. For study participation, media and all other inquiries, write to us by email.</p>
+        </div>
+        <div class="cluster">
+          <a class="btn btn--primary" href={`mailto:${contactEmail}`}>Email the lab</a>
+          <a class="btn btn--secondary" href={u('/contact/')}>Contact page</a>
+        </div>
+      </div>
+    </Section>
+  </main>
+</Layout>
