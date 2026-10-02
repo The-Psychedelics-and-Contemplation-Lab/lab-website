@@ -38,6 +38,15 @@
 @media (max-width: 59.99em) { .marble__img, .hero--marble .marble__img, .band-header .marble__img { top: 0; bottom: 0; background-image: var(--marble-url-small, var(--marble-url)); } }
 .marble__veil { position: absolute; inset: 0; z-index: -1; background: var(--marble-overlay); pointer-events: none; }
 .marble--deep .marble__veil { background: var(--marble-overlay-deep); }
+.marble__grain {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 4px 4px, 180px 180px;
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+}
 .marble h1, .marble h2, .marble h3, .marble p, .marble .lead, .marble .eyebrow { color: var(--on-marble); }
 .marble .lead { color: var(--on-marble-muted); }
 .marble a:not(.btn) { color: var(--on-marble); }
