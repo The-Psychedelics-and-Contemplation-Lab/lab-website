@@ -1,0 +1,49 @@
+---
+/** Renders one entry of the `topics` collection as its own short page: marbled header band
+ *  (tinted purple for the psychedelic strand, olive for the contemplative strand) with a
+ *  "← Back to all research" link, then the topic's own content, then a quick link to the
+ *  other topics in the same strand. One topic, one page — no more scroll-spy tabs. */
+import { Layout, Section, Figure } from '@pcl/design-system';
+import { getEntry, getCollection, render } from 'astro:content';
+import { site, navFor } from '../site.config';
+import { u } from '../lib/url';
+import BandHeader from './BandHeader.astro';
+import '../styles/site.css';
+export interface Props { slug: string; strandPath: string; strandTitle: string }
+const { slug, strandPath, strandTitle } = Astro.props;
+const entry = (await getEntry('topics', slug))!;
+const { Content } = await render(entry);
+const d = entry.data;
+const tint = d.strand === 'contemplative' ? ' marble--olive' : '';
+const siblings = (await getCollection('topics'))
+  .filter((t) => t.data.strand === d.strand && t.id !== slug)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path: `${strandPath}${slug}/` }} nav={navFor(strandPath)}>
+  <main id="main">
+    <BandHeader eyebrow={d.eyebrow} title={d.title} back={u(strandPath)} backLabel={`← Back to ${strandTitle.toLowerCase()}`} tint={d.strand === 'contemplative' ? 'marble--olive' : undefined} />
+    <Section watermark="rings" watermarkPosition="left" watermarkInk>
+      {d.image && (
+        <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--mask research-figure" />
+      )}
+      {d.pullquote && (
+        <blockquote class="pullquote pullquote--epigraph reveal reveal--rise-lg">
+          {d.pullquote}
+          {d.pullquoteCite && <cite>{d.pullquoteCite}</cite>}
+        </blockquote>
+      )}
+      <div class="container--reading">
+        <div class="prose research-prose"><Content /></div>
+      </div>
+      {siblings.length > 0 && (
+        <nav class={`topic-more${tint}`} aria-label={`More ${strandTitle.toLowerCase()}`}>
+          <p class="topic-more__label">More {strandTitle.toLowerCase()}</p>
+          <ul class="topic-more__list">
+            {siblings.map((s) => <li><a href={u(`${strandPath}${s.id}/`)}>{s.data.title}</a></li>)}
+          </ul>
+        </nav>
+      )}
+      <p style="margin-top: var(--s-12)"><a class="btn btn--quiet" href={u(strandPath)}>← Back to {strandTitle.toLowerCase()}</a></p>
+    </Section>
+  </main>
+</Layout>

@@ -1,4 +1,13 @@
 ---
-import ResearchPage from '../../components/ResearchPage.astro';
+import { Layout } from '@pcl/design-system';
+import { getEntry } from 'astro:content';
+import { site, navFor } from '../../site.config';
+import ResearchHub from '../../components/ResearchHub.astro';
+import '../../styles/site.css';
+const entry = (await getEntry('research', 'psychedelic'))!;
 ---
-<ResearchPage slug="psychedelic" path="/psychedelic-research/" />
+<Layout site={site} page={{ title: `${entry.data.title} — The Psychedelics & Contemplation Lab`, description: entry.data.description, path: '/psychedelic-research/' }} nav={navFor('/psychedelic-research/')}>
+  <main id="main">
+    <ResearchHub mode="psychedelic" />
+  </main>
+</Layout>

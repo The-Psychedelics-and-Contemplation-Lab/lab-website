@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 
-/** Long-form research pages: src/content/research/<slug>.md */
+/** Research strand landing pages: src/content/research/<slug>.md (psychedelic | contemplative) */
 const research = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/research' }),
   schema: z.object({
@@ -9,13 +9,24 @@ const research = defineCollection({
     eyebrow: z.string(),
     description: z.string().max(160),
     lead: z.string(),
-    image: z.string().optional(),        // "/uploads/…" — the strand image, shown as a Figure at the top of the page
+  }),
+});
+
+/** Individual research topics, each its own page: src/content/topics/<slug>.md */
+const topics = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/topics' }),
+  schema: z.object({
+    strand: z.enum(['psychedelic', 'contemplative']),
+    order: z.number(),
+    title: z.string(),
+    eyebrow: z.string(),
+    description: z.string().max(160),
+    image: z.string().optional(),        // "/uploads/…" shown as a Figure at the top of the page
     imageAlt: z.string().optional(),
     imageCaption: z.string().optional(),
     imageRatio: z.enum(['wide', 'cinema', 'square', 'tall']).default('wide'),  // 'cinema' = shown whole, no drift (schematics)
     pullquote: z.string().optional(),    // a sentence taken verbatim from the page text
     pullquoteCite: z.string().optional(),
-    sections: z.array(z.object({ id: z.string(), label: z.string() })),
   }),
 });
 
@@ -58,4 +69,4 @@ const pages = defineCollection({
   schema: z.object({ title: z.string(), eyebrow: z.string(), description: z.string().max(160), lead: z.string().optional() }),
 });
 
-export const collections = { research, people, publications, pages };
+export const collections = { research, topics, people, publications, pages };

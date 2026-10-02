@@ -1,0 +1,75 @@
+---
+/**
+ * <ResearchHub mode> — the research landing pages, as buttons to each topic's own page rather than
+ * a scrolling wall of text.
+ *  - mode="split": the combined /research/ page — a full-bleed band split purple (psychedelic) / olive
+ *    (contemplative), the single H1 centred across both halves, then the two strands' buttons side by side.
+ *  - mode="psychedelic" / mode="contemplative": a single strand's hub — the usual marbled BandHeader
+ *    (tinted olive for contemplative) followed by that strand's buttons in one column.
+ */
+import { Section } from '@pcl/design-system';
+import { getCollection, getEntry } from 'astro:content';
+import { u } from '../lib/url';
+import Marble from './Marble.astro';
+import BandHeader from './BandHeader.astro';
+
+export interface Props { mode: 'split' | 'psychedelic' | 'contemplative' }
+const { mode } = Astro.props;
+
+const topics = await getCollection('topics');
+const byStrand = (strand: 'psychedelic' | 'contemplative') =>
+  topics.filter((t) => t.data.strand === strand).sort((a, b) => a.data.order - b.data.order);
+
+const psych = { entry: (await getEntry('research', 'psychedelic'))!, path: '/psychedelic-research/', items: byStrand('psychedelic') };
+const contempl = { entry: (await getEntry('research', 'contemplative'))!, path: '/contemplative-research/', items: byStrand('contemplative') };
+
+// Single-strand mode: which strand this page is for (only meaningful when mode !== 'split').
+const solo = mode === 'contemplative' ? contempl : psych;
+---
+{mode === 'split' ? (
+  <div class="marble marble--deep research-split" aria-hidden="false">
+    <div class="research-split__half research-split__half--psych">
+      <Marble parallax={false} position="30% 45%" />
+    </div>
+    <div class="research-split__half research-split__half--contemplative marble--olive">
+      <Marble parallax={false} position="70% 55%" />
+    </div>
+    <div class="research-split__header text-center">
+      <p class="eyebrow reveal reveal--wipe">Research</p>
+      <h1 class="reveal-words" style="--reveal-delay: 100ms">Psychedelics &amp; Contemplation</h1>
+    </div>
+  </div>
+) : (
+  <BandHeader
+    eyebrow={solo.entry.data.eyebrow}
+    title={solo.entry.data.title}
+    lead={solo.entry.data.lead}
+    back={u('/research/')}
+    backLabel="← Back to all research"
+    tint={mode === 'contemplative' ? 'marble--olive' : undefined}
+  />
+)}
+<Section>
+  {mode === 'split' ? (
+    <div class="grid grid--2 research-hub__columns reveal-group reveal-group--slow">
+      <div class="research-hub__column">
+        <p class="research-hub__column-lead">{psych.entry.data.lead}</p>
+        <ul class="research-hub__buttons">
+          {psych.items.map((t) => <li><a href={u(`${psych.path}${t.id}/`)}>{t.data.title}</a></li>)}
+        </ul>
+        <p><a class="btn btn--secondary" href={u(psych.path)}>All psychedelic research</a></p>
+      </div>
+      <div class="research-hub__column research-hub__column--olive">
+        <p class="research-hub__column-lead">{contempl.entry.data.lead}</p>
+        <ul class="research-hub__buttons">
+          {contempl.items.map((t) => <li><a href={u(`${contempl.path}${t.id}/`)}>{t.data.title}</a></li>)}
+        </ul>
+        <p><a class="btn btn--secondary" href={u(contempl.path)}>All contemplative research</a></p>
+      </div>
+    </div>
+  ) : (
+    <ul class="research-hub__buttons reveal-group">
+      {solo.items.map((t) => <li><a href={u(`${solo.path}${t.id}/`)}>{t.data.title}</a></li>)}
+    </ul>
+  )}
+</Section>
