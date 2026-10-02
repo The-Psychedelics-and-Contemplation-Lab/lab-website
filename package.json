@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "postinstall": "node scripts/build-texture.mjs",
     "check:html": "node scripts/check-html.mjs",
     "update-design": "npm update @pcl/design-system"
   },

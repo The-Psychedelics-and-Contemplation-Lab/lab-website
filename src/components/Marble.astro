@@ -6,8 +6,9 @@
  * contemplative strand's green tint); the content follows.
  * `parallax` is the design-system speed (negative = faster than the page), `origin="top"` measures from
  * the layer's natural top (for heroes that start in view), `max` the pixel clamp.
- * The texture itself is a single shared data: URI, set once as --marble-tex / --marble-tex-small in
- * site.css, so every instance of this component stays tiny.
+ * The texture itself is a single shared asset (public/images/marble-tex.webp, built from
+ * src/assets/texture-chunks/ — see scripts/build-texture.mjs) set once as --marble-tex in site.css,
+ * so every instance of this component stays tiny.
  */
 export interface Props { parallax?: number | false; origin?: 'top'; max?: number; position?: string }
 const { parallax = 0.12, origin, max, position } = Astro.props;
