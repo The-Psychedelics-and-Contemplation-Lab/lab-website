@@ -10,7 +10,7 @@ const d = entry.data;
 ---
 <Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path: '/media/' }} nav={navFor('/media/')}>
   <main id="main">
-    <BandHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead} />
+    <BandHeader eyebrow={d.eyebrow} title={d.title} />
     <Section><div class="prose prose--centered"><Content /></div></Section>
   </main>
 </Layout>

@@ -15,7 +15,7 @@ const d = entry.data;
 ---
 <Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path }} nav={navFor(path)}>
   <main id="main">
-    <BandHeader eyebrow={d.eyebrow} title={d.title} lead={d.lead} back={u('/research/')} backLabel="← Back to all research" tabs>
+    <BandHeader eyebrow={d.eyebrow} title={d.title} back={u('/research/')} backLabel="← Back to all research" tabs>
       <nav aria-label="Categories of this page">
         <ul class="tab-row reveal-group">
           {d.sections.map((s, i) => <li><a href={`#${s.id}`} class={i === 0 ? 'is-current' : undefined}>{s.label}</a></li>)}
