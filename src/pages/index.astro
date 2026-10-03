@@ -12,7 +12,7 @@ const latest = (await getCollection('publications')).map((e) => e.data).sort((a,
 /** Project cards (hover-reveal: the text appears on hover, the picture zooms slowly). Each card shows
  *  a photograph of its own project. */
 const projectArt: Record<string, { src?: string; alt?: string; mark?: string; markAlt?: string; cls: string }> = {
-  'ReSPCT 2025 Guidelines': { src: u('/images/project-rspct.jpg'), alt: 'ReSPCT 2025 Guidelines', cls: 'project-card--image' },
+  'ReSPCT 2025 Guidelines': { src: u('/images/project-rspct.webp'), alt: 'ReSPCT 2025 Guidelines', cls: 'project-card--image' },
   'StaMPS Data Framework': { src: u('/images/project-stamps.jpg'), alt: 'StaMPS Data Framework', cls: 'project-card--image' },
   'The Montreal Model': { src: u('/images/project-montreal.jpg'), alt: 'The Montreal Model', cls: 'project-card--image' },
 };
@@ -25,7 +25,7 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
         stretches gently as it leaves instead of the title running into the lead. Nested layers add their speeds:
         0.35 outer, -0.07 for the lead's layer, -0.08 more for the title's. */}
     <div class="hero hero--marble marble">
-      <Marble parallax={-0.25} origin="top" max={500} image="/images/marble-light-1920_2.png" />
+      <Marble parallax={-0.25} origin="top" max={500} image="/images/marble-light-1920_2.webp" />
       <div class="hero__inner hero__layer" data-parallax="0.35" data-parallax-origin="top" data-parallax-max="400">
         <div class="hero__layer hero__layer--lead" data-parallax="-0.07" data-parallax-origin="top" data-parallax-max="80">
           <div class="hero__title" data-parallax="-0.08" data-parallax-origin="top" data-parallax-max="92">

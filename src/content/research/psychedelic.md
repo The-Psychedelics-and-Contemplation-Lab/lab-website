@@ -88,7 +88,7 @@ Learn more about the [HBHL SDoH in Neuroscience Team Grant](https://www.mcgill.c
 
 As clinical care and research in psychedelic therapy expand rapidly, inconsistent data collection highlights the urgent need for standardized measures to build robust evidence and guide safe, equitable, and scalable practice. This project aims to create a standardized framework for collecting data in psychedelic therapy across clinical and research settings. In collaboration with the Psychedelics Mental Health Access Alliance (PMHA) and UC Berkeley’s Collaborative on the Economics of Psychedelics, we aim to address the critical need for consistent and comparable data in this field. By engaging a diverse international panel of experts, including clinicians, researchers, economists, and policy specialists, through a structured Delphi consensus process, the project will identify best practices for measuring outcomes, timing, and key variables in psychedelic therapy. The resulting framework, accompanied by an interactive online tool, will support more rigorous research, inform clinical guidelines, and guide policy and insurance decisions.
 
-<p class="cta"><span class="cta__label">Learn more</span> <a class="btn btn--secondary btn--small" target="_blank" rel="noopener noreferrer" href="https://stamps-website.vercel.app">StaMPS Data Framework website<span class="btn__icon" aria-hidden="true"></span></a></p>
+<p class="cta"><span class="cta__label">Learn more</span> <a class="btn btn--secondary btn--small" target="_blank" rel="noopener noreferrer" href="https://stamps.psychedelicsandcontemplationlab.com">StaMPS Data Framework website<span class="btn__icon" aria-hidden="true"></span></a></p>
 
 ### Interpersonal synchrony
 
