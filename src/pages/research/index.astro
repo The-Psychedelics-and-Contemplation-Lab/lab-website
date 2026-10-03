@@ -20,16 +20,13 @@ const strands = [
         {strands.map((s) => (
           <div class="strand">
             {/* A large marbled panel with the strand title, as on the original research page */}
-            <a class="strand__panel marble no-icon" href={u(s.path)}>
+            <a class={`strand__panel strand__panel--${s.slug} marble no-icon`} href={u(s.path)}>
               <Marble parallax={false} position={s.pos} />
-              <span class="eyebrow">{s.entry.data.sections.length} themes</span>
               <h2>{s.title}</h2>
-              <p>{s.entry.data.lead}</p>
             </a>
             <ul class="strand__list">
               {s.entry.data.sections.map((sec) => <li><a href={u(`${s.path}#${sec.id}`)}>{sec.label}</a></li>)}
             </ul>
-            <p><a class="btn btn--secondary" href={u(s.path)}>All {s.entry.data.title.toLowerCase()}</a></p>
           </div>
         ))}
       </div>
