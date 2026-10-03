@@ -98,6 +98,10 @@
 /* Light fallback so the dark purple hero text stays legible even before marble-light-1920.jpg is
    uploaded to public/images/ (until then .marble__img has nothing to show and this shows through). */
 .hero--marble { min-height: 100svh; padding: 0; background: #F3EEF5; }
+/* The shared .marble__img tiles its texture at 60% width (right for the small repeating oil-slick
+   pattern used elsewhere); the hero's photographic marble image should instead run as one large image
+   filling the box, so override size/repeat for the hero only. */
+.hero--marble .marble__img { background-size: cover; background-repeat: no-repeat; background-position: center; }
 /* Nested full-height layers so that every parallax layer starts at the top of the page (the script measures
    "origin: top" from an element's natural top): .hero__inner (buttons), .hero__layer--lead (lead) and
    .hero__title (eyebrow + h1), each a flex column pushing its content to the bottom. */
