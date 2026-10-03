@@ -27,7 +27,7 @@
 .marble__img {
   position: absolute; left: 0; right: 0; top: -120px; bottom: -120px; z-index: -2;
   background-image: var(--marble-url);   /* set inline by <Marble> so the base path is right */
-  background-size: cover; background-position: center; background-repeat: no-repeat;
+  background-size: 60% auto; background-position: center top; background-repeat: repeat;
   pointer-events: none;
 }
 /* Round 3: the home hero and the band headers run their texture faster than the page (-0.25 / -0.2, measured
