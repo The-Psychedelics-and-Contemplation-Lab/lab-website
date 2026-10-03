@@ -325,20 +325,23 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 .research-split__title .ampersand { flex: 0; }
 .research-split__title .word-right { flex: 1; text-align: left; }
 
+/* Theme items: plain typographic list, not cards — no fill, no border box, no shadow. A thin left
+   rule marks each item like a divider; text is white (muted by default, full white on hover/focus),
+   with a left indent instead of padding-as-button. */
 .research-theme-card {
-  background: rgba(245, 240, 232, 0.92);
-  border: 1px solid rgba(80, 100, 70, 0.4);
-  border-radius: 4px;
-  padding: 1rem 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #3a4a35;
+  padding: 0.65rem 0 0.65rem 1.25rem;
+  margin-bottom: 0.9rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.35);
+  color: var(--on-marble-muted);
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: border-color 0.2s, color 0.2s;
 }
 
-.research-theme-card:hover {
-  background: rgba(245, 240, 232, 1);
+.research-theme-card:hover,
+.research-theme-card:focus-visible {
+  border-left-color: var(--on-marble);
+  color: var(--on-marble);
 }
 
 /* Supporting rules (not part of the spec above, added so the panels are usable): push the panel
