@@ -65,21 +65,21 @@ export const navFor = (path: string) => navItems.map((n) => ({ ...n, current: n.
 /** The lab's sister sites, shown on the home page and in the footer. */
 export const projects = [
   {
-    name: 'The ReSPCT Guidelines',
+    name: 'ReSPCT 2025 Guidelines',
     eyebrow: 'Reporting standard',
     href: 'https://respctguidelines.com',
-    description: 'Reporting of Setting in Psychedelic Clinical Trials — a Delphi consensus of 89 experts on the 30 variables every trial should document.',
+    description: 'A consensus-based framework for transparent and rigorous reporting of set and setting in psychedelic clinical trials.',
   },
   {
     name: 'StaMPS Data Framework',
     eyebrow: 'Standardized measures',
     href: 'https://stamps-website.vercel.app',
-    description: 'A standardized framework for collecting data in psychedelic therapy across clinical and research settings, with an interactive online tool.',
+    description: 'An international expert-consensus framework for standardizing what data are collected across psychedelic research and care.',
   },
   {
     name: 'The Montreal Model',
     eyebrow: 'Ketamine therapy',
     href: 'https://montrealmodelketaminetherapy.com',
-    description: 'An intensive, evidence-based program combining low-dose ketamine with psychological support for treatment-resistant depression.',
+    description: 'A clinically validated framework integrating ketamine therapy with psychological support.',
   },
 ];
