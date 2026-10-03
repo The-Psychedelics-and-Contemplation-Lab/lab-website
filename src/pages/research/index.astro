@@ -11,19 +11,6 @@ const strands = [
   { slug: 'psychedelic', title: 'Psychedelic research', path: '/psychedelic-research/', pos: '20% 40%' },
   { slug: 'contemplative', title: 'Contemplative research', path: '/contemplative-research/', pos: '80% 60%' },
 ].map((s) => ({ ...s, entry: research.find((r) => r.id === s.slug)! }));
-
-/** Each theme now has its own page under /research/ instead of just an anchor within the long-form
- *  strand page; this maps a section's content-collection id to that page's slug. */
-const themeSlugs: Record<string, string> = {
-  depression: 'ketamine-refractory-depression',
-  music: 'psychedelics-music',
-  methods: 'psychedelic-research-methodologies',
-  realworld: 'real-world-psilocybin-therapy',
-  meditation: 'meditation-plasticity-self',
-  imagination: 'imagination-invisible-presence',
-  interpersonal: 'interpersonal-transmission',
-  ecological: 'ecological-context',
-};
 ---
 <Layout site={site} page={{ title: 'Research — The Psychedelics & Contemplation Lab', description: 'Two strands of research at the lab: psychedelic research (ketamine, psilocybin, music, methods) and contemplative research (meditation, prayer, imagination, nature).', path: '/research/' }} nav={navFor('/research/')}>
   <main id="main">
@@ -38,7 +25,10 @@ const themeSlugs: Record<string, string> = {
               <h2>{s.title}</h2>
             </a>
             <ul class="strand__list">
-              {s.entry.data.sections.map((sec) => <li><a href={u(`/research/${themeSlugs[sec.id]}/`)}>{sec.label}</a></li>)}
+              {/* Each theme button opens its strand's page directly on the matching tab, rather than a
+                  separate page of its own — the id matches a <button data-tab> in ResearchPage.astro,
+                  which opens that tab on load when it finds its id in the URL hash. */}
+              {s.entry.data.sections.map((sec) => <li><a href={u(`${s.path}#${sec.id}`)}>{sec.label}</a></li>)}
             </ul>
           </div>
         ))}

@@ -54,6 +54,10 @@ However, the music and non-music approaches developed in the MUSIK trial may hav
 
 - Greenway, K. T., Garel, N., Williams, L., Beaulieu, S., Turecki, G., Rej, S., & Richard-Devantoy, S. (2024). Music as an intervention to improve the hemodynamic response of ketamine in depression. *JAMA Network Open, 7*(2), e2354719. <https://doi.org/10.1001/jamanetworkopen.2023.54719>
 
+### Music vs Mindfulness
+
+Music-listening and mindfulness are extremely common interventions with measurable effects on blood pressure, heart rate, and other autonomic outputs, yet their effects have rarely been directly compared. Our lab's MUSIK trial offered a rare head-to-head comparison. To test whether these effects extend beyond clinical settings, we conducted a pilot randomized crossover trial in 30 healthy adults, each completing a 40-minute curated music listening session and a matched 40-minute guided mindfulness session. Using the Finometer, a non-invasive continuous hemodynamic monitoring system with synchronized ECG, we recorded blood pressure and heart rate continuously to capture moment-to-moment dynamics missed by intermittent arm-cuff measures. Recruitment is complete and analysis is underway, with preliminary results supporting the feasibility and utility of our approach. Our upcoming project builds directly on the pilot, expanding our sample, adding respiratory measurement, and exploring how individual traits shape physiological responses. Together, these studies will provide the first rigorous, high-resolution comparison of how music and mindfulness influence cardiovascular dynamics.
+
 ### Musical Playlists
 
 For more playlists, check out our [**Spotify page!**](https://open.spotify.com/user/cveosw0gqemcjcsjjsw55dbzz?si=0868844dec304963)
@@ -89,6 +93,8 @@ As clinical care and research in psychedelic therapy expand rapidly, inconsisten
 ### Interpersonal synchrony
 
 The therapeutic relationship has long been recognized as a central ingredient of psychotherapy. To date, it has rarely been studied in depth in psychedelics-assisted psychotherapy. Our research therefore incorporates measuring this relationship as well as more subtle interpersonal dynamics that unfold within it: **interpersonal synchrony**, i.e. the spontaneous coordination of rhythms between two or more people, from language patterns to physiological signals such as heart rate variability. Using wearable sensors and computational analysis of dialogue, we aim to capture how patients and clinicians align such rhythms in real time during treatment sessions. These methods allow us to quantify aspects of the therapeutic encounter that are typically described only qualitatively, offering new precision in studying patient-clinician dynamics in psychedelic therapy.
+
+- Adel, L., Moses, L., Irvine, E., Greenway, K. T., Dumas, G., & Lifshitz, M. (2025). A systematic review of hyperscanning in clinical encounters. *Neuroscience & Biobehavioral Reviews, 176*, 106248. <https://doi.org/10.1016/j.neubiorev.2025.106248>
 
 <h2 class="reveal reveal--wipe" id="realworld">Real-World Psilocybin Therapy</h2>
 

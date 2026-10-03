@@ -96,6 +96,11 @@ const d = entry.data;
     };
 
     tabs.forEach((btn) => btn.addEventListener('click', () => { if (btn.dataset.tab) show(btn.dataset.tab); }));
-    if (tabs[0]?.dataset.tab) show(tabs[0].dataset.tab);
+
+    // A theme button on /research/ links straight to its tab here (e.g. "#depression") instead of a
+    // separate page of its own, so open that tab on load when the URL names one; otherwise, the first.
+    const requested = tabs.find((btn) => btn.dataset.tab === location.hash.slice(1))?.dataset.tab;
+    const initial = requested ?? tabs[0]?.dataset.tab;
+    if (initial) show(initial);
   }
 </script>
