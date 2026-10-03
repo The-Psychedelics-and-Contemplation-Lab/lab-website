@@ -3,6 +3,7 @@ name: Kyle Greenway
 role: Lab Director
 group: directors
 order: 1
+team: greenway
 photo: /uploads/2025/04/Kyle-Greenway.jpg
 summary: Psychiatrist-researcher studying how extra-pharmacological factors shape psychedelic and conventional therapies for non-idealised patients.
 links: []

@@ -3,6 +3,7 @@ name: Nathan Fisher
 role: Postdoctoral Fellow
 group: postdocs
 order: 1
+team: lifshitz
 photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-9.54.53-PM.jpg
 summary: Religious studies and cognitive science; absorption, meditation-related distress and culturally sensitive care for meditators.
 links: []

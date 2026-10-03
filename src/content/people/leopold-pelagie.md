@@ -3,6 +3,7 @@ name: Léopold Pélagie
 role: PhD Student, Integrated Program in Neuroscience
 group: phd
 order: 3
+team: greenway
 photo: /images/leoP.jpeg
 summary: How music and guided meditation shape the psychedelic therapy experience.
 links: []

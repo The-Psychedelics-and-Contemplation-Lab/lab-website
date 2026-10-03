@@ -26,6 +26,7 @@ const people = defineCollection({
     name: z.string(),
     role: z.string(),
     group: z.enum(['directors', 'postdocs', 'phd', 'masters', 'alumni']),
+    team: z.enum(['greenway', 'lifshitz']),   // which director's team the person belongs to (sets the purple/olive panel colour)
     order: z.number(),
     photo: z.string().optional(),       // "/uploads/2025/04/….jpg" (served from public/)
     summary: z.string(),                // one line for the card

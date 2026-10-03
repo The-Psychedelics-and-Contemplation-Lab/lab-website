@@ -3,6 +3,7 @@ name: Mar Estarellas
 role: Postdoctoral Researcher
 group: postdocs
 order: 3
+team: lifshitz
 photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-9.57.08-PM.jpg
 summary: Neurophenomenology at the intersection of brain science, nature and art; Forest Therapy guide.
 links: []

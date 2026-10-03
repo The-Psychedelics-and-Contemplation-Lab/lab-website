@@ -3,6 +3,7 @@ name: Elisabeth Irvine
 role: MSc Student, Mental Health
 group: masters
 order: 3
+team: greenway
 photo: /uploads/2025/10/Elisabeth-Irvine-Profile-copy-2.jpeg
 summary: The social elements that lead to successful psychedelic therapy.
 links: []
