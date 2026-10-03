@@ -322,6 +322,11 @@ a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z
 /* --- Redirect pages -------------------------------------------------------------- */
 .redirect { text-align: left; }
 
+/* --- Site footer: centre the logos and affiliation text, hide the copyright line --- */
+.site-footer__logos { justify-content: center; }
+.site-footer__affiliation { margin-inline: auto; text-align: center; }
+.site-footer__copy { display: none; }
+
 /* --- Print ----------------------------------------------------------------------- */
 @media print {
   .cta, .playlists, .tab-row, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
