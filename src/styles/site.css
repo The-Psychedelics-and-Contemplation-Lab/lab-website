@@ -305,6 +305,16 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
    needs no leading rule/gap; every <h3> after it still gets the divider above. */
 .tab-panel > h3 { margin-top: var(--s-16); padding-top: var(--s-8); border-top: 1px solid var(--rule); }
 .tab-panel > h3:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
+/* Breathing room right under a subsection's heading (before its first paragraph) and right under its
+   text (before a citation list) — otherwise flush at 0, since the site resets all margins globally and
+   the design system's own heading/list spacing only targets .prose's direct children, which these
+   elements no longer are once JS has grouped them a level deeper into their .tab-panel. The sibling
+   selector here needs no .tab-panel/.research-prose distinction, since h3/p/ul stay siblings either way. */
+.research-prose h3 + p,
+.research-prose h3 + ul,
+.research-prose h3 + ol { margin-top: var(--s-4); }
+.research-prose p + ul,
+.research-prose p + ol { margin-top: var(--s-6); }
 .research-prose img { border-radius: var(--radius-card); border: 1px solid var(--rule); }
 .research-prose ul li { font-family: var(--font-sans); font-size: var(--fs-ui); line-height: 1.55; color: var(--ink-muted); }
 .research-prose ul li a { word-break: break-all; }
