@@ -20,6 +20,27 @@
   .site-header .logo-lockup .logo-lockup__name { white-space: normal; max-width: 13rem; }
 }
 
+/* --- Site header: frosted glass navbar ---------------------------------------------------------- */
+.site-header {
+  background: rgba(200, 185, 215, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.site-header img {
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+.site-nav__list a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.9);
+}
+.site-nav__list a:hover {
+  color: #ffffff;
+}
+
 /* --- Marble: the purple oil-slick texture under a translucent purple layer --------------------- */
 /* .marble is a positioned box; .marble__img is the texture (parallaxed, with overscan so the
    ±120 px drift never shows an edge); .marble__veil is the colour layer. Content sits above both. */
