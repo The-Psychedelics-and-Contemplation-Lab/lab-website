@@ -107,7 +107,7 @@
    .hero__title (eyebrow + h1), each a flex column pushing its content to the bottom. */
 /* Bottom padding of at least 12 svh: the reveal observer ignores the lowest 10 % of the viewport, so the
    buttons must sit above it to rise with the rest of the entrance at any viewport height. */
-.hero--marble .hero__inner { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; min-height: 100svh; padding-bottom: max(var(--s-12), 12svh); }
+.hero--marble .hero__inner { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; min-height: 100svh; padding-bottom: max(var(--s-12), 16svh); }
 .hero--marble .hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
 .hero--marble .hero__layer--lead { flex: 1 1 auto; }
 .hero--marble .hero__title { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-end; padding-top: calc(var(--header-h) + var(--s-12)); }
@@ -115,18 +115,28 @@
    full brightness, so the hero skips both the shared .marble__veil tint and the gradient other marble
    boxes (band headers) use for white-text contrast. */
 .hero--marble .marble__veil { background: transparent; }
-.hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow { text-shadow: 0 1px 8px rgba(30,18,40,0.35); }
+.hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__cta { text-shadow: 0 1px 8px rgba(30,18,40,0.35); }
 .hero--marble h1 {
-  font-size: clamp(3rem, 9vw, 8.5rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
+  font-size: clamp(2.7rem, 8.1vw, 7.65rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
   max-width: 16ch; text-wrap: balance; overflow-wrap: normal; hyphens: none;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
-.hero--marble .lead { margin-top: var(--s-4); max-width: 46ch; font-size: clamp(1.1875rem, 1.6vw, 1.5rem); }
+.hero--marble .lead { margin-top: var(--s-4); max-width: 42ch; font-size: clamp(1.3125rem, 1.8vw, 1.6875rem); }
 .hero--marble .cluster { margin-top: var(--s-6); }
 .hero--marble .hero__eyebrow { color: var(--on-marble-muted); margin-bottom: var(--s-4); }
 /* Hero text over the lighter marble image reads better in the brand's dark purple than in white. */
 .hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__eyebrow { color: var(--brand-purple-deep); }
-@media (max-width: 40em) { .hero--marble h1 { font-size: clamp(2.75rem, 13vw, 4rem); } }
+/* "Explore our research" as an underlined text link instead of a filled button, with the arrow
+   nudging right on hover; the "People" button next to it keeps its existing pill style. */
+.hero--marble .hero__cta {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 600;
+  color: var(--brand-purple-deep); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1.5px;
+}
+.hero--marble .hero__cta:hover { color: var(--brand-purple); }
+.hero--marble .hero__cta-arrow { display: inline-block; transition: transform 200ms ease; }
+.hero--marble .hero__cta:hover .hero__cta-arrow { transform: translateX(3px); }
+@media (max-width: 40em) { .hero--marble h1 { font-size: clamp(2.475rem, 11.7vw, 3.6rem); } }
 
 .home-section__head { text-align: center; margin: 0 auto var(--s-8); max-width: var(--measure); }
 .home-section__head > * + * { margin-top: var(--s-3); }
