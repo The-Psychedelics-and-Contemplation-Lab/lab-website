@@ -95,7 +95,9 @@
 /* --- Home: the original's full-viewport hero ------------------------------------------------- */
 /* The header now uses the same background and nav styling as every other page (no transparent/
    absolute override here), so it's consistent across the whole site. */
-.hero--marble { min-height: 100svh; padding: 0; }
+/* Light fallback so the dark purple hero text stays legible even before marble-light-1920.jpg is
+   uploaded to public/images/ (until then .marble__img has nothing to show and this shows through). */
+.hero--marble { min-height: 100svh; padding: 0; background: #F3EEF5; }
 /* Nested full-height layers so that every parallax layer starts at the top of the page (the script measures
    "origin: top" from an element's natural top): .hero__inner (buttons), .hero__layer--lead (lead) and
    .hero__title (eyebrow + h1), each a flex column pushing its content to the bottom. */
