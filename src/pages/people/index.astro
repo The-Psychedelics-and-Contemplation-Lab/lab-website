@@ -17,7 +17,7 @@ const rendered = await Promise.all(people.map(async (p) => ({ ...p, Content: (aw
 ---
 <Layout site={site} page={{ title: 'People — The Psychedelics & Contemplation Lab', description: 'Lab directors Kyle Greenway and Michael Lifshitz, postdoctoral fellows, PhD and masters students of the Psychedelics & Contemplation Lab at McGill.', path: '/people/' }} nav={navFor('/people/')}>
   <main id="main">
-    <BandHeader eyebrow="People" title="Lab members" />
+    <BandHeader title="Lab Members" />
     <Section>
       {groups.map((g) => {
         const members = rendered.filter((p) => p.data.group === g.key);
