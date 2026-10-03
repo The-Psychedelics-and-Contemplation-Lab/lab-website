@@ -122,9 +122,11 @@
 .home-section__head h2 { font-size: var(--fs-h2); }
 .home-section__more { margin-top: var(--s-6); text-align: center; }
 /* Project cards: hover-reveal (design-system .media-card--hover), shown as plain photographs. Forced
-   square and the design system's dark scrim removed so each project's own colours read unedited. */
+   square; the design system's dark scrim is hidden at rest so each project's own colours read
+   unedited, and brought back only on hover/focus, for contrast under the white title and text. */
 .media-card.project-card { aspect-ratio: 1; }
-.media-card.project-card::after { background: none; }
+.media-card.project-card::after { opacity: 0; }
+.media-card.project-card:hover::after, .media-card.project-card:focus-visible::after { opacity: 1; }
 /* ROUND3 §3 — cards lift 2 px with a soft shadow (the lift is on the card, the reveal on its wrapper,
    so the two transitions never fight). Images zoom over 1400 ms (media-card--hover does it). */
 .card-wrap { display: block; }
