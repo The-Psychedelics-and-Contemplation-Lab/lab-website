@@ -8,9 +8,9 @@
  * The texture is served from public/images (1920 px ≤ 300 KB; 960 px under 60em).
  */
 import { u } from '../lib/url';
-export interface Props { parallax?: number | false; origin?: 'top'; max?: number; position?: string }
-const { parallax = 0.12, origin, max, position } = Astro.props;
-const style = `--marble-url:url(${u('/images/marble-1920.webp')});--marble-url-small:url(${u('/images/marble-960.webp')})${position ? `;--marble-pos:${position}` : ''}`;
+export interface Props { parallax?: number | false; origin?: 'top'; max?: number; position?: string; image?: string }
+const { parallax = 0.12, origin, max, position, image } = Astro.props;
+const style = `--marble-url:url(${u(image ?? '/images/marble-1920.webp')});--marble-url-small:url(${u(image ?? '/images/marble-960.webp')})${position ? `;--marble-pos:${position}` : ''}`;
 ---
 <div class="marble__img" style={style} data-parallax={parallax === false ? undefined : String(parallax)} data-parallax-origin={parallax === false ? undefined : origin} data-parallax-max={parallax === false || max === undefined ? undefined : String(max)} aria-hidden="true"></div>
 <div class="marble__veil" aria-hidden="true"></div>

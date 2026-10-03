@@ -115,6 +115,8 @@
 .hero--marble .lead { margin-top: var(--s-4); max-width: 46ch; font-size: clamp(1.1875rem, 1.6vw, 1.5rem); }
 .hero--marble .cluster { margin-top: var(--s-6); }
 .hero--marble .hero__eyebrow { color: var(--on-marble-muted); margin-bottom: var(--s-4); }
+/* Hero text over the lighter marble image reads better in the brand's dark purple than in white. */
+.hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__eyebrow { color: var(--brand-purple-deep); }
 @media (max-width: 40em) { .hero--marble h1 { font-size: clamp(2.75rem, 13vw, 4rem); } }
 
 .home-section__head { text-align: center; margin: 0 auto var(--s-8); max-width: var(--measure); }
