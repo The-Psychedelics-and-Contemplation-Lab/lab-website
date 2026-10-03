@@ -1,38 +1,34 @@
 ---
-import { Layout, Section } from '@pcl/design-system';
+import { Layout } from '@pcl/design-system';
 import { getCollection } from 'astro:content';
 import { site, navFor } from '../../site.config';
 import { u } from '../../lib/url';
-import BandHeader from '../../components/BandHeader.astro';
-import Marble from '../../components/Marble.astro';
 import '../../styles/site.css';
 const research = await getCollection('research');
 const strands = [
-  { slug: 'psychedelic', title: 'Psychedelic research', path: '/psychedelic-research/', pos: '20% 40%' },
-  { slug: 'contemplative', title: 'Contemplative research', path: '/contemplative-research/', pos: '80% 60%' },
+  { slug: 'psychedelic', title: 'Psychedelic research', path: '/psychedelic-research/', panelClass: 'research-split__psychedelics' },
+  { slug: 'contemplative', title: 'Contemplative research', path: '/contemplative-research/', panelClass: 'research-split__contemplation' },
 ].map((s) => ({ ...s, entry: research.find((r) => r.id === s.slug)! }));
+// --marble-url / --marble-url-small set inline, the same way <Marble> does, so the split panels
+// can use the marble texture without the parallax/veil/grain layers that <Marble> also renders.
+const marbleStyle = `--marble-url:url(${u('/images/marble-1920.webp')});--marble-url-small:url(${u('/images/marble-960.webp')})`;
 ---
 <Layout site={site} page={{ title: 'Research — The Psychedelics & Contemplation Lab', description: 'Two strands of research at the lab: psychedelic research (ketamine, psilocybin, music, methods) and contemplative research (meditation, prayer, imagination, nature).', path: '/research/' }} nav={navFor('/research/')}>
   <main id="main">
-    <BandHeader eyebrow="Research" title="Psychedelics & Contemplation" lead="The lab’s work runs along two strands. Each theme below opens the full description of the project." />
-    <Section>
-      <div class="grid grid--2 strands reveal-group reveal-group--slow">
-        {strands.map((s) => (
-          <div class="strand">
-            {/* A large marbled panel with the strand title, as on the original research page */}
-            <a class="strand__panel marble no-icon" href={u(s.path)}>
-              <Marble parallax={false} position={s.pos} />
-              <span class="eyebrow">{s.entry.data.sections.length} themes</span>
-              <h2>{s.title}</h2>
-              <p>{s.entry.data.lead}</p>
-            </a>
-            <ul class="strand__list">
-              {s.entry.data.sections.map((sec) => <li><a href={u(`${s.path}#${sec.id}`)}>{sec.label}</a></li>)}
-            </ul>
+    <div class="research-split">
+      <h1 class="research-split__title">Psychedelics &amp; Contemplation</h1>
+      {strands.map((s) => (
+        <div class={s.panelClass} style={marbleStyle}>
+          <div class="research-split__content">
+            <h2>{s.title}</h2>
+            <p>{s.entry.data.lead}</p>
+            {s.entry.data.sections.map((sec) => (
+              <a class="research-theme-card" href={u(`${s.path}#${sec.id}`)}>{sec.label}</a>
+            ))}
             <p><a class="btn btn--secondary" href={u(s.path)}>All {s.entry.data.title.toLowerCase()}</a></p>
           </div>
-        ))}
-      </div>
-    </Section>
+        </div>
+      ))}
+    </div>
   </main>
 </Layout>

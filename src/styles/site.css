@@ -254,26 +254,106 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 .pullquote { border-left-color: var(--brand-purple); }
 .pullquote::before { color: var(--brand-purple); }
 
-/* Research index: the two strands as large marbled panels with white titles */
-.strands { gap: var(--s-8); }
-.strand { display: grid; gap: var(--s-6); align-content: start; }
-.strand__panel {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  min-height: 24rem; padding: var(--s-8); border-radius: var(--radius-card); text-decoration: none;
+/* Research index: dramatic full-width split panel — purple for psychedelic research, green for
+   contemplative research. The h1 spans the top via .research-split__title; each side sets
+   --marble-url inline (see src/pages/research/index.astro) the same way <Marble> does. */
+.research-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+  position: relative;
 }
-.strand__panel .marble__img { background-position: var(--marble-pos, center); }
-.strand__panel h2 { font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 500; letter-spacing: -0.015em; color: #fff; }
-.strand__panel h2::after { content: none; }
-.strand__panel .eyebrow { margin-bottom: var(--s-3); }
-.strand__panel p { margin-top: var(--s-3); max-width: 40ch; color: var(--on-marble-muted); font-family: var(--font-sans); font-size: var(--fs-ui); line-height: 1.5; }
-a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(32, 20, 40, 0.55), transparent 60%); display: block; margin: 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .strand__panel .marble__img { transition: transform 1400ms var(--ease); }
-  .strand__panel:hover .marble__img, .strand__panel:focus-visible .marble__img { transform: scale(1.03); }
+
+.research-split__psychedelics {
+  background-image: var(--marble-url);
+  background-size: 60% auto;
+  background-repeat: repeat;
+  background-position: center top;
+  position: relative;
+  padding: 3rem 2.5rem;
 }
-.strand__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
-.strand__list a { display: block; padding: var(--s-3) var(--s-4); border: 1px solid var(--rule); border-radius: var(--radius-button); background: var(--card); text-decoration: none; color: var(--ink); font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 500; }
-.strand__list a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+.research-split__psychedelics::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(90, 50, 110, 0.45);
+  pointer-events: none;
+}
+
+.research-split__contemplation {
+  background-image: var(--marble-url);
+  background-size: 60% auto;
+  background-repeat: repeat;
+  background-position: center top;
+  position: relative;
+  padding: 3rem 2.5rem;
+}
+
+.research-split__contemplation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(50, 85, 60, 0.45);
+  pointer-events: none;
+}
+
+.research-split__content {
+  position: relative;
+  z-index: 1;
+}
+
+.research-split__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.research-theme-card {
+  background: rgba(245, 240, 232, 0.92);
+  border: 1px solid rgba(80, 100, 70, 0.4);
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #3a4a35;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.research-theme-card:hover {
+  background: rgba(245, 240, 232, 1);
+}
+
+/* Supporting rules (not part of the spec above, added so the panels are usable): push the panel
+   content below the absolutely-positioned title, stack the theme-card links in a column with no
+   underline, keep the panel heading/intro text readable (white) over the tinted marble, and stack
+   the two panels on narrow screens instead of squeezing them side by side. */
+.research-split__content {
+  padding-top: clamp(4rem, 10vw, 7rem);
+}
+.research-theme-card {
+  display: block;
+  text-decoration: none;
+}
+.research-split__content h2,
+.research-split__content p {
+  color: #fff;
+}
+.research-split__content .btn--secondary {
+  margin-top: var(--s-4);
+}
+@media (max-width: 59.99em) {
+  .research-split { grid-template-columns: 1fr; min-height: auto; }
+  .research-split__title { position: static; padding: 2.5rem 1.5rem 0; }
+  .research-split__content { padding-top: 1.5rem; }
+}
 
 /* --- Media ----------------------------------------------------------------------- */
 .press-list { list-style: none; padding: 0; margin: 0; }
