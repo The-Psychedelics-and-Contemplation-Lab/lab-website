@@ -3,7 +3,7 @@ name: Joseph Diehl
 role: Postdoctoral Researcher, Department of Psychiatry
 group: postdocs
 order: 5
-photo: joeD.jpeg
+photo: /images/joeD.jpeg
 summary: Processes of change in psychedelic-assisted psychotherapy and mindfulness-based interventions.
 links: []
 ---
