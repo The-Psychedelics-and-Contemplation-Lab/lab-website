@@ -107,7 +107,10 @@
 .hero--marble .hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
 .hero--marble .hero__layer--lead { flex: 1 1 auto; }
 .hero--marble .hero__title { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-end; padding-top: calc(var(--header-h) + var(--s-12)); }
-.hero--marble::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(32, 20, 40, 0.30) 0%, rgba(32, 20, 40, 0.10) 45%, transparent 75%); pointer-events: none; }
+/* No dark/purple scrim over the marble image here: with dark purple text the image should show at
+   full brightness, so the hero skips both the shared .marble__veil tint and the gradient other marble
+   boxes (band headers) use for white-text contrast. */
+.hero--marble .marble__veil { background: transparent; }
 .hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow { text-shadow: 0 1px 8px rgba(30,18,40,0.35); }
 .hero--marble h1 {
   font-size: clamp(3rem, 9vw, 8.5rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
