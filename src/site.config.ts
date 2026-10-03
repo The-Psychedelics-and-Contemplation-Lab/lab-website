@@ -21,7 +21,6 @@ export const site: SiteConfig & { base: string; previewUrl: string } = {
   footerLinks: [
     { label: 'Psychedelic research', href: u('/psychedelic-research/') },
     { label: 'Contemplative research', href: u('/contemplative-research/') },
-    { label: 'Contact', href: u('/contact/') },
     { label: 'ReSPCT Guidelines', href: 'https://respctguidelines.com', external: true },
     { label: 'StaMPS Data Framework', href: 'https://stamps-website.vercel.app', external: true },
     { label: 'The Montreal Model', href: 'https://montrealmodelketaminetherapy.com', external: true },
@@ -57,7 +56,6 @@ export const navItems = [
   { label: 'People', href: u('/people/') },
   { label: 'Publications', href: u('/publications/') },
   { label: 'Media', href: u('/media/') },
-  { label: 'Contact', href: u('/contact/') },
 ];
 export const nav = navItems;
 
