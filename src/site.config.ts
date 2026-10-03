@@ -51,7 +51,14 @@ export const site: SiteConfig & { base: string; previewUrl: string } = {
  * one click away on /research/, on the home page and in the footer.
  */
 export const navItems = [
-  { label: 'Research', href: u('/research/') },
+  {
+    label: 'Research',
+    href: u('/research/'),
+    children: [
+      { label: 'Psychedelic Research', href: `${u('/research/')}#psychedelic` },
+      { label: 'Contemplative Research', href: `${u('/research/')}#contemplative` },
+    ],
+  },
   { label: 'People', href: u('/people/') },
   { label: 'Publications', href: u('/publications/') },
   { label: 'Media', href: u('/media/') },
