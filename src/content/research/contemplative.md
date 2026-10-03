@@ -6,6 +6,8 @@ lead: How meditation, prayer and imagination reshape the sense of self — studi
 image: /uploads/2025/10/jhana-pic-1.jpg
 imageAlt: Two meditators wearing EEG caps sit in a small chapel while a laptop records their brain activity during jhāna practice.
 imageCaption: EEG recording during jhāna meditation.
+imageSection: meditation
+imageAfterHeading: Jhana meditation and advanced concentration
 pullquote: Prayer may calm the mind either by gently releasing intrusive thoughts or by generating a mental “white noise” that displaces them.
 pullquoteCite: Prayer — Imagination & Invisible Presence
 sections:

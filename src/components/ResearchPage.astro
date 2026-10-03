@@ -28,13 +28,9 @@ const d = entry.data;
     </BandHeader>
     <Section watermark="rings" watermarkPosition="left" watermarkInk>
       {d.image && (
-        <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--mask research-figure" />
-      )}
-      {d.pullquote && (
-        <blockquote class="pullquote pullquote--epigraph reveal reveal--rise-lg">
-          {d.pullquote}
-          {d.pullquoteCite && <cite>{d.pullquoteCite}</cite>}
-        </blockquote>
+        <div class="research-figure-wrap" data-image-section={d.imageSection} data-image-after={d.imageAfterHeading}>
+          <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--mask research-figure" />
+        </div>
       )}
       <div class="container--reading">
         <div class="prose research-prose"><Content /></div>
@@ -69,6 +65,26 @@ const d = entry.data;
       current?.appendChild(el);
     });
     panels.forEach((panel) => prose.appendChild(panel));
+
+    // A strand's image (if any) belongs inside one specific tab's panel, right after a named subheading —
+    // not at the top of the page above the tab row. Move it there now, before the panel is ever shown, so
+    // it's hidden/shown along with the rest of that panel's content with no extra code.
+    const figureWrap = document.querySelector<HTMLElement>('.research-figure-wrap');
+    const targetSection = figureWrap?.dataset.imageSection;
+    const targetHeading = figureWrap?.dataset.imageAfter;
+    if (figureWrap && targetSection && targetHeading) {
+      const panel = panels.get(targetSection);
+      const heading = panel
+        ? [...panel.querySelectorAll('h3')].find((h) => h.textContent?.trim() === targetHeading)
+        : undefined;
+      if (heading) {
+        let anchor: Element = heading;
+        let sib = heading.nextElementSibling;
+        while (sib && sib.tagName !== 'P' && sib.tagName !== 'H2' && sib.tagName !== 'H3') sib = sib.nextElementSibling;
+        if (sib?.tagName === 'P') anchor = sib;
+        anchor.after(figureWrap);
+      }
+    }
 
     const show = (id: string) => {
       panels.forEach((panel, panelId) => { panel.hidden = panelId !== id; });

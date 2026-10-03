@@ -9,10 +9,12 @@ const research = defineCollection({
     eyebrow: z.string(),
     description: z.string().max(160),
     lead: z.string(),
-    image: z.string().optional(),        // "/uploads/…" — the strand image, shown as a Figure at the top of the page
+    image: z.string().optional(),        // "/uploads/…" — the strand image
     imageAlt: z.string().optional(),
     imageCaption: z.string().optional(),
     imageRatio: z.enum(['wide', 'cinema', 'square', 'tall']).default('wide'),  // 'cinema' = shown whole, no drift (schematics)
+    imageSection: z.string().optional(),       // a `sections[].id` — if set, the image is placed inside that tab's panel instead of at the top of the page
+    imageAfterHeading: z.string().optional(),  // the exact text of the <h3> within that section after which the image is inserted
     pullquote: z.string().optional(),    // a sentence taken verbatim from the page text
     pullquoteCite: z.string().optional(),
     sections: z.array(z.object({ id: z.string(), label: z.string() })),

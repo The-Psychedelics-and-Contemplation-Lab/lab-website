@@ -7,6 +7,8 @@ image: /uploads/2025/10/montreal-model-pic.jpg
 imageAlt: Schematic of the Montreal Model ketamine therapy programme — psychiatric assessment, initial preparation, six ketamine treatment sessions with rolling preparation and integration over four weeks, then maintenance, alongside concomitant conventional psychotherapy.
 imageRatio: cinema
 imageCaption: The Montreal Model of Ketamine Therapy — six treatment sessions over four weeks, with rolling preparation and integration.
+imageSection: depression
+imageAfterHeading: The Montreal Model
 pullquote: Psychedelic science has long emphasized the importance of “set and setting”, that is, the patient’s mindset and the environment in which a psychedelic is taken, yet these factors are rarely reported in clinical trials.
 pullquoteCite: ReSPCT Guidelines — Psychedelic Research Methodologies
 sections:
