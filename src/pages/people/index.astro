@@ -11,6 +11,7 @@ const groups = [
   { key: 'postdocs', label: 'Post-docs' },
   { key: 'phd', label: 'PhD students' },
   { key: 'masters', label: 'Masters students' },
+  { key: 'alumni', label: 'Alumni' },
 ] as const;
 const people = (await getCollection('people')).sort((a, b) => a.data.order - b.data.order);
 const rendered = await Promise.all(people.map(async (p) => ({ ...p, Content: (await render(p)).Content })));

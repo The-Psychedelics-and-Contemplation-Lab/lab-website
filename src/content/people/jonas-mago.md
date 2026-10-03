@@ -1,7 +1,7 @@
 ---
 name: Jonas Mago
 role: PhD Candidate in Neuroscience
-group: phd
+group: alumni
 order: 1
 photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.06.27-PM.jpg
 summary: EEG, fMRI and computational neuro-phenomenology of jhāna meditation, charismatic prayer and psychedelics.

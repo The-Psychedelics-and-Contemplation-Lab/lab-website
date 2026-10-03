@@ -1,8 +1,8 @@
 ---
 name: Lena Adel
 role: PhD Candidate, Integrated Program in Neuroscience
-group: phd
-order: 3
+group: alumni
+order: 2
 photo: /uploads/2025/04/Screen-Shot-2025-04-16-at-10.10.39-PM.jpg
 summary: Interpersonal dynamics and biobehavioural synchrony between clinicians and patients in psychedelic and family therapy.
 links: []

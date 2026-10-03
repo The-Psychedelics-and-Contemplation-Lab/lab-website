@@ -25,7 +25,7 @@ const people = defineCollection({
   schema: z.object({
     name: z.string(),
     role: z.string(),
-    group: z.enum(['directors', 'postdocs', 'phd', 'masters']),
+    group: z.enum(['directors', 'postdocs', 'phd', 'masters', 'alumni']),
     order: z.number(),
     photo: z.string().optional(),       // "/uploads/2025/04/….jpg" (served from public/)
     summary: z.string(),                // one line for the card
