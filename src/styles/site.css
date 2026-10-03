@@ -266,8 +266,8 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 .strand__panel h2 { font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 500; letter-spacing: -0.015em; color: #fff; }
 .strand__panel h2::after { content: none; }
 a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(32, 20, 40, 0.55), transparent 60%); display: block; margin: 0; }
-.strand__panel--psychedelic::before { content: ""; position: absolute; inset: 0; z-index: 0; background: rgba(90, 68, 102, 0.22); pointer-events: none; }
-.strand__panel--contemplative::before { content: ""; position: absolute; inset: 0; z-index: 0; background: rgba(85, 98, 79, 0.13); pointer-events: none; }
+.strand__panel--psychedelic::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(90, 68, 102, 0.32); pointer-events: none; }
+.strand__panel--contemplative::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(85, 98, 79, 0.22); pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) {
   .strand__panel .marble__img { transition: transform 1400ms var(--ease); }
   .strand__panel:hover .marble__img, .strand__panel:focus-visible .marble__img { transform: scale(1.03); }
