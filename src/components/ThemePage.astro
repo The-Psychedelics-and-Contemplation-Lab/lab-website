@@ -1,0 +1,26 @@
+---
+/** Placeholder page for one research theme (e.g. "Ketamine for Refractory Depression"). Each theme
+ *  used to be just an anchor within its strand's long-form page; it now gets its own page here.
+ *  For now this just shows the theme name and which strand it belongs to — full content to come later. */
+import { Layout, Section } from '@pcl/design-system';
+import { site, navFor } from '../site.config';
+import { u } from '../lib/url';
+import BandHeader from './BandHeader.astro';
+import '../styles/site.css';
+
+export interface Props { title: string; strand: 'psychedelic' | 'contemplative'; path: string }
+const { title, strand, path } = Astro.props;
+const strandLabel = strand === 'psychedelic' ? 'Psychedelic research' : 'Contemplative research';
+const strandPath = strand === 'psychedelic' ? '/psychedelic-research/' : '/contemplative-research/';
+---
+<Layout site={site} page={{ title: `${title} — The Psychedelics & Contemplation Lab`, description: `${title}, part of the lab's ${strand} research.`, path }} nav={navFor(path)}>
+  <main id="main">
+    <BandHeader eyebrow={strandLabel} title={title} back={u('/research/')} backLabel="← Back to all research" />
+    <Section>
+      <div class="container--reading">
+        <p class="lead">This page is part of the lab's <strong>{strand}</strong> research. Full content for this theme is coming soon.</p>
+        <p><a class="btn btn--quiet" href={u(strandPath)}>← Back to {strandLabel.toLowerCase()}</a></p>
+      </div>
+    </Section>
+  </main>
+</Layout>
