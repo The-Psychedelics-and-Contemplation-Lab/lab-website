@@ -21,7 +21,7 @@ export const site: SiteConfig & { base: string; previewUrl: string } = {
     { label: 'Psychedelic research', href: u('/psychedelic-research/') },
     { label: 'Contemplative research', href: u('/contemplative-research/') },
     { label: 'ReSPCT Guidelines', href: 'https://respctguidelines.com', external: true },
-    { label: 'StaMPS Data Framework', href: 'https://stamps.psychedelicsandcontemplationlab.com', external: true },
+    { label: 'StaMPS Data Framework', href: 'https://stamps-website.vercel.app', external: true },
     { label: 'The Montreal Model', href: 'https://montrealmodelketaminetherapy.com', external: true },
   ],
   organizationSchema: {
@@ -80,7 +80,7 @@ export const projects = [
   {
     name: 'StaMPS Data Framework',
     eyebrow: 'Standardized measures',
-    href: 'https://stamps.psychedelicsandcontemplationlab.com',
+    href: 'https://stamps-website.vercel.app',
     description: 'An international expert-consensus framework for standardizing what data are collected across psychedelic research and care.',
   },
   {
