@@ -8,10 +8,10 @@
  * The text sits in a centred column (max 68ch).
  */
 import Marble from './Marble.astro';
-export interface Props { title: string; eyebrow?: string; lead?: string; back?: string; backLabel?: string; tabs?: boolean }
-const { title, eyebrow, lead, back, backLabel = '← Back', tabs = false } = Astro.props;
+export interface Props { title: string; eyebrow?: string; lead?: string; back?: string; backLabel?: string; tabs?: boolean; wide?: boolean }
+const { title, eyebrow, lead, back, backLabel = '← Back', tabs = false, wide = false } = Astro.props;
 ---
-<div class={`page-header band-header marble marble--deep${tabs ? ' band-header--tabs' : ''}`}>
+<div class={`page-header band-header marble marble--deep${tabs ? ' band-header--tabs' : ''}${wide ? ' band-header--wide' : ''}`}>
   <Marble parallax={-0.2} origin="top" max={200} />
   <div class="band-header__inner text-center" data-parallax="0.15" data-parallax-origin="top" data-parallax-max={tabs ? '24' : '40'}>
     {back && <a class="btn btn--quiet btn--small band-header__back" href={back}>{backLabel}</a>}

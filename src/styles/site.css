@@ -144,12 +144,13 @@ a.project-card--stamps.media-card--accent { background: #B5502F; }
    in a centred column of at most 68ch (Leo: reading columns centred on the screen). */
 .band-header__inner {
   width: min(100% - 2 * var(--gutter), 68ch); margin-inline: auto;
-  min-height: 38vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
-  padding: var(--s-12) 0 var(--s-10, 2.5rem);
+  min-height: 20vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: var(--s-10, 2.5rem) 0;
 }
 .band-header .band-header__back { display: inline-block; margin-bottom: var(--s-4); }
 .band-header .eyebrow { color: var(--on-marble-muted); }
 .band-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.015em; font-weight: 500; max-width: 18ch; text-wrap: balance; }
+.band-header--wide h1 { max-width: none; }
 .band-header .lead { margin-top: var(--s-4); max-width: var(--measure); }
 .band-header--tabs .band-header__inner { padding-bottom: var(--s-6); }
 /* Category tabs on the bottom edge of the band, like the original's row of dark buttons */
