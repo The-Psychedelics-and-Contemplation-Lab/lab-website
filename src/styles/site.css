@@ -111,31 +111,32 @@
 .hero--marble .hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
 .hero--marble .hero__layer--lead { flex: 1 1 auto; }
 .hero--marble .hero__title { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-end; padding-top: calc(var(--header-h) + var(--s-12)); }
-/* No dark/purple scrim over the marble image here: with dark purple text the image should show at
-   full brightness, so the hero skips both the shared .marble__veil tint and the gradient other marble
-   boxes (band headers) use for white-text contrast. */
-.hero--marble .marble__veil { background: transparent; }
-.hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__cta { text-shadow: 0 1px 8px rgba(30,18,40,0.35); }
+/* A very transparent white layer over the marble image, to soften it slightly behind the dark
+   purple text (reusing the shared .marble__veil layer, which already sits between the image and
+   the content). */
+.hero--marble .marble__veil { background: rgba(255, 255, 255, 0.18); }
+.hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__cta { text-shadow: 0 1px 10px rgba(255, 255, 255, 0.75); }
 .hero--marble h1 {
   font-size: clamp(2.7rem, 8.1vw, 7.65rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
   max-width: 16ch; text-wrap: balance; overflow-wrap: normal; hyphens: none;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.75);
 }
-.hero--marble .lead { margin-top: var(--s-4); max-width: 42ch; font-size: clamp(1.3125rem, 1.8vw, 1.6875rem); }
+.hero--marble .lead { margin-top: var(--s-4); max-width: 68ch; font-size: clamp(1.3125rem, 1.8vw, 1.6875rem); }
 .hero--marble .cluster { margin-top: var(--s-6); }
 .hero--marble .hero__eyebrow { color: var(--on-marble-muted); margin-bottom: var(--s-4); }
 /* Hero text over the lighter marble image reads better in the brand's dark purple than in white. */
 .hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__eyebrow { color: var(--brand-purple-deep); }
 /* "Explore our research" as an underlined text link instead of a filled button, with the arrow
-   nudging right on hover; the "People" button next to it keeps its existing pill style. */
-.hero--marble .hero__cta {
+   nudging right on hover; the "People" button next to it keeps its existing pill style.
+   Selector needs the "a" type to out-specificity the shared ".marble a:not(.btn)" white-text rule. */
+.hero--marble a.hero__cta {
   display: inline-flex; align-items: center; gap: 0.5em;
   font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 600;
   color: var(--brand-purple-deep); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1.5px;
 }
-.hero--marble .hero__cta:hover { color: var(--brand-purple); }
+.hero--marble a.hero__cta:hover { color: var(--brand-purple); }
 .hero--marble .hero__cta-arrow { display: inline-block; transition: transform 200ms ease; }
-.hero--marble .hero__cta:hover .hero__cta-arrow { transform: translateX(3px); }
+.hero--marble a.hero__cta:hover .hero__cta-arrow { transform: translateX(3px); }
 @media (max-width: 40em) { .hero--marble h1 { font-size: clamp(2.475rem, 11.7vw, 3.6rem); } }
 
 .home-section__head { text-align: center; margin: 0 auto var(--s-8); max-width: var(--measure); }
