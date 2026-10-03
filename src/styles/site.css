@@ -6,7 +6,7 @@
   --brand-purple: #5A4466;   /* measured from the original's people panels — white text 8.6:1 */
   --brand-olive: #55624F;    /* the alternate panel — white text 6.5:1 */
   --brand-purple-deep: #3C2B47;
-  --marble-overlay: rgba(74, 52, 86, 0.58);        /* home hero: muted purple over the marble */
+  --marble-overlay: rgba(74, 52, 86, 0.15);        /* home hero: muted purple over the marble */
   --marble-overlay-deep: rgba(50, 34, 60, 0.74);   /* inner page bands: darker, title must read */
   --on-marble: #FFFFFF;
   --on-marble-muted: rgba(255, 255, 255, 0.86);
