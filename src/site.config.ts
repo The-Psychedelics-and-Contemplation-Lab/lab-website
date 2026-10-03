@@ -8,7 +8,6 @@ export const contactEmail = 'elisabeth.irvine@mail.mcgill.ca';
 
 export const site: SiteConfig & { base: string; previewUrl: string } = {
   name: 'The Psychedelics & Contemplation Lab',
-  tagline: 'McGill University · Lady Davis Institute',
   url: 'https://psychedelicsandcontemplationlab.com',
   lang: 'en',
   accent: '#4B6A8A',
