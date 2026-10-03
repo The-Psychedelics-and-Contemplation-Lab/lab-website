@@ -20,13 +20,7 @@
   .site-header .logo-lockup .logo-lockup__name { white-space: normal; max-width: 13rem; }
 }
 
-/* --- Site header: frosted glass navbar ---------------------------------------------------------- */
-.site-header {
-  background: rgba(200, 185, 215, 0.18);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
+/* --- Site header: logo and nav text styling ------------------------------------------------------ */
 .site-header img {
   mix-blend-mode: multiply;
   background: transparent;
@@ -95,7 +89,7 @@
     transition: -webkit-mask-size var(--reveal-dur, 900ms) var(--ease), mask-size var(--reveal-dur, 900ms) var(--ease);
   }
   html.js .reveal.reveal--mask { -webkit-mask-position: top; mask-position: top; --reveal-dur: 1100ms; }
-  html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--mask.is-visible { clip-path: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
+  html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--mask.is-visible { clip-path: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
 }
 
 /* --- Home: the original's full-viewport hero ------------------------------------------------- */
