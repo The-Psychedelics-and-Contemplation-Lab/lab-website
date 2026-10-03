@@ -291,6 +291,12 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
    (e.g. the theme placeholder page) are unaffected. */
 .container > .container--reading { width: min(100%, 64ch); }
 .container > .container--reading.research-reading { width: min(100%, 88ch); }
+/* "Contemplative research" is two characters longer than "Psychedelic research", which is just enough
+   that the shared .band-header h1 rule's own max-width (18ch, sized for the shorter title) wraps it to a
+   second line everywhere the shorter title fits on one. Scaling this page's title down by the same ratio
+   the extra characters need (~12%), and dropping its own max-width so only the band's outer column still
+   bounds it, makes it wrap at the same breakpoints the psychedelic page's title does — nothing narrower. */
+body.contemplative .band-header h1 { font-size: clamp(2.2rem, 4.4vw, 3.5rem); max-width: none; }
 .research-prose > h2 { padding-top: var(--s-8); border-top: 1px solid var(--rule); margin-top: var(--s-16); }
 .research-prose > h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
 /* Each subsection (<h3>) is set off from the one before it with extra space and a thin rule, the same

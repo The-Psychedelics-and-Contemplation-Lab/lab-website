@@ -13,9 +13,11 @@ const entry = (await getEntry('research', slug))!;
 const { Content } = await render(entry);
 const d = entry.data;
 ---
-<Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path }} nav={navFor(path)}>
+<Layout site={site} page={{ title: `${d.title} — The Psychedelics & Contemplation Lab`, description: d.description, path, bodyClass: slug }} nav={navFor(path)}>
   <main id="main">
-    <BandHeader eyebrow={d.eyebrow} title={d.title} back={u('/research/')} backLabel="← Back to all research" tabs>
+    {/* No eyebrow here — "Research" above the title was redundant with the "← Back to all research" link
+        right above it, and with the nav itself. */}
+    <BandHeader title={d.title} back={u('/research/')} backLabel="← Back to all research" tabs>
       <nav aria-label="Categories of this page">
         <ul class="tab-row reveal-group" role="tablist">
           {d.sections.map((s, i) => (

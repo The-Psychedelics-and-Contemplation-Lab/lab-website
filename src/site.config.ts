@@ -61,7 +61,8 @@ export const navItems = [
   },
   { label: 'People', href: u('/people/') },
   { label: 'Publications', href: u('/publications/') },
-  { label: 'Media', href: u('/media/') },
+  // Hidden from the header nav for now (page itself is untouched — restore this line to bring it back).
+  // { label: 'Media', href: u('/media/') },
 ];
 export const nav = navItems;
 
