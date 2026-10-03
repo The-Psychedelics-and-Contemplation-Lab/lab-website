@@ -29,7 +29,6 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
       <div class="hero__inner hero__layer" data-parallax="0.35" data-parallax-origin="top" data-parallax-max="400">
         <div class="hero__layer hero__layer--lead" data-parallax="-0.07" data-parallax-origin="top" data-parallax-max="80">
           <div class="hero__title" data-parallax="-0.08" data-parallax-origin="top" data-parallax-max="92">
-            <p class="eyebrow hero__eyebrow reveal reveal--wipe">McGill University · Lady Davis Institute</p>
             <h1 class="reveal-words" style="--reveal-delay: 150ms">The Psychedelics &amp; Contemplation Lab</h1>
           </div>
           <p class="lead reveal reveal--blur" style="--reveal-delay: 450ms; --reveal-dur: 1000ms">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions.</p>
@@ -42,6 +41,7 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
     </div>
 
     <Section ariaLabelledby="projects-h" watermark="phyllotaxis" watermarkPosition="right">
+      <SectionMark label="Research initiatives" />
       <div class="home-section__head">
         <h2 id="projects-h" class="reveal reveal--wipe">Featured Initiatives</h2>
         <p class="muted sans reveal reveal--blur" style="--reveal-delay: 150ms">Explore three research initiatives developed by our lab and their dedicated websites.</p>
@@ -60,7 +60,7 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
       <div class="home-section__head">
         <h2 id="latest-h" class="reveal reveal--wipe">Latest publications</h2>
       </div>
-      <ul class="pub-list reveal-group">
+      <ul class="pub-list pub-list--wide reveal-group">
         {latest.map((pub) => <PublicationItem pub={pub} />)}
       </ul>
       <p class="home-section__more reveal reveal--fade"><a class="btn btn--quiet" href={u('/publications/')}>All publications →</a></p>

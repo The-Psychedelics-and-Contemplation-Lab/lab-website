@@ -158,6 +158,9 @@
 .pub-list { list-style: none; padding: 0; margin: 0 auto; max-width: var(--measure); }
 .pub-list > li { padding-block: var(--s-4); border-top: 1px solid var(--rule); }
 .pub-list > li:last-child { border-bottom: 1px solid var(--rule); }
+/* Homepage's Latest Publications list fills the section's full width instead of being capped
+   to the narrower reading measure, so it takes up more of the page. */
+.pub-list--wide { max-width: none; }
 
 /* --- Inner pages: the marbled page-header band --------------------------------------------- */
 .band-header { padding: 0; border-bottom: 0; }
