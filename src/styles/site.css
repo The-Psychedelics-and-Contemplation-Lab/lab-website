@@ -89,7 +89,7 @@
     transition: -webkit-mask-size var(--reveal-dur, 900ms) var(--ease), mask-size var(--reveal-dur, 900ms) var(--ease);
   }
   html.js .reveal.reveal--mask { -webkit-mask-position: top; mask-position: top; --reveal-dur: 1100ms; }
-  html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--mask.is-visible { clip-path: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
+  html.js .reveal.reveal--wipe.is-visible, html.js .reveal.reveal--mask.is-visible { clip-path: none; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; }
 }
 
 /* --- Home: the original's full-viewport hero ------------------------------------------------- */
