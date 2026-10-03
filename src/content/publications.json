@@ -1,7 +1,80 @@
 [
   {
-    "id": "diep-2025-ketamine-chameleon",
+    "id": "mago-2026-computational-spirits",
     "order": 1,
+    "year": 2026,
+    "authors": "Mago, J., Deane, G., Sandved-Smith, L., Safron, A., Timmermann, C., Ramstead, M., Dupuis, D., Carhart-Harris, R., Greenway, K. T., & Lifshitz, M.",
+    "title": "Computational spirits: a neuroscientific account of psychedelic entity encounters",
+    "journal": "Neuroscience of Consciousness",
+    "volume": "2026",
+    "issue": "1",
+    "pages": "niaf069",
+    "doi": "10.1093/nc/niaf069"
+  },
+  {
+    "id": "mago-2026-complex-brain-hypothesis",
+    "order": 2,
+    "year": 2026,
+    "authors": "Mago, J., Lopez-Sola, E., Vohryzek, J., Lifshitz, M., Carhart-Harris, R., Friston, K., & Chandaria, S.",
+    "title": "The Complex Brain Hypothesis: Resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience",
+    "journal": "arXiv",
+    "doi": "10.48550/arXiv.2605.16146"
+  },
+  {
+    "id": "langlitz-2026-context-as-contraindication",
+    "order": 3,
+    "year": 2026,
+    "authors": "Langlitz, N., Greenway, K., Pronovost-Morgan, C., et al.",
+    "title": "Context as Contraindication: Ethical Challenges of Psychedelics and Other Neuroplasticity-Enhancing Drugs",
+    "journal": "Neuroethics",
+    "volume": "19",
+    "pages": "34",
+    "doi": "10.1007/s12152-026-09663-3"
+  },
+  {
+    "id": "fisher-2025-holy-spirit",
+    "order": 4,
+    "year": 2025,
+    "authors": "Fisher, N. E., Irvine, E., Yonkovig, M. Z., Cooper, D. J., & Lifshitz, M.",
+    "title": "Holy Spirit or Holy Psyche? Energy-Like Somatic Experiences in Contemporary Abrahamic Meditative Traditions",
+    "journal": "Religions",
+    "volume": "16",
+    "issue": "11",
+    "pages": "1436",
+    "doi": "10.3390/rel16111436"
+  },
+  {
+    "id": "adel-2025-cardiac-synchrony",
+    "order": 5,
+    "year": 2025,
+    "authors": "Adel, L., Manova, V., Bain, T., et al.",
+    "title": "Interpersonal Cardiac Synchrony During Emotional Sharing Between Strangers",
+    "journal": "PsyArXiv",
+    "doi": "10.31234/osf.io/nmj5k_v1"
+  },
+  {
+    "id": "mago-2025-meditative-absorption",
+    "order": 6,
+    "year": 2025,
+    "authors": "Mago, J., Brahinsky, J., Miller, M., Maschke, C., Slagter, H., Catherine, S., Dixey, W., Dixey, R., Rej, S., & Lifshitz, M.",
+    "title": "Meditative absorption shifts brain dynamics toward criticality",
+    "journal": "PsyArXiv",
+    "doi": "10.31234/osf.io/2hjq6_v1"
+  },
+  {
+    "id": "adel-2025-sharing-caring-comment",
+    "order": 7,
+    "year": 2025,
+    "authors": "Adel, L., Gomez-Carrillo, A., Mago, J., Lifshitz, M., & Dumas, G.",
+    "title": "Is sharing always caring? Entropy, boundaries and the plurality of psychotherapeutic process: Comment on “Nature heals: An informational entropy account of self-organization and change in field psychotherapy” by P. Sarasso et al.",
+    "journal": "Physics of Life Reviews",
+    "volume": "52",
+    "pages": "250–252",
+    "doi": "10.1016/j.plrev.2025.01.007"
+  },
+  {
+    "id": "diep-2025-ketamine-chameleon",
+    "order": 8,
     "year": 2025,
     "authors": "Diep, D., de la Salle, S., Thibault Lévesque, J., Lifshitz, M., Garel, N., & Greenway, K. T.",
     "title": "The ketamine chameleon: history, pharmacology, and the contested value of experience",
@@ -13,7 +86,7 @@
   },
   {
     "id": "adel-2025-hyperscanning",
-    "order": 2,
+    "order": 9,
     "year": 2025,
     "authors": "Adel, L., Moses, L., Irvine, E., Greenway, K. T., Dumas, G., & Lifshitz, M.",
     "title": "A systematic review of hyperscanning in clinical encounters",
@@ -24,7 +97,7 @@
   },
   {
     "id": "pronovost-morgan-2025-respct",
-    "order": 3,
+    "order": 10,
     "year": 2025,
     "authors": "Pronovost-Morgan, C., Greenway, K. T., Roseman, L., & The ReSPCT Experts",
     "title": "An international Delphi consensus for reporting of setting in psychedelic clinical trials",
@@ -35,7 +108,7 @@
   },
   {
     "id": "greenway-2025-musik",
-    "order": 4,
+    "order": 11,
     "year": 2025,
     "authors": "Greenway, K. T., Garel, N., Dinh-Williams, L.-A. L., Thibault Lévesque, J., Kaelen, M., Dagenais-Beaulé, V., … Richard-Devantoy, S.",
     "title": "The Music for Subanesthetic Infusions of Ketamine randomised clinical trial: ketamine as a psychedelic treatment for highly refractory depression",
@@ -44,8 +117,20 @@
     "doi": "10.1192/bjp.2025.102"
   },
   {
+    "id": "brahinsky-2024-spiral-attention",
+    "order": 12,
+    "year": 2024,
+    "authors": "Brahinsky, J., Mago, J., Miller, M., Catherine, S., & Lifshitz, M.",
+    "title": "The Spiral of Attention, Arousal, and Release: A Comparative Phenomenology of Jhāna Meditation and Speaking in Tongues",
+    "journal": "American Journal of Human Biology",
+    "volume": "36",
+    "issue": "12",
+    "pages": "e24189",
+    "doi": "10.1002/ajhb.24189"
+  },
+  {
     "id": "de-la-salle-2024-compassionate-access",
-    "order": 5,
+    "order": 13,
     "year": 2024,
     "authors": "de la Salle, S., Kettner, H., Thibault-Levesque, J., Garel, N., Dames, S., Patchett-Marble, R., Rej, S., Gloeckler, S., Erritzoe, D., Carhart-Harris, R., & Greenway, K. T.",
     "title": "Longitudinal experiences of Canadians receiving compassionate access to psilocybin-assisted psychotherapy",
@@ -57,7 +142,7 @@
   },
   {
     "id": "guay-2024-post-partum",
-    "order": 6,
+    "order": 14,
     "year": 2024,
     "authors": "Guay, É., Brouillette, M. J., Drury, J., Garel, N., & Greenway, K.",
     "title": "Rapid Improvement of Post-Partum Depression With Subanesthetic Racemic Ketamine",
@@ -69,7 +154,7 @@
   },
   {
     "id": "gloeckler-2024-preferences-music",
-    "order": 7,
+    "order": 15,
     "year": 2024,
     "authors": "Gloeckler, S. G., Lehmann, A., de la Salle, S., Greenway, K. T., & Lucas, P.",
     "title": "Preferences and Attitudes Toward Music in Nonclinical Uses of Psychedelics",
@@ -81,7 +166,7 @@
   },
   {
     "id": "greenway-2024-music-hemodynamic",
-    "order": 8,
+    "order": 16,
     "year": 2024,
     "authors": "Greenway, K. T., Garel, N., Williams, L., Beaulieu, S., Turecki, G., Rej, S., & Richard-Devantoy, S.",
     "title": "Music as an intervention to improve the hemodynamic response of ketamine in depression",
@@ -93,7 +178,7 @@
   },
   {
     "id": "peill-2024-inner-healer",
-    "order": 9,
+    "order": 17,
     "year": 2024,
     "authors": "Peill, J., Marguilho, M., Erritzoe, D., Barba, T., Greenway, K. T., Rosas, F., Timmerman, C., & Carhart-Harris, R.",
     "title": "Psychedelics and the “inner healer”: Myth or mechanism?",
@@ -105,7 +190,7 @@
   },
   {
     "id": "gloeckler-2024-sound-of-silence",
-    "order": 10,
+    "order": 18,
     "year": 2024,
     "authors": "Gloeckler, S. G., Thibault-Levesque, J., Lehmann, A., Farzin, H., & Greenway, K. T.",
     "title": "Music and non-music approaches in psilocybin-assisted psychotherapy: The sound of silence",
@@ -117,7 +202,7 @@
   },
   {
     "id": "erritzoe-2024-psilocybin-escitalopram",
-    "order": 11,
+    "order": 19,
     "year": 2024,
     "authors": "Erritzoe, D., Barba, T., Greenway, K. T., Murphy, R., Martell, J., Timmerman, C., Murphey-Beiner, A., Baker Jones, M., Nutt, D., Weiss, B., & Carhart-Harris, C.",
     "title": "Effect of psilocybin versus escitalopram on depression symptom severity in patients with moderate-to-severe major depressive disorder: Observational 6-month follow-up of a phase 2, double-blind, randomised, controlled trial",
@@ -128,7 +213,7 @@
   },
   {
     "id": "garel-2023-imprinting",
-    "order": 12,
+    "order": 20,
     "year": 2023,
     "authors": "Garel, N., Thibault-Levesque, J., Sandra, D., Solomonova, E., Lifshitz, M., Richard-Devantoy, S., & Greenway, K. T.",
     "title": "Imprinting: Expanding the extra-pharmacological model of psychedelic drug action to incorporate delayed influences of sets and settings",
@@ -139,7 +224,7 @@
   },
   {
     "id": "la-torre-2023-psychotic-symptoms",
-    "order": 13,
+    "order": 21,
     "year": 2023,
     "authors": "La Torre, J. T., Mahammadli, M., Faber, S. C., Greenway, K. T., & Williams, M. T.",
     "title": "Expert opinion on psychedelic-assisted psychotherapy for people with psychotic symptoms",
@@ -149,7 +234,7 @@
   },
   {
     "id": "greenway-2023-context-is-critical",
-    "order": 14,
+    "order": 22,
     "year": 2023,
     "authors": "Greenway, K. T.",
     "title": "Context is critical for psychoactive drug effects",
@@ -160,7 +245,7 @@
   },
   {
     "id": "manson-2023-indigenous-voices",
-    "order": 15,
+    "order": 23,
     "year": 2023,
     "authors": "Manson, E., Ryding, E., Taylor, W., Gloeckler, S. G., Allard, P., Johnny, C., Greenway, K. T., & Dames, S.",
     "title": "Indigenous voices in psychedelic therapy: Experiential learnings from a community-based group psychedelic therapy program",
@@ -172,7 +257,7 @@
   },
   {
     "id": "garel-2023-montreal-model",
-    "order": 16,
+    "order": 24,
     "year": 2023,
     "authors": "Garel, N., Drury, J. L., Thibault-Levesque, J., Goyette, N., Lehmann, A., Looper, K., Erritzoe, D., Dames, S., Turecki, G., Rej, S., Richard-Devantoy, S., & Greenway, K. T.",
     "title": "The Montreal Model: An integrative biomedical-psychedelic approach to ketamine for severe treatment-resistant depression",
@@ -183,7 +268,7 @@
   },
   {
     "id": "garel-2023-benzodiazepine",
-    "order": 17,
+    "order": 25,
     "year": 2023,
     "authors": "Garel, N., Greenway, K. T., Dinh-Williams, L., Thibault-Levesque, J., Jutras-Aswad, D., Rej, S., & Richard-Devantoy, S.",
     "title": "Intravenous ketamine for benzodiazepine deprescription and withdrawal management in treatment-resistant depression: A preliminary report",
@@ -195,7 +280,7 @@
   },
   {
     "id": "garel-2023-maid",
-    "order": 18,
+    "order": 26,
     "year": 2023,
     "authors": "Garel, N., Nazon, M., Naghi, K., Willis, E., Looper, K., Rej, S., & Greenway, K. T.",
     "title": "Ketamine for depression: A potential role in requests for medical aid in dying",
@@ -207,7 +292,7 @@
   },
   {
     "id": "gobbi-2022-crossroads",
-    "order": 19,
+    "order": 27,
     "year": 2022,
     "authors": "Gobbi, G., Inserra, A., Greenway, K. T., Lifshitz, M., & Kirmayer, L. J.",
     "title": "Psychedelic medicine at a crossroads: Advancing an integrative approach to research and practice",
@@ -219,7 +304,7 @@
   },
   {
     "id": "garel-2022-alcohol",
-    "order": 20,
+    "order": 28,
     "year": 2022,
     "authors": "Garel, N., McAnulty, C., Greenway, K. T., Lesperance, P., Miron, J. P., Rej, S., Richard-Devantoy, S., & Jutras-Aswad, D.",
     "title": "Efficacy of ketamine intervention to decrease alcohol use, cravings, and withdrawal symptoms in adults with problematic alcohol use or alcohol use disorder: A systematic review and comprehensive analysis of mechanism of actions",
@@ -230,7 +315,7 @@
   },
   {
     "id": "houle-2022-lithium",
-    "order": 21,
+    "order": 29,
     "year": 2022,
     "authors": "Houle, J., Schweitzer, L., & Greenway, K. T.",
     "title": "Complex interaction of lithium with kidney and bone health",
@@ -242,7 +327,7 @@
   },
   {
     "id": "damba-2022-kidney",
-    "order": 22,
+    "order": 30,
     "year": 2022,
     "authors": "Damba, J. J., Bodenstein, K., Lavin, P., Drury, J., Sekhon, H., Renoux, C., Trinh, E., Rej, S., & Greenway, K. T.",
     "title": "Psychotropic drugs and adverse kidney effects: A systematic review of the past decade of research",
@@ -254,7 +339,7 @@
   },
   {
     "id": "rosenblat-2022-canmat",
-    "order": 23,
+    "order": 31,
     "year": 2022,
     "authors": "Rosenblat, J. D., Husain, M. I., Lee, Y., McIntyre, R. S., Mansur, R. B., Castle, D., Offman, H., Parikh, S. V., Frey, B. N., Schaffer, A., Greenway, K. T., Garel, N., Beaulieu, S., Kennedy, S. H., Lam, R. W., Milev, R., Ravindran, A. V., Tourjman, V., Ameringen, M. V., & Yatham, L. N., Taylor, V.",
     "title": "The Canadian Network for Mood and Anxiety Treatments (CANMAT) Task Force report: Serotonergic psychedelic treatments for major depressive disorder",
@@ -265,7 +350,7 @@
   },
   {
     "id": "garel-2021-cannabidiol",
-    "order": 24,
+    "order": 32,
     "year": 2021,
     "authors": "Garel, N., Greenway, K. T., & Joober, R.",
     "title": "The antipsychotic potential of cannabidiol: Clinical implications for patients with psychosis and comorbid cannabis substance use disorder",
@@ -277,7 +362,7 @@
   },
   {
     "id": "richard-devantoy-2021-moca",
-    "order": 25,
+    "order": 33,
     "year": 2021,
     "authors": "Richard-Devantoy, S., Badillo-Amberg, I., Greenway, K. T., Tomasso, M. D., Turecki, G., & Bertrand, J. A.",
     "title": "Low MoCA performances correlate with suicidal ideation in late-life depression",
@@ -288,7 +373,7 @@
   },
   {
     "id": "garel-2021-serotonin-syndrome",
-    "order": 26,
+    "order": 34,
     "year": 2021,
     "authors": "Garel, N., Greenway, K. T., Tabbane, K., & Joober, R.",
     "title": "Serotonin syndrome: SSRIs are not the only culprit",
@@ -300,7 +385,7 @@
   },
   {
     "id": "greenway-2021-adjunctive-music",
-    "order": 27,
+    "order": 35,
     "year": 2021,
     "authors": "Greenway, K. T., Garel, N., Goyette, N., Turecki, G., & Richard-Devantoy, S.",
     "title": "Adjunctive music improves the tolerability of intravenous ketamine for bipolar depression",
@@ -312,7 +397,7 @@
   },
   {
     "id": "richard-devantoy-2021-psychological-pain",
-    "order": 28,
+    "order": 36,
     "year": 2021,
     "authors": "Richard-Devantoy, S., Bertrand, J. A., Béziat, S., Jaussent, I., Cazals, A., Ducasse, D., Greenway, K. T., Guillaume, S., Courtet, P., & Olié, E.",
     "title": "Psychological pain and depression: it's hard to speak when it hurts",
@@ -324,7 +409,7 @@
   },
   {
     "id": "greenway-2020-integrating",
-    "order": 29,
+    "order": 37,
     "year": 2020,
     "authors": "Greenway, K. T., Garel, N., Jerome, L., & Feduccia, A. A.",
     "title": "Integrating psychotherapy and psychopharmacology: Psychedelic-assisted psychotherapy and other combined treatments",
@@ -336,7 +421,7 @@
   },
   {
     "id": "duarte-2020-childhood-maltreatment",
-    "order": 30,
+    "order": 38,
     "year": 2020,
     "authors": "Duarte, D., Belzeaux, R., Etain, B., Greenway, K. T., Rancourt, E., Correa, H., Turecki, G., & Richard-Devantoy, S.",
     "title": "Childhood-maltreatment subtypes in bipolar patients with suicidal behaviour: Systematic review and meta-analysis",
@@ -348,7 +433,7 @@
   },
   {
     "id": "richard-devantoy-2019-cognitive-skill",
-    "order": 31,
+    "order": 39,
     "year": 2019,
     "authors": "Richard-Devantoy, S., Orri, M., Bertrand, J. A., Greenway, K. T., Turecki, G., Gunnell, D., Power, C., & Geoffroy, M. C.",
     "title": "Childhood cognitive skill trajectories and suicide by mid-adulthood: An investigation of the 1958 British Birth Cohort",
