@@ -326,6 +326,9 @@ a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z
 .site-footer__logos { justify-content: center; }
 .site-footer__affiliation { margin-inline: auto; text-align: center; }
 .site-footer__copy { display: none; }
+/* The McGill logo's link is hardcoded in the shared Footer component with no per-site override, so
+   this disables the click here only (cursor + pointer events); it no longer opens mcgill.ca on click. */
+.site-footer__logos a:first-child { pointer-events: none; cursor: default; }
 
 /* --- Print ----------------------------------------------------------------------- */
 @media print {
