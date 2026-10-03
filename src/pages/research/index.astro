@@ -16,7 +16,11 @@ const marbleStyle = `--marble-url:url(${u('/images/marble-1920.webp')});--marble
 <Layout site={site} page={{ title: 'Research — The Psychedelics & Contemplation Lab', description: 'Two strands of research at the lab: psychedelic research (ketamine, psilocybin, music, methods) and contemplative research (meditation, prayer, imagination, nature).', path: '/research/' }} nav={navFor('/research/')}>
   <main id="main">
     <div class="research-split">
-      <h1 class="research-split__title">Psychedelics &amp; Contemplation</h1>
+      <h1 class="research-split__title">
+        <span class="word-left">Psychedelics</span>
+        <span class="ampersand">&amp;</span>
+        <span class="word-right">Contemplation</span>
+      </h1>
       {strands.map((s) => (
         <div class={s.panelClass} style={marbleStyle}>
           <div class="research-split__content">

@@ -303,17 +303,27 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
   z-index: 1;
 }
 
+/* Title: "Psychedelics" right-aligned in the left half, "Contemplation" left-aligned in the right
+   half, "&" sitting on the column join. position/top/left/right/z-index/color/font-size kept from
+   the original rule so the title still spans full-width over both panels in white; display/align-
+   items/justify-content/gap/padding are the new layout that aligns the halves on the ampersand. */
 .research-split__title {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2;
-  text-align: center;
   color: white;
-  padding: 2rem;
   font-size: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4em;
+  padding: 2rem 2rem 0;
 }
+.research-split__title .word-left { flex: 1; text-align: right; }
+.research-split__title .ampersand { flex: 0; }
+.research-split__title .word-right { flex: 1; text-align: left; }
 
 .research-theme-card {
   background: rgba(245, 240, 232, 0.92);
@@ -348,6 +358,20 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 }
 .research-split__content .btn--secondary {
   margin-top: var(--s-4);
+}
+/* Theme list start position: a 3-row grid (label / description / theme list) inside each panel's
+   content box, so the theme list begins at the same height in both columns regardless of how long
+   each strand's description is. The description (h2's next sibling p) gets align-self: end so it
+   sits at the bottom of its row, right above the theme list; later siblings (the theme cards, the
+   "All ..." link) flow into auto-sized rows after the explicit three, stacking normally. */
+.research-split__psychedelics .research-split__content,
+.research-split__contemplation .research-split__content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+.research-split__content h2 + p {
+  align-self: end;
 }
 @media (max-width: 59.99em) {
   .research-split { grid-template-columns: 1fr; min-height: auto; }
