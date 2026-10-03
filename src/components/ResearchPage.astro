@@ -17,8 +17,12 @@ const d = entry.data;
   <main id="main">
     <BandHeader eyebrow={d.eyebrow} title={d.title} back={u('/research/')} backLabel="← Back to all research" tabs>
       <nav aria-label="Categories of this page">
-        <ul class="tab-row reveal-group">
-          {d.sections.map((s, i) => <li><a href={`#${s.id}`} class={i === 0 ? 'is-current' : undefined}>{s.label}</a></li>)}
+        <ul class="tab-row reveal-group" role="tablist">
+          {d.sections.map((s, i) => (
+            <li role="presentation">
+              <button type="button" class={i === 0 ? 'is-current' : undefined} role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-tab={s.id}>{s.label}</button>
+            </li>
+          ))}
         </ul>
       </nav>
     </BandHeader>
@@ -41,16 +45,41 @@ const d = entry.data;
 </Layout>
 
 <script>
-  // The tab row highlights the category currently on screen (the original's "active" tab button).
-  const links = [...document.querySelectorAll<HTMLAnchorElement>('.tab-row a[href^="#"]')];
-  const targets = links.map((a) => document.getElementById(a.hash.slice(1))).filter((el): el is HTMLElement => !!el);
-  if (links.length && targets.length && 'IntersectionObserver' in window) {
-    const set = (id: string) => links.forEach((a) => a.classList.toggle('is-current', a.hash === `#${id}`));
-    const io = new IntersectionObserver((entries) => {
-      const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      if (visible[0]) set(visible[0].target.id);
-    }, { rootMargin: '-20% 0px -60% 0px' });
-    targets.forEach((t) => io.observe(t));
-    links.forEach((a) => a.addEventListener('click', () => set(a.hash.slice(1))));
+  // The tab row used to be a set of in-page anchors, with the "active" tab highlighted as you scrolled
+  // past its heading. It's now a real tab control: clicking a tab shows that theme's content in a panel
+  // and hides the rest, with no scrolling or page jump. Switching is instant (no animation).
+  //
+  // The content itself is still one flowing block rendered from markdown (each theme is just an
+  // <h2 id="..."> followed by its prose), so on load we group the rendered content into one panel per
+  // heading, then toggle which panel is visible.
+  const prose = document.querySelector<HTMLElement>('.research-prose');
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>('.tab-row button[data-tab]')];
+
+  if (prose && tabs.length) {
+    const panels = new Map<string, HTMLDivElement>();
+    let current: HTMLDivElement | null = null;
+    [...prose.children].forEach((el) => {
+      if (el.tagName === 'H2' && el.id) {
+        current = document.createElement('div');
+        current.className = 'tab-panel';
+        current.dataset.panel = el.id;
+        current.setAttribute('role', 'tabpanel');
+        panels.set(el.id, current);
+      }
+      current?.appendChild(el);
+    });
+    panels.forEach((panel) => prose.appendChild(panel));
+
+    const show = (id: string) => {
+      panels.forEach((panel, panelId) => { panel.hidden = panelId !== id; });
+      tabs.forEach((btn) => {
+        const active = btn.dataset.tab === id;
+        btn.classList.toggle('is-current', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    };
+
+    tabs.forEach((btn) => btn.addEventListener('click', () => { if (btn.dataset.tab) show(btn.dataset.tab); }));
+    if (tabs[0]?.dataset.tab) show(tabs[0].dataset.tab);
   }
 </script>

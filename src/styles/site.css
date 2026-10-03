@@ -179,13 +179,21 @@
 .band-header--tabs .band-header__inner { padding-bottom: var(--s-6); }
 /* Category tabs on the bottom edge of the band, like the original's row of dark buttons */
 .tab-row { list-style: none; margin: var(--s-8) 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-2); }
-.tab-row a {
+/* Shared by the publications page's year anchors (<a>) and the research pages' theme tabs (<button>,
+   switched via JS instead of scrolling to an anchor) — same pill look either way. */
+.tab-row a, .tab-row button {
   display: inline-block; padding: 9px 16px; border-radius: var(--radius-chip);
   background: rgba(40, 26, 48, 0.55); color: #fff; border: 1px solid rgba(255, 255, 255, 0.22);
   font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 600; text-decoration: none;
+  cursor: pointer; appearance: none; -webkit-appearance: none; margin: 0;
 }
-.tab-row a:hover { background: rgba(40, 26, 48, 0.8); border-color: rgba(255, 255, 255, 0.5); }
-.tab-row a.is-current, .tab-row a[aria-current="true"] { background: #fff; color: var(--brand-purple-deep); border-color: #fff; }
+.tab-row a:hover, .tab-row button:hover { background: rgba(40, 26, 48, 0.8); border-color: rgba(255, 255, 255, 0.5); }
+.tab-row a.is-current, .tab-row a[aria-current="true"],
+.tab-row button.is-current, .tab-row button[aria-selected="true"] { background: #fff; color: var(--brand-purple-deep); border-color: #fff; }
+
+/* Research theme panels: only the active one is shown (toggled via the `hidden` attribute in JS);
+   without JS every panel stays visible, so the page still reads fine as one long document. */
+.tab-panel[hidden] { display: none; }
 .band-header + .section { padding-top: var(--s-12); }
 .pub-nav { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
 
