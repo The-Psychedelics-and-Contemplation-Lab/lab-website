@@ -107,7 +107,7 @@
    .hero__title (eyebrow + h1), each a flex column pushing its content to the bottom. */
 /* Bottom padding of at least 12 svh: the reveal observer ignores the lowest 10 % of the viewport, so the
    buttons must sit above it to rise with the rest of the entrance at any viewport height. */
-.hero--marble .hero__inner { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; min-height: 100svh; padding-bottom: max(var(--s-12), 16svh); }
+.hero--marble .hero__inner { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; min-height: 100svh; padding-bottom: max(var(--s-12), 22svh); }
 .hero--marble .hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
 .hero--marble .hero__layer--lead { flex: 1 1 auto; }
 .hero--marble .hero__title { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-end; padding-top: calc(var(--header-h) + var(--s-12)); }
