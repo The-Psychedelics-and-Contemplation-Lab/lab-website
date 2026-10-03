@@ -32,7 +32,7 @@ const d = entry.data;
           <Figure src={u(d.image)} alt={d.imageAlt ?? ''} caption={d.imageCaption} ratio={d.imageRatio} drift={d.imageRatio !== 'cinema'} loading="eager" class="reveal reveal--mask research-figure" />
         </div>
       )}
-      <div class="container--reading">
+      <div class="container--reading research-reading">
         <div class="prose research-prose"><Content /></div>
         <p style="margin-top: var(--s-12)"><a class="btn btn--quiet" href={u('/research/')}>← Back to all research</a></p>
       </div>

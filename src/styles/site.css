@@ -285,12 +285,26 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
 /* The pull quote opens the page as a centred epigraph between the figure and the reading column */
 .pullquote--epigraph { margin: 0 auto var(--s-16); max-width: 32ch; }
 .research-prose { max-width: none; }
-/* .container already pays the gutter; the reading column inside it must not pay it twice on phones */
+/* .container already pays the gutter; the reading column inside it must not pay it twice on phones.
+   The research pages' column (.research-reading) runs wider than the site's default reading measure
+   (64ch) to make better use of the section's full width; other pages using .container--reading
+   (e.g. the theme placeholder page) are unaffected. */
 .container > .container--reading { width: min(100%, 64ch); }
+.container > .container--reading.research-reading { width: min(100%, 88ch); }
 .research-prose > h2 { padding-top: var(--s-8); border-top: 1px solid var(--rule); margin-top: var(--s-16); }
 .research-prose > h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
-.research-prose > h3 { margin-top: var(--s-12); }
-.research-prose > h2 + h3 { margin-top: var(--s-6); }
+/* Each subsection (<h3>) is set off from the one before it with extra space and a thin rule, the same
+   way whole themes used to be divided — visible wherever one subsection's content (e.g. a "Learn more"
+   CTA) ends and the next begins. No rule/gap above the first subsection in a section, which already
+   has the <h2>'s own divider above it (or, with JS, is the first visible thing in its tab panel). */
+.research-prose > h3 { margin-top: var(--s-16); padding-top: var(--s-8); border-top: 1px solid var(--rule); }
+.research-prose > h2 + h3,
+.research-prose > h3:first-child { margin-top: var(--s-6); border-top: 0; padding-top: 0; }
+/* Once JS has grouped each section into its own .tab-panel, its <h2> is visually hidden and out of
+   flow (see ".tab-panel > h2" above), so the first <h3> in a panel is the first visible element and
+   needs no leading rule/gap; every <h3> after it still gets the divider above. */
+.tab-panel > h3 { margin-top: var(--s-16); padding-top: var(--s-8); border-top: 1px solid var(--rule); }
+.tab-panel > h3:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
 .research-prose img { border-radius: var(--radius-card); border: 1px solid var(--rule); }
 .research-prose ul li { font-family: var(--font-sans); font-size: var(--fs-ui); line-height: 1.55; color: var(--ink-muted); }
 .research-prose ul li a { word-break: break-all; }
