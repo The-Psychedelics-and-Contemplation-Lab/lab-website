@@ -111,39 +111,22 @@
 .hero--marble .hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
 .hero--marble .hero__layer--lead { flex: 1 1 auto; }
 .hero--marble .hero__title { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: flex-end; padding-top: calc(var(--header-h) + var(--s-12)); }
-/* Title left, description + button right: at wide widths .hero__inner becomes a two-column grid so the
-   title's layer (col 1) sits beside the lead and button cluster (col 2, stacked), both anchored to the
-   bottom of the hero so the two columns read as one composition. */
-.hero--marble .hero__inner.hero__layer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--s-10, 3rem); row-gap: 0; align-content: end; }
-.hero--marble .hero__layer--lead { grid-column: 1; grid-row: 1 / span 2; }
-.hero--marble .hero__inner > .lead { grid-column: 2; grid-row: 1; align-self: end; }
-.hero--marble .hero__inner > .cluster { grid-column: 2; grid-row: 2; align-self: start; }
 /* No dark/purple scrim over the marble image here: with dark purple text the image should show at
    full brightness, so the hero skips both the shared .marble__veil tint and the gradient other marble
    boxes (band headers) use for white-text contrast. */
 .hero--marble .marble__veil { background: transparent; }
 .hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow { text-shadow: 0 1px 8px rgba(30,18,40,0.35); }
 .hero--marble h1 {
-  font-size: clamp(2.25rem, 4.5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; font-weight: 500;
-  overflow-wrap: normal; hyphens: none;
+  font-size: clamp(3rem, 9vw, 8.5rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
+  max-width: 16ch; text-wrap: balance; overflow-wrap: normal; hyphens: none;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
-.hero--marble .lead { margin-top: 0; max-width: 40ch; font-size: clamp(1.1875rem, 1.6vw, 1.5rem); }
+.hero--marble .lead { margin-top: var(--s-4); max-width: 46ch; font-size: clamp(1.1875rem, 1.6vw, 1.5rem); }
 .hero--marble .cluster { margin-top: var(--s-6); }
 .hero--marble .hero__eyebrow { color: var(--on-marble-muted); margin-bottom: var(--s-4); }
 /* Hero text over the lighter marble image reads better in the brand's dark purple than in white. */
 .hero--marble h1, .hero--marble .lead, .hero--marble .eyebrow, .hero--marble .hero__eyebrow { color: var(--brand-purple-deep); }
-@media (max-width: 48em) {
-  /* Narrow viewports: drop the two-column grid back to a single stacked column (title, then description,
-     then buttons) and let the title wrap naturally instead of forcing the 4 fixed line breaks meant for
-     the wide composition above. */
-  .hero--marble .hero__inner.hero__layer { display: flex; flex-direction: column; justify-content: flex-end; }
-  .hero--marble .hero__layer--lead { grid-column: unset; grid-row: unset; }
-  .hero--marble .hero__inner > .lead { grid-column: unset; grid-row: unset; margin-top: var(--s-4); }
-  .hero--marble .hero__inner > .cluster { grid-column: unset; grid-row: unset; }
-  .hero--marble h1 br { display: none; }
-  .hero--marble h1 { font-size: clamp(2.5rem, 11vw, 3.5rem); max-width: 16ch; text-wrap: balance; }
-}
+@media (max-width: 40em) { .hero--marble h1 { font-size: clamp(2.75rem, 13vw, 4rem); } }
 
 .home-section__head { text-align: center; margin: 0 auto var(--s-8); max-width: var(--measure); }
 .home-section__head > * + * { margin-top: var(--s-3); }
