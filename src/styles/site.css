@@ -106,6 +106,7 @@ body.home .site-header .logo-lockup > .logo-lockup__partner { border-left: 0; ma
 .hero--marble h1 {
   font-size: clamp(3rem, 9vw, 8.5rem); line-height: 0.98; letter-spacing: -0.02em; font-weight: 500;
   max-width: 16ch; text-wrap: balance; overflow-wrap: normal; hyphens: none;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .hero--marble .lead { margin-top: var(--s-4); max-width: 46ch; font-size: clamp(1.1875rem, 1.6vw, 1.5rem); }
 .hero--marble .cluster { margin-top: var(--s-6); }
