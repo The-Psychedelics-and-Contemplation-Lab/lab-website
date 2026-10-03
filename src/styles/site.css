@@ -121,13 +121,10 @@
 .home-section__head > * + * { margin-top: var(--s-3); }
 .home-section__head h2 { font-size: var(--fs-h2); }
 .home-section__more { margin-top: var(--s-6); text-align: center; }
-/* Project cards: hover-reveal (design-system .media-card--hover). The two cards without a photo carry their
-   own site's mark on that site's brand colour: the Montreal Model plum (#77396E, white text 8.1:1) and the
-   StaMPS orange (#B5502F, white text 4.9:1). */
-a.project-card--montreal.media-card--accent { background: #77396E; }
-a.project-card--stamps.media-card--accent { background: #B5502F; }
-.project-card .media-card__mark { padding: 13% 14%; }
-.project-card--stamps .media-card__mark { padding: 16% 13%; }
+/* Project cards: hover-reveal (design-system .media-card--hover), shown as plain photographs. Forced
+   square and the design system's dark scrim removed so each project's own colours read unedited. */
+.media-card.project-card { aspect-ratio: 1; }
+.media-card.project-card::after { background: none; }
 /* ROUND3 §3 — cards lift 2 px with a soft shadow (the lift is on the card, the reveal on its wrapper,
    so the two transitions never fight). Images zoom over 1400 ms (media-card--hover does it). */
 .card-wrap { display: block; }
