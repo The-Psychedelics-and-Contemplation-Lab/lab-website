@@ -1,6 +1,6 @@
 ---
 name: Alyssa Bensoussan
-role: MSc Student, Mental Health
+role: MSc Graduate, Mental Health
 group: alumni
 order: 3
 team: greenway
