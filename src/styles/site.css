@@ -34,6 +34,18 @@
 .site-nav__list a:hover {
   color: #ffffff;
 }
+/* "Research" dropdown (Psychedelic/Contemplative): the design system opens it on :hover of the <li>, but
+   positions the submenu a few pixels below the link with `margin-top`. That gap sits outside the <li>'s own
+   box (the submenu is `position: absolute`, so it doesn't add to the <li>'s height), so moving the cursor
+   straight down from "Research" into the menu briefly leaves the <li> — the hover ends, the submenu's
+   `display: none` kicks back in, and it's gone before the cursor arrives. Moving that same gap inside the
+   <li> as padding (and removing it from the submenu) keeps every point along that path over the <li>, so the
+   hover — and the menu — survives the trip down into it. Desktop-only: the mobile menu opens by tapping the
+   chevron instead, via a `.is-open` class, so it was never affected by this. */
+@media (min-width: 60em) {
+  .site-nav__item.has-children { padding-bottom: var(--s-2) !important; }
+  .site-nav__submenu { margin-top: 0 !important; }
+}
 
 /* --- Marble: the purple oil-slick texture under a translucent purple layer --------------------- */
 /* .marble is a positioned box; .marble__img is the texture (parallaxed, with overscan so the
