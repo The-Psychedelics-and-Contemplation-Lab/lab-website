@@ -55,8 +55,8 @@ export const navItems = [
     label: 'Research',
     href: u('/research/'),
     children: [
-      { label: 'Psychedelic Research', href: `${u('/research/')}#psychedelic` },
-      { label: 'Contemplative Research', href: `${u('/research/')}#contemplative` },
+      { label: 'Psychedelic Research', href: u('/psychedelic-research/') },
+      { label: 'Contemplative Research', href: u('/contemplative-research/') },
     ],
   },
   { label: 'People', href: u('/people/') },

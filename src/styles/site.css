@@ -10,6 +10,11 @@
   --marble-overlay-deep: rgba(50, 34, 60, 0.74);   /* inner page bands: darker, title must read */
   --on-marble: #FFFFFF;
   --on-marble-muted: rgba(255, 255, 255, 0.86);
+  /* The two research strands' own tint, shared by their /research/ index button and their own page's
+     header band (see ".strand__panel--psychedelic::before" and "body.psychedelic .band-header" below) —
+     one variable each so the two places can never drift apart. */
+  --tint-psychedelic: rgba(112, 66, 118, 0.52);     /* more purple/mauve, less transparent than the old rgba(90, 68, 102, 0.32) */
+  --tint-contemplative: rgba(100, 136, 86, 0.46);   /* sage green, less transparent than the old rgba(85, 98, 79, 0.22) */
 }
 
 /* Guard against the lab's long name overflowing the header lockup when the viewport is narrow:
@@ -390,8 +395,13 @@ body.contemplative .band-header h1 { font-size: clamp(2.2rem, 4.4vw, 3.5rem); ma
 .strand__panel h2 { font-size: clamp(2rem, 3.6vw, 3rem); font-weight: 500; letter-spacing: -0.015em; color: #fff; }
 .strand__panel h2::after { content: none; }
 a.strand__panel::after { content: "" !important; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(32, 20, 40, 0.55), transparent 60%); display: block; margin: 0; }
-.strand__panel--psychedelic::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(90, 68, 102, 0.32); pointer-events: none; }
-.strand__panel--contemplative::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(85, 98, 79, 0.22); pointer-events: none; }
+.strand__panel--psychedelic::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--tint-psychedelic); pointer-events: none; }
+.strand__panel--contemplative::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--tint-contemplative); pointer-events: none; }
+/* Each strand's own page carries its button's exact tint on its header band too (body.psychedelic /
+   body.contemplative — set via ResearchPage.astro's bodyClass), replacing the site-wide dark-purple
+   ".marble--deep" veil used on every other inner page. */
+body.psychedelic .band-header .marble__veil { background: var(--tint-psychedelic); }
+body.contemplative .band-header .marble__veil { background: var(--tint-contemplative); }
 @media (prefers-reduced-motion: no-preference) {
   .strand__panel .marble__img { transition: transform 1400ms var(--ease); }
   .strand__panel:hover .marble__img, .strand__panel:focus-visible .marble__img { transform: scale(1.03); }
