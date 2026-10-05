@@ -178,6 +178,24 @@
 .media-card.project-card { aspect-ratio: 1; }
 .media-card.project-card::after { opacity: 0; }
 .media-card.project-card:hover::after, .media-card.project-card:focus-visible::after { opacity: 1; }
+/* On a device that can't hover (every phone, and most tablets), that scheme falls apart two ways at
+   once: the design system's own hover-reveal rule only hides the caption inside `@media (hover: hover)`
+   (see MediaCard.astro — "always visible on touch"), so here the title and description are always
+   shown; and the line above only brings the darkening scrim back on `:hover`/`:focus-visible`, which a
+   tap doesn't reliably produce. The result is permanently-visible white text with no scrim to read it
+   against. Rather than force the scrim on too (defeating the point of showing each photo unedited),
+   restack the card for these devices: the photo on top as plain, uncovered artwork, the caption below
+   it in the card's own colours — no overlay, so nothing to lose contrast. The whole card is still one
+   <a>, image included, so it still reads and taps as a single button through to the project's site. */
+@media (hover: none) {
+  .media-card.project-card { display: block; aspect-ratio: auto; }
+  .media-card.project-card img { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1; }
+  .media-card.project-card::after { display: none; } /* content stays "" — motion.css forces it back with !important — but it's not painted */
+  .media-card.project-card .media-card__body { position: static; margin-top: 0; padding: var(--s-4) var(--s-6) var(--s-6); }
+  .media-card.project-card .media-card__eyebrow { color: var(--ink-muted); text-shadow: none; opacity: 1; }
+  .media-card.project-card .media-card__title { color: var(--ink); text-shadow: none; }
+  .media-card.project-card .media-card__text { color: var(--ink-muted); text-shadow: none; }
+}
 /* ROUND3 §3 — cards lift 2 px with a soft shadow (the lift is on the card, the reveal on its wrapper,
    so the two transitions never fight). Images zoom over 1400 ms (media-card--hover does it). */
 .card-wrap { display: block; }
