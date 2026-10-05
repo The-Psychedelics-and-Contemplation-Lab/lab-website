@@ -25,6 +25,13 @@
   mix-blend-mode: multiply;
   background: transparent;
 }
+/* The McGill logo's link is hardcoded in the shared Header component with no per-site override, so this
+   disables the click here only (cursor + pointer events) — same treatment already used for the footer's
+   McGill logo below. It no longer opens mcgill.ca on click. */
+.logo-lockup__mcgill {
+  pointer-events: none;
+  cursor: default;
+}
 .site-nav__list a {
   font-size: 0.95rem;
   font-weight: 500;
@@ -38,13 +45,23 @@
    positions the submenu a few pixels below the link with `margin-top`. That gap sits outside the <li>'s own
    box (the submenu is `position: absolute`, so it doesn't add to the <li>'s height), so moving the cursor
    straight down from "Research" into the menu briefly leaves the <li> — the hover ends, the submenu's
-   `display: none` kicks back in, and it's gone before the cursor arrives. Moving that same gap inside the
-   <li> as padding (and removing it from the submenu) keeps every point along that path over the <li>, so the
-   hover — and the menu — survives the trip down into it. Desktop-only: the mobile menu opens by tapping the
-   chevron instead, via a `.is-open` class, so it was never affected by this. */
+   `display: none` kicks back in, and it's gone before the cursor arrives. An invisible `::after` bridge,
+   positioned absolutely over that same gap, is still painted as part of the <li>'s own box, so hovering it
+   keeps the <li> (and the submenu) hovered too — without adding any height to the <li> itself. (An earlier
+   version of this fix used padding-bottom on the <li> instead; that also closed the gap, but it made the
+   <li> taller than its siblings, which — combined with the nav row's vertical centering — shifted "Research"
+   visibly higher than "People" and "Publications". The ::after approach gets the same hover fix with zero
+   layout impact.) Desktop-only: the mobile menu opens by tapping the chevron instead, via a `.is-open`
+   class, so it was never affected by either version of this. */
 @media (min-width: 60em) {
-  .site-nav__item.has-children { padding-bottom: var(--s-2) !important; }
-  .site-nav__submenu { margin-top: 0 !important; }
+  .site-nav__item.has-children::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 14rem; /* matches .site-nav__submenu's own min-width, so the bridge spans its full footprint */
+    height: var(--s-2); /* the same gap the design system puts between the link and the submenu */
+  }
 }
 
 /* --- Marble: the purple oil-slick texture under a translucent purple layer --------------------- */
