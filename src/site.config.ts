@@ -11,6 +11,7 @@ export const site: SiteConfig & { base: string; previewUrl: string } = {
   url: 'https://psychedelicsandcontemplationlab.com',
   lang: 'en',
   accent: '#4B6A8A',
+  analyticsToken: '35ec10f364e44f2da703158b4dc61bb0',   // Cloudflare Web Analytics (cookieless page-view counts; dashboard: dash.cloudflare.com → Web analytics)
   affiliation:
     'The Psychedelics & Contemplation Lab is part of the Department of Psychiatry, McGill University, and the Lady Davis Institute for Medical Research, Jewish General Hospital, Montréal.',
   base: '/lab-website',
