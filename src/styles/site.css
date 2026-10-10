@@ -45,6 +45,20 @@
   }
 }
 
+/* Mobile Menu button: icon only, no "Menu" text. Two reasons: it's the universally recognised mobile
+   affordance on its own, and — since .site-header__inner is "justify-content: space-between" — a
+   narrower button on the right directly hands that freed width to the logo/title on the left, instead
+   of it sitting unused in the button's own padding. The <summary>'s aria-label already names the
+   control for assistive tech, so hiding the visible text loses nothing there. Square-ish padding
+   (vs. the design system's 8px/12px split, sized for icon+text side by side) suits an icon-only button. */
+@media (max-width: 59.99em) {
+  .site-nav__toggle-label { display: none; }
+  /* A fixed square, rather than padding around the 2px-tall burger line: with only the icon left in
+     the button, content-driven sizing would collapse its tap target to well under the ~44px minimum
+     touch-target size. */
+  .site-nav__toggle { width: 44px; height: 44px; padding: 0; justify-content: center; }
+}
+
 /* --- Site header: logo and nav text styling ------------------------------------------------------ */
 .site-header img {
   mix-blend-mode: multiply;
