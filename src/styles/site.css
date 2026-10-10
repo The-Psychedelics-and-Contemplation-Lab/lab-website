@@ -25,6 +25,26 @@
   .site-header .logo-lockup .logo-lockup__name { white-space: normal; max-width: 13rem; }
 }
 
+/* Same overflow bug as above, but below 60em (mobile), where it's worse: the design system caps
+   .logo-lockup__name at "40vw"/"46vw" — a fraction of the VIEWPORT, not of the actual space left
+   next to the McGill logo and the Menu button once .logo-lockup has shrunk to fit. That gap lets the
+   name's box render wider than its own shrunk flex parent and bleed straight into the Menu button,
+   since .logo-lockup__brand's "align-items: flex-start" means its text isn't stretched to the parent's
+   real width either. Fix: stretch the name to the lockup's actual (correctly shrunk) width and let it
+   wrap, instead of capping it to an unrelated viewport fraction. Wraps to 2 lines once there's room
+   (~414px+), more lines on the very narrowest phones — but never overlaps the Menu button. */
+@media (max-width: 59.99em) {
+  .site-header .logo-lockup .logo-lockup__brand { align-items: stretch !important; }
+  .site-header .logo-lockup .logo-lockup__text { width: 100%; }
+  .site-header .logo-lockup .logo-lockup__name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: none;
+    width: 100%;
+  }
+}
+
 /* --- Site header: logo and nav text styling ------------------------------------------------------ */
 .site-header img {
   mix-blend-mode: multiply;
