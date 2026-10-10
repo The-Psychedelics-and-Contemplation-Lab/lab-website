@@ -1,5 +1,5 @@
 ---
-name: Mar Estarellas
+name: Dr. Mar Estarellas
 role: Postdoctoral Researcher
 group: postdocs
 order: 3

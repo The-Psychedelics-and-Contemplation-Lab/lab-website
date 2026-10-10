@@ -1,5 +1,5 @@
 ---
-name: Michael Lifshitz
+name: Dr. Michael Lifshitz
 role: Lab Director
 group: directors
 order: 2
