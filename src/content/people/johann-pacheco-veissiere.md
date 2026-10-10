@@ -4,6 +4,7 @@ role: MSc Student, Integrated Program in Neuroscience
 group: masters
 order: 4
 team: lifshitz
+photo: /images/johannP.jpg
 summary: Characterizing inter-brain dynamics in advanced contemplative practices.
 links: []
 ---
