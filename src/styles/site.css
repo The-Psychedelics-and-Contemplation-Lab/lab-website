@@ -25,6 +25,40 @@
   .site-header .logo-lockup .logo-lockup__name { white-space: normal; max-width: 13rem; }
 }
 
+/* Same overflow bug as above, but below 60em (mobile), where it's worse: the design system caps
+   .logo-lockup__name at "40vw"/"46vw" — a fraction of the VIEWPORT, not of the actual space left
+   next to the McGill logo and the Menu button once .logo-lockup has shrunk to fit. That gap lets the
+   name's box render wider than its own shrunk flex parent and bleed straight into the Menu button,
+   since .logo-lockup__brand's "align-items: flex-start" means its text isn't stretched to the parent's
+   real width either. Fix: stretch the name to the lockup's actual (correctly shrunk) width and let it
+   wrap, instead of capping it to an unrelated viewport fraction. Wraps to 2 lines once there's room
+   (~414px+), more lines on the very narrowest phones — but never overlaps the Menu button. */
+@media (max-width: 59.99em) {
+  .site-header .logo-lockup .logo-lockup__brand { align-items: stretch !important; }
+  .site-header .logo-lockup .logo-lockup__text { width: 100%; }
+  .site-header .logo-lockup .logo-lockup__name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* Mobile Menu button: icon only, no "Menu" text. Two reasons: it's the universally recognised mobile
+   affordance on its own, and — since .site-header__inner is "justify-content: space-between" — a
+   narrower button on the right directly hands that freed width to the logo/title on the left, instead
+   of it sitting unused in the button's own padding. The <summary>'s aria-label already names the
+   control for assistive tech, so hiding the visible text loses nothing there. Square-ish padding
+   (vs. the design system's 8px/12px split, sized for icon+text side by side) suits an icon-only button. */
+@media (max-width: 59.99em) {
+  .site-nav__toggle-label { display: none; }
+  /* A fixed square, rather than padding around the 2px-tall burger line: with only the icon left in
+     the button, content-driven sizing would collapse its tap target to well under the ~44px minimum
+     touch-target size. */
+  .site-nav__toggle { width: 44px; height: 44px; padding: 0; justify-content: center; }
+}
+
 /* --- Site header: logo and nav text styling ------------------------------------------------------ */
 .site-header img {
   mix-blend-mode: multiply;
@@ -275,6 +309,37 @@
 .pub-nav { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
 
 /* --- Publications ----------------------------------------------------------- */
+/* A small checkbox, right of the year list, toggles between "Lab publications" (only entries with a
+   lab director as an author) and every publication by current, active lab members. It sits flush
+   with the right edge of the centred reading column, off to the side of the list rather than over it.
+   Its JS lives in src/pages/publications/index.astro and toggles each .pub's `hidden` attribute off
+   its data-core attribute. */
+.pub-filter { display: flex; justify-content: flex-end; max-width: var(--measure); margin: 0 auto var(--s-4); }
+.pub-filter__check { display: inline-flex; align-items: center; gap: var(--s-2); font-family: var(--font-sans); font-size: var(--fs-ui); color: var(--ink-muted); cursor: pointer; user-select: none; }
+.pub-filter__check:hover { color: var(--ink); }
+.pub-filter__check input[type="checkbox"] { width: 1.05em; height: 1.05em; margin: 0; accent-color: var(--brand-purple); cursor: pointer; }
+/* "Filter by topic" chip row: unlike the year/theme tab-row pills above (dark background, the
+   selected one turns white — a scheme a user found backwards), a selected chip here fills solid
+   purple, so "selected" reads as "turned on" rather than the reverse. Several chips can be active at
+   once — they're OR'd together in the page's script against each .pub's data-tags attribute — so this
+   is a plain toggle-button group, not a role="tablist" (only one tab can ever be current). */
+.pub-topics { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-2) var(--s-4); max-width: var(--measure); margin: 0 auto var(--s-10); }
+.pub-topics__label { flex: 0 0 100%; margin: 0; font-family: var(--font-sans); font-size: var(--fs-eyebrow); font-weight: 600; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--ink-muted); }
+.pub-topics__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.tag-chip {
+  display: inline-block; padding: 6px 14px; border-radius: var(--radius-chip);
+  background: transparent; color: var(--ink-muted); border: 1px solid var(--rule);
+  font-family: var(--font-sans); font-size: 0.8125rem; font-weight: 500; line-height: 1.2;
+  cursor: pointer; appearance: none; -webkit-appearance: none; margin: 0;
+}
+.tag-chip:hover { border-color: var(--brand-purple); color: var(--brand-purple); }
+.tag-chip[aria-pressed="true"] { background: var(--brand-purple); color: #fff; border-color: var(--brand-purple); }
+.tag-chip[aria-pressed="true"]:hover { background: var(--brand-purple-deep); border-color: var(--brand-purple-deep); }
+/* Only shown once a chip is active (.has-active, set in JS), so there's nothing to click when every
+   topic is already showing. */
+.pub-topics__clear { display: none; padding: 0; border: 0; background: none; cursor: pointer; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--ink-muted); text-decoration: underline; text-underline-offset: 0.2em; }
+.pub-topics__clear:hover { color: var(--ink); }
+.pub-topics.has-active .pub-topics__clear { display: inline-block; }
 .pub { font-size: var(--fs-ui); font-family: var(--font-sans); line-height: 1.55; }
 .pub__authors { color: var(--ink); }
 .pub__year { color: var(--ink-muted); }
@@ -286,6 +351,10 @@
 .year-group + .year-group { margin-top: var(--s-12); }
 .year-group__year { font-family: var(--font-serif); font-size: var(--fs-h2); font-weight: 600; line-height: 1; color: var(--brand-purple); }
 .year-group .pub-list { max-width: none; }
+/* Without this, the .year-group[hidden] set by the filter script wouldn't hide anything: an author
+   rule's `display: grid` above beats the UA stylesheet's own `[hidden] { display: none }` in the
+   cascade (same issue already solved for .tab-panel[hidden] above). */
+.year-group[hidden] { display: none; }
 @media (min-width: 60em) {
   /* year | centred reading column | empty balance column, so the references sit centred on the screen */
   .year-group { grid-template-columns: 7rem minmax(0, var(--measure)) 7rem; justify-content: center; }
@@ -343,6 +412,11 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
   .person--director { grid-template-columns: minmax(0, 1fr) 10rem; }
 }
 @media (min-width: 72em) { .person--director .portrait { width: 12rem; height: 12rem; } .person--director { grid-template-columns: minmax(0, 1fr) 12rem; } }
+/* Alumni: the same purple/olive panel as everyone else, faded back so current, active members stand
+   out at a glance in the list. Hovering (or tabbing into) a card brings it back to full strength so
+   the name, role and bio are still easy to read up close. */
+.person--alumni { opacity: 0.6; transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.person--alumni:hover, .person--alumni:focus-within { opacity: 1; }
 
 /* --- Research pages ------------------------------------------------------------- */
 .research-figure { margin-bottom: var(--s-12); }
@@ -452,8 +526,9 @@ body.contemplative .band-header .marble__veil { background: var(--tint-contempla
 
 /* --- Print ----------------------------------------------------------------------- */
 @media print {
-  .cta, .playlists, .tab-row, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
+  .cta, .playlists, .tab-row, .pub-filter, .pub-topics, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
   .marble, .person, .band-header { background: none !important; color: var(--ink) !important; }
+  .person--alumni { opacity: 1 !important; }
   .marble h1, .marble p, .person h3, .person p, .person .prose, .band-header .lead { color: var(--ink) !important; }
   .person__bio[open] > summary { display: none; }
   .person__bio:not([open]) > *:not(summary) { display: block !important; }

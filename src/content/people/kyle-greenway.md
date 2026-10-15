@@ -1,5 +1,5 @@
 ---
-name: Kyle Greenway
+name: Dr. Kyle Greenway
 role: Lab Director
 group: directors
 order: 1

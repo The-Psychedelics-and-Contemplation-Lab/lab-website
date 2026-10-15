@@ -1,6 +1,6 @@
 ---
-name: Joseph Diehl
-role: Postdoctoral Researcher, Department of Psychiatry
+name: Dr. Joseph Diehl
+role: Postdoctoral Researcher
 group: postdocs
 order: 5
 team: greenway

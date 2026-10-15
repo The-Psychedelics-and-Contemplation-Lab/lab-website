@@ -8,6 +8,7 @@ import '../../styles/site.css';
 
 const pubs = (await getCollection('publications')).map((e) => e.data).sort((a, b) => a.order - b.order);
 const years = [...new Set(pubs.map((p) => p.year))].sort((a, b) => b - a);
+const coreCount = pubs.filter((p) => p.core).length;
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -16,7 +17,7 @@ const schema = {
   hasPart: pubs.map((p) => ({ '@type': 'ScholarlyArticle', headline: p.title, datePublished: String(p.year), author: p.authors, isPartOf: { '@type': 'Periodical', name: p.journal }, ...(p.doi ? { sameAs: `https://doi.org/${p.doi}` } : {}) })),
 };
 ---
-<Layout site={site} page={{ title: 'Publications — The Psychedelics & Contemplation Lab', description: `${pubs.length} peer-reviewed publications of the lab, ${years[years.length - 1]}–${years[0]}, on ketamine and psilocybin therapy, music, set and setting, and contemplative science.`, path: '/publications/', schema }} nav={navFor('/publications/')}>
+<Layout site={site} page={{ title: 'Publications — The Psychedelics & Contemplation Lab', description: `${coreCount} peer-reviewed publications co-authored by the lab's directors, ${years[years.length - 1]}–${years[0]}, on ketamine and psilocybin therapy, music, set and setting, and contemplative science.`, path: '/publications/', schema }} nav={navFor('/publications/')}>
   <main id="main">
     <BandHeader title="Publications" tabs>
       <nav aria-label="Jump to year">
@@ -24,6 +25,12 @@ const schema = {
       </nav>
     </BandHeader>
     <Section>
+      <div class="pub-filter">
+        <label class="pub-filter__check">
+          <input type="checkbox" id="pub-show-all" />
+          Show all publications from active lab members
+        </label>
+      </div>
       {years.map((y) => (
         <section class="year-group" id={`y${y}`} aria-labelledby={`y${y}-h`}>
           <h2 class="year-group__year reveal reveal--wipe" id={`y${y}-h`}>{y}</h2>
@@ -35,3 +42,30 @@ const schema = {
     </Section>
   </main>
 </Layout>
+
+<script>
+  // The "show all" checkbox toggles between "Lab publications" (only entries with a lab director as an
+  // author — PublicationItem marks each entry data-core="true|false") and every publication by current,
+  // active lab members. A year's heading and its jump-to-year nav link are hidden too whenever that year
+  // has nothing left to show.
+  const checkbox = document.querySelector<HTMLInputElement>('#pub-show-all');
+  const pubItems = [...document.querySelectorAll<HTMLElement>('.pub[data-core]')];
+  const yearGroups = [...document.querySelectorAll<HTMLElement>('.year-group')];
+  const yearNavLinks = [...document.querySelectorAll<HTMLAnchorElement>('[aria-label="Jump to year"] a')];
+
+  const applyView = () => {
+    const showAll = checkbox?.checked ?? false;
+    pubItems.forEach((item) => {
+      item.hidden = !(showAll || item.dataset.core === 'true');
+    });
+    yearGroups.forEach((group) => {
+      const hasVisible = [...group.querySelectorAll<HTMLElement>('.pub')].some((p) => !p.hidden);
+      group.hidden = !hasVisible;
+      const link = yearNavLinks.find((a) => a.getAttribute('href') === `#${group.id}`);
+      if (link?.parentElement) (link.parentElement as HTMLElement).hidden = !hasVisible;
+    });
+  };
+
+  checkbox?.addEventListener('change', applyView);
+  applyView();
+</script>

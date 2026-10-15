@@ -1,6 +1,6 @@
 ---
 name: Julien Thibault Lévesque
-role: Social Worker and Ph.D. Student
+role: Postdoctoral Researcher and Social Worker
 group: postdocs
 order: 4
 team: greenway
