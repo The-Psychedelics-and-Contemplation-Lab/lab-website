@@ -43,6 +43,9 @@ const d = entry.data;
 </Layout>
 
 <script>
+  // Runs on every page view (the site uses view transitions, so a page can be shown without a
+  // full load); the DOM is queried afresh each time.
+  const init = () => {
   // The tab row used to be a set of in-page anchors, with the "active" tab highlighted as you scrolled
   // past its heading. It's now a real tab control: clicking a tab shows that theme's content in a panel
   // and hides the rest, with no scrolling or page jump. Switching is instant (no animation).
@@ -105,4 +108,7 @@ const d = entry.data;
     const initial = requested ?? tabs[0]?.dataset.tab;
     if (initial) show(initial);
   }
+  };
+  document.addEventListener('astro:page-load', init);
+  if (!document.querySelector('meta[name="astro-view-transitions-enabled"]')) init();
 </script>

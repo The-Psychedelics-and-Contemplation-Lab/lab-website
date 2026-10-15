@@ -44,6 +44,9 @@ const schema = {
 </Layout>
 
 <script>
+  // Runs on every page view (the site uses view transitions, so a page can be shown without a
+  // full load); the DOM is queried afresh each time.
+  const init = () => {
   // The "show all" checkbox toggles between "Lab publications" (only entries with a lab director as an
   // author — PublicationItem marks each entry data-core="true|false") and every publication by current,
   // active lab members. A year's heading and its jump-to-year nav link are hidden too whenever that year
@@ -68,4 +71,7 @@ const schema = {
 
   checkbox?.addEventListener('change', applyView);
   applyView();
+  };
+  document.addEventListener('astro:page-load', init);
+  if (!document.querySelector('meta[name="astro-view-transitions-enabled"]')) init();
 </script>
