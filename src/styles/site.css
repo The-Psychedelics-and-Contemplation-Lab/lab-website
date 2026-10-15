@@ -85,6 +85,23 @@
    (20 % above, 40 % below): 0.25 × (0.2 + 1) × H = 0.3 H < 0.4 H, no edge at any viewport height. */
 .hero--marble .marble__img, .band-header .marble__img { top: -20%; bottom: -40%; }
 @media (max-width: 59.99em) { .marble__img, .hero--marble .marble__img, .band-header .marble__img { top: 0; bottom: 0; background-image: var(--marble-url-small, var(--marble-url)); } }
+/* "Living" marble (home hero): the texture sits on a child layer that breathes very slowly (scale, 70 s) and
+   drifts a little with the cursor (GSAP, opposite to the title: see motion-rich.ts). The parent keeps the
+   scroll parallax, so the two never fight over the same transform. */
+.marble__img--live { background-image: none; }
+.marble__tex {
+  position: absolute; inset: -5%;
+  background-image: var(--marble-url); background-size: 60% auto; background-position: center top; background-repeat: repeat;
+  will-change: transform; transform-origin: 50% 40%;
+}
+@media (max-width: 59.99em) { .marble__tex { background-image: var(--marble-url-small, var(--marble-url)); } }
+@media (prefers-reduced-motion: no-preference) {
+  .marble__tex { animation: marble-breathe 70s ease-in-out infinite alternate; }
+  @keyframes marble-breathe { from { scale: 1; rotate: 0deg; } to { scale: 1.07; rotate: 0.6deg; } }
+}
+/* Card tilt (rich motion): the wrapper carries the 3D rotation and the spotlight; the card keeps its own hover */
+.grid--3:has(.card-wrap[data-tilt]) { perspective: 1400px; }
+.card-wrap[data-tilt] { position: relative; border-radius: var(--radius-card); }
 .marble__veil { position: absolute; inset: 0; z-index: -1; background: var(--marble-overlay); pointer-events: none; }
 .marble--deep .marble__veil { background: var(--marble-overlay-deep); }
 .marble__grain {

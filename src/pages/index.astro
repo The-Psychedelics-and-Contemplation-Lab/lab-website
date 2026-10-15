@@ -24,13 +24,15 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
         500 px); the text lingers, the lower it sits the more — buttons 0.35, lead 0.28, title 0.2 — so the block
         stretches gently as it leaves instead of the title running into the lead. Nested layers add their speeds:
         0.35 outer, -0.07 for the lead's layer, -0.08 more for the title's. */}
-    <div class="hero hero--marble marble">
-      <Marble parallax={-0.25} origin="top" max={500} image="/images/marble-light-1920_2.webp" />
+    <div class="hero hero--marble marble" data-mouse-scene="22">
+      <Marble parallax={-0.25} origin="top" max={500} image="/images/marble-light-1920_2.webp" live />
       <div class="hero__inner hero__layer" data-parallax="0.35" data-parallax-origin="top" data-parallax-max="400">
         <div class="hero__layer hero__layer--lead" data-parallax="-0.07" data-parallax-origin="top" data-parallax-max="80">
           <div class="hero__title" data-parallax="-0.08" data-parallax-origin="top" data-parallax-max="92">
-            <p class="eyebrow hero__eyebrow reveal reveal--wipe">McGill University · Lady Davis Institute</p>
-            <h1 class="reveal-words" style="--reveal-delay: 150ms">The Psychedelics &amp; Contemplation Lab</h1>
+            <div data-mouse-depth="0.45">
+              <p class="eyebrow hero__eyebrow reveal reveal--wipe">McGill University · Lady Davis Institute</p>
+              <h1 class="reveal-chars" style="--reveal-delay: 150ms">The Psychedelics &amp; Contemplation Lab</h1>
+            </div>
           </div>
           <p class="lead reveal reveal--blur" style="--reveal-delay: 450ms; --reveal-dur: 1000ms">The Psychedelics and Contemplation Lab is a collaborative, multidisciplinary space dedicated to exploring the phenomenology of non-ordinary states of consciousness, spiritual practices, and novel clinical interventions.</p>
         </div>
@@ -41,7 +43,7 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
       </div>
     </div>
 
-    <Section ariaLabelledby="projects-h" watermark="phyllotaxis" watermarkPosition="right">
+    <Section ariaLabelledby="projects-h" watermark="phyllotaxis" watermarkPosition="right" watermarkBloom>
       <SectionMark label=" " />
       <div class="home-section__head">
         <h2 id="projects-h" class="reveal reveal--wipe">Featured Initiatives</h2>
@@ -49,7 +51,7 @@ const projectArt: Record<string, { src?: string; alt?: string; mark?: string; ma
       </div>
       <div class="grid grid--3 reveal-group reveal-group--slow">
         {projects.map((p) => { const art = projectArt[p.name]; return (
-          <div class="card-wrap">
+          <div class="card-wrap" data-tilt="4">
             <MediaCard href={p.href} external eyebrow={p.eyebrow} title={p.name} text={p.description} src={art?.src} alt={art?.alt} mark={art?.mark} markAlt={art?.markAlt} class={`media-card--hover project-card ${art?.cls ?? ''}`} />
           </div>
         ); })}
