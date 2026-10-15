@@ -152,7 +152,7 @@
 /* The shared .marble__img tiles its texture at 60% width (right for the small repeating oil-slick
    pattern used elsewhere); the hero's photographic marble image should instead run as one large image
    filling the box, so override size/repeat for the hero only. */
-.hero--marble .marble__img { background-size: cover; background-repeat: no-repeat; background-position: center; }
+.hero--marble .marble__img, .hero--marble .marble__tex { background-size: cover; background-repeat: no-repeat; background-position: center; }
 /* Nested full-height layers so that every parallax layer starts at the top of the page (the script measures
    "origin: top" from an element's natural top): .hero__inner (buttons), .hero__layer--lead (lead) and
    .hero__title (eyebrow + h1), each a flex column pushing its content to the bottom. */
