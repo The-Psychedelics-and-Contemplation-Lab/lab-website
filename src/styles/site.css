@@ -292,6 +292,15 @@
 .pub-nav { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
 
 /* --- Publications ----------------------------------------------------------- */
+/* A small checkbox, right of the year list, toggles between "Lab publications" (only entries with a
+   lab director as an author) and every publication by current, active lab members. It sits flush
+   with the right edge of the centred reading column, off to the side of the list rather than over it.
+   Its JS lives in src/pages/publications/index.astro and toggles each .pub's `hidden` attribute off
+   its data-core attribute. */
+.pub-filter { display: flex; justify-content: flex-end; max-width: var(--measure); margin: 0 auto var(--s-6); }
+.pub-filter__check { display: inline-flex; align-items: center; gap: var(--s-2); font-family: var(--font-sans); font-size: var(--fs-ui); color: var(--ink-muted); cursor: pointer; user-select: none; }
+.pub-filter__check:hover { color: var(--ink); }
+.pub-filter__check input[type="checkbox"] { width: 1.05em; height: 1.05em; margin: 0; accent-color: var(--brand-purple); cursor: pointer; }
 .pub { font-size: var(--fs-ui); font-family: var(--font-sans); line-height: 1.55; }
 .pub__authors { color: var(--ink); }
 .pub__year { color: var(--ink-muted); }
@@ -303,6 +312,10 @@
 .year-group + .year-group { margin-top: var(--s-12); }
 .year-group__year { font-family: var(--font-serif); font-size: var(--fs-h2); font-weight: 600; line-height: 1; color: var(--brand-purple); }
 .year-group .pub-list { max-width: none; }
+/* Without this, the .year-group[hidden] set by the filter script wouldn't hide anything: an author
+   rule's `display: grid` above beats the UA stylesheet's own `[hidden] { display: none }` in the
+   cascade (same issue already solved for .tab-panel[hidden] above). */
+.year-group[hidden] { display: none; }
 @media (min-width: 60em) {
   /* year | centred reading column | empty balance column, so the references sit centred on the screen */
   .year-group { grid-template-columns: 7rem minmax(0, var(--measure)) 7rem; justify-content: center; }
@@ -469,7 +482,7 @@ body.contemplative .band-header .marble__veil { background: var(--tint-contempla
 
 /* --- Print ----------------------------------------------------------------------- */
 @media print {
-  .cta, .playlists, .tab-row, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
+  .cta, .playlists, .tab-row, .pub-filter, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
   .marble, .person, .band-header { background: none !important; color: var(--ink) !important; }
   .marble h1, .marble p, .person h3, .person p, .person .prose, .band-header .lead { color: var(--ink) !important; }
   .person__bio[open] > summary { display: none; }
