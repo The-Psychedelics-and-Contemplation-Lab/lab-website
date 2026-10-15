@@ -7,7 +7,7 @@ import Marble from '../components/Marble.astro';
 import PublicationItem from '../components/PublicationItem.astro';
 import '../styles/site.css';
 
-const latest = (await getCollection('publications')).map((e) => e.data).sort((a, b) => b.year - a.year || a.order - b.order).slice(0, 5);
+const latest = (await getCollection('publications')).map((e) => e.data).filter((p) => p.core).sort((a, b) => b.year - a.year || a.order - b.order).slice(0, 5);
 
 /** Project cards (hover-reveal: the text appears on hover, the picture zooms slowly). Each card shows
  *  a photograph of its own project. */

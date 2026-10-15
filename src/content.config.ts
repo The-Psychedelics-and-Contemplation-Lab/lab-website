@@ -52,6 +52,8 @@ const publications = defineCollection({
     url: z.string().optional(),          // used when there is no DOI
     pdf: z.string().optional(),          // "/uploads/…pdf"
     note: z.string().optional(),         // e.g. "Advance online publication"
+    core: z.boolean().default(false),    // has a lab director (Greenway or Lifshitz) as an author — drives the
+                                          // publications page's default view vs. its "show all" filter
   }),
 });
 

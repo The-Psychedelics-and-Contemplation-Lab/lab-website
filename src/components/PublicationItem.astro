@@ -1,15 +1,19 @@
 ---
-/** One reference, APA-like, with DOI link and ⤓ PDF link when a file is referenced. */
+/** One reference, APA-like, with DOI link and ⤓ PDF link when a file is referenced.
+ *  `data-core` marks whether a lab director (Greenway or Lifshitz) is an author — the publications
+ *  page's "show all" filter toggles visibility off this attribute. Defaults to shown (true) when a
+ *  caller (e.g. the homepage) doesn't pass `core` at all, so nothing regresses where it isn't used. */
 import { u } from '../lib/url';
 export interface Props {
-  pub: { authors: string; year: number; title: string; journal: string; volume?: string; issue?: string; pages?: string; doi?: string; url?: string; pdf?: string; note?: string };
+  pub: { authors: string; year: number; title: string; journal: string; volume?: string; issue?: string; pages?: string; doi?: string; url?: string; pdf?: string; note?: string; core?: boolean };
   as?: 'li' | 'div';
 }
 const { pub, as: Tag = 'li' } = Astro.props;
 const href = pub.doi ? `https://doi.org/${pub.doi}` : pub.url;
 const where = [pub.volume ? `${pub.volume}${pub.issue ? `(${pub.issue})` : ''}` : '', pub.pages ?? ''].filter(Boolean).join(', ');
+const core = pub.core ?? true;
 ---
-<Tag class="pub">
+<Tag class="pub" data-core={core ? 'true' : 'false'}>
   <span class="pub__authors">{pub.authors}</span> <span class="pub__year">({pub.year}).</span>
   <span class="pub__title">{pub.title}.</span>
   <span class="pub__journal"><i>{pub.journal}</i>{pub.note ? `. ${pub.note}` : where ? `, ${where}` : ''}.</span>
