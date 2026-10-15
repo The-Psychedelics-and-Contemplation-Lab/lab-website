@@ -297,10 +297,32 @@
    with the right edge of the centred reading column, off to the side of the list rather than over it.
    Its JS lives in src/pages/publications/index.astro and toggles each .pub's `hidden` attribute off
    its data-core attribute. */
-.pub-filter { display: flex; justify-content: flex-end; max-width: var(--measure); margin: 0 auto var(--s-6); }
+.pub-filter { display: flex; justify-content: flex-end; max-width: var(--measure); margin: 0 auto var(--s-4); }
 .pub-filter__check { display: inline-flex; align-items: center; gap: var(--s-2); font-family: var(--font-sans); font-size: var(--fs-ui); color: var(--ink-muted); cursor: pointer; user-select: none; }
 .pub-filter__check:hover { color: var(--ink); }
 .pub-filter__check input[type="checkbox"] { width: 1.05em; height: 1.05em; margin: 0; accent-color: var(--brand-purple); cursor: pointer; }
+/* "Filter by topic" chip row: unlike the year/theme tab-row pills above (dark background, the
+   selected one turns white — a scheme a user found backwards), a selected chip here fills solid
+   purple, so "selected" reads as "turned on" rather than the reverse. Several chips can be active at
+   once — they're OR'd together in the page's script against each .pub's data-tags attribute — so this
+   is a plain toggle-button group, not a role="tablist" (only one tab can ever be current). */
+.pub-topics { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-2) var(--s-4); max-width: var(--measure); margin: 0 auto var(--s-10); }
+.pub-topics__label { flex: 0 0 100%; margin: 0; font-family: var(--font-sans); font-size: var(--fs-eyebrow); font-weight: 600; letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--ink-muted); }
+.pub-topics__list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.tag-chip {
+  display: inline-block; padding: 6px 14px; border-radius: var(--radius-chip);
+  background: transparent; color: var(--ink-muted); border: 1px solid var(--rule);
+  font-family: var(--font-sans); font-size: 0.8125rem; font-weight: 500; line-height: 1.2;
+  cursor: pointer; appearance: none; -webkit-appearance: none; margin: 0;
+}
+.tag-chip:hover { border-color: var(--brand-purple); color: var(--brand-purple); }
+.tag-chip[aria-pressed="true"] { background: var(--brand-purple); color: #fff; border-color: var(--brand-purple); }
+.tag-chip[aria-pressed="true"]:hover { background: var(--brand-purple-deep); border-color: var(--brand-purple-deep); }
+/* Only shown once a chip is active (.has-active, set in JS), so there's nothing to click when every
+   topic is already showing. */
+.pub-topics__clear { display: none; padding: 0; border: 0; background: none; cursor: pointer; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--ink-muted); text-decoration: underline; text-underline-offset: 0.2em; }
+.pub-topics__clear:hover { color: var(--ink); }
+.pub-topics.has-active .pub-topics__clear { display: inline-block; }
 .pub { font-size: var(--fs-ui); font-family: var(--font-sans); line-height: 1.55; }
 .pub__authors { color: var(--ink); }
 .pub__year { color: var(--ink-muted); }
@@ -487,7 +509,7 @@ body.contemplative .band-header .marble__veil { background: var(--tint-contempla
 
 /* --- Print ----------------------------------------------------------------------- */
 @media print {
-  .cta, .playlists, .tab-row, .pub-filter, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
+  .cta, .playlists, .tab-row, .pub-filter, .pub-topics, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
   .marble, .person, .band-header { background: none !important; color: var(--ink) !important; }
   .person--alumni { opacity: 1 !important; }
   .marble h1, .marble p, .person h3, .person p, .person .prose, .band-header .lead { color: var(--ink) !important; }

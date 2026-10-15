@@ -54,6 +54,9 @@ const publications = defineCollection({
     note: z.string().optional(),         // e.g. "Advance online publication"
     core: z.boolean().default(false),    // has a lab director (Greenway or Lifshitz) as an author — drives the
                                           // publications page's default view vs. its "show all" filter
+    tags: z.array(z.string()).default([]),   // topic slugs (see TOPIC_TAGS in src/pages/publications/index.astro)
+                                              // — drives the page's "Filter by topic" chips. A pub can have
+                                              // several, or none (a handful of pre-lab/unrelated entries do).
   }),
 });
 
