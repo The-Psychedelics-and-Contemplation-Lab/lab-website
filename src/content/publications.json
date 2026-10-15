@@ -9,7 +9,8 @@
     "core": false,
     "volume": "183",
     "pages": "106565",
-    "doi": "10.1016/j.neubiorev.2026.106565"
+    "doi": "10.1016/j.neubiorev.2026.106565",
+    "tags": ["nature", "neuroscience"]
   },
   {
     "id": "bellemare-pepin-2026-bio-adaptive-mythologies-envisioning",
@@ -22,7 +23,8 @@
     "volume": "12",
     "issue": "1",
     "pages": "36–61",
-    "doi": "10.24193/mjcst.2026.20.03"
+    "doi": "10.24193/mjcst.2026.20.03",
+    "tags": ["nature"]
   },
   {
     "id": "bellemare-pepin-2026-melodies-forest-nature-improvisational",
@@ -35,7 +37,8 @@
     "volume": "8",
     "issue": "4",
     "pages": "871–885",
-    "doi": "10.1002/pan3.70249"
+    "doi": "10.1002/pan3.70249",
+    "tags": ["nature"]
   },
   {
     "id": "bellemare-pepin-2026-latent-ecologies-mind-laying",
@@ -48,7 +51,8 @@
     "volume": "59",
     "issue": "1",
     "pages": "72–79",
-    "doi": "10.1162/leon.a.2589"
+    "doi": "10.1162/leon.a.2589",
+    "tags": ["nature", "consciousness"]
   },
   {
     "id": "bellingrath-2026-neuronal-criticality-framework-computational",
@@ -58,7 +62,8 @@
     "title": "Neuronal criticality as a framework for the computational neurophenomenology of advanced meditation",
     "journal": "PsyArXiv",
     "core": true,
-    "doi": "10.31234/osf.io/z4sbv_v1"
+    "doi": "10.31234/osf.io/z4sbv_v1",
+    "tags": ["consciousness", "meditation", "neuroscience"]
   },
   {
     "id": "chen-2026-liver-transplantation-outcomes-patients",
@@ -68,7 +73,8 @@
     "title": "Liver Transplantation Outcomes in Patients With and Without Alcohol Use Disorder Diagnosis: Evidence From a Nationwide Cohort Study",
     "journal": "Journal of Addiction Medicine",
     "core": true,
-    "doi": "10.1097/adm.0000000000001777"
+    "doi": "10.1097/adm.0000000000001777",
+    "tags": ["addiction", "clinical"]
   },
   {
     "id": "estarellas-2026-face-validity-contextual-reflexivity",
@@ -80,7 +86,8 @@
     "core": false,
     "volume": "21",
     "issue": "2",
-    "pages": "152–153"
+    "pages": "152–153",
+    "tags": ["consciousness"]
   },
   {
     "id": "graner-2026-regulating-negative-autobiographical-memories",
@@ -93,7 +100,8 @@
     "volume": "38",
     "issue": "2",
     "pages": "299–318",
-    "doi": "10.1162/jocn.a.88"
+    "doi": "10.1162/jocn.a.88",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "langlitz-2026-context-contraindication-ethical-challenges",
@@ -105,7 +113,8 @@
     "core": true,
     "volume": "19",
     "pages": "34",
-    "doi": "10.1007/s12152-026-09663-3"
+    "doi": "10.1007/s12152-026-09663-3",
+    "tags": ["psychedelics", "policy", "context"]
   },
   {
     "id": "mago-2026-computational-spirits-neuroscientific-account",
@@ -118,7 +127,8 @@
     "volume": "2026",
     "issue": "1",
     "pages": "niaf069",
-    "doi": "10.1093/nc/niaf069"
+    "doi": "10.1093/nc/niaf069",
+    "tags": ["psychedelics", "consciousness", "neuroscience"]
   },
   {
     "id": "mago-2026-complex-brain-hypothesis-resolving",
@@ -128,7 +138,8 @@
     "title": "The Complex Brain Hypothesis: Resolving the Entropy-Content Conundrum in Minimal Phenomenal Experience",
     "journal": "arXiv",
     "core": true,
-    "doi": "10.48550/arXiv.2605.16146"
+    "doi": "10.48550/arXiv.2605.16146",
+    "tags": ["consciousness"]
   },
   {
     "id": "mcanulty-2026-montreal-model-ketamine-therapy",
@@ -141,7 +152,8 @@
     "volume": "16",
     "issue": "3",
     "pages": "e116969",
-    "doi": "10.1136/bmjopen-2026-116969"
+    "doi": "10.1136/bmjopen-2026-116969",
+    "tags": ["ketamine", "addiction", "mood", "clinical"]
   },
   {
     "id": "montagne-2026-what-works-transdiagnostic-adult",
@@ -152,7 +164,8 @@
     "journal": "Journal of Mental Health",
     "core": true,
     "pages": "1–21",
-    "doi": "10.1080/09638237.2026.2732877"
+    "doi": "10.1080/09638237.2026.2732877",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "nazon-2026-missed-opportunity-retrospective-cohort",
@@ -164,7 +177,8 @@
     "core": true,
     "volume": "61",
     "issue": "2",
-    "doi": "10.1093/alcalc/agag008"
+    "doi": "10.1093/alcalc/agag008",
+    "tags": ["addiction", "clinical"]
   },
   {
     "id": "olbrich-2026-deep-learning-electroencephalogram-eeg",
@@ -176,7 +190,8 @@
     "core": false,
     "volume": "6",
     "issue": "1",
-    "doi": "10.1038/s43856-026-01394-z"
+    "doi": "10.1038/s43856-026-01394-z",
+    "tags": ["neuroscience", "methods", "mood"]
   },
   {
     "id": "ostrand-2026-defining-psychedelic",
@@ -186,7 +201,8 @@
     "title": "Defining 'psychedelic'",
     "journal": "Journal of Psychopharmacology",
     "core": true,
-    "doi": "10.1177/02698811261464986"
+    "doi": "10.1177/02698811261464986",
+    "tags": ["psychedelics"]
   },
   {
     "id": "reggente-2026-mnemonics-optimization-leveraging-what",
@@ -198,7 +214,8 @@
     "core": true,
     "volume": "56",
     "pages": "236–238",
-    "doi": "10.1016/j.plrev.2026.01.008"
+    "doi": "10.1016/j.plrev.2026.01.008",
+    "tags": ["consciousness", "neuroscience"]
   },
   {
     "id": "adel-2025-sharing-always-caring-entropy",
@@ -210,7 +227,8 @@
     "core": true,
     "volume": "52",
     "pages": "250–252",
-    "doi": "10.1016/j.plrev.2025.01.007"
+    "doi": "10.1016/j.plrev.2025.01.007",
+    "tags": ["consciousness"]
   },
   {
     "id": "adel-2025-systematic-review-hyperscanning-clinical",
@@ -222,7 +240,8 @@
     "core": true,
     "volume": "176",
     "pages": "106248",
-    "doi": "10.1016/j.neubiorev.2025.106248"
+    "doi": "10.1016/j.neubiorev.2025.106248",
+    "tags": ["neuroscience", "clinical"]
   },
   {
     "id": "agnorelli-2025-detecting-neuroplastic-effects-induced",
@@ -232,7 +251,8 @@
     "title": "Detecting neuroplastic effects induced by ketamine in healthy human subjects: a multimodal approach",
     "journal": "openRxiv",
     "core": false,
-    "doi": "10.1101/2025.05.01.651686"
+    "doi": "10.1101/2025.05.01.651686",
+    "tags": ["ketamine", "neuroscience"]
   },
   {
     "id": "becattini-2025-learning-attenuate-myself-predictive",
@@ -242,7 +262,8 @@
     "title": "Learning to Attenuate Myself: A Predictive Processing Account of Body-Scan Meditation and the Dissolution of Bodily Boundaries",
     "journal": "Center for Open Science",
     "core": true,
-    "doi": "10.31234/osf.io/gcjth_v2"
+    "doi": "10.31234/osf.io/gcjth_v2",
+    "tags": ["meditation", "consciousness"]
   },
   {
     "id": "chandia-jorquera-2025-distilling-neurophenomenological-signatures-pure",
@@ -252,7 +273,8 @@
     "title": "Distilling the neurophenomenological signatures of pure awareness during Transcendental Meditation",
     "journal": "openRxiv",
     "core": false,
-    "doi": "10.1101/2025.09.25.678494"
+    "doi": "10.1101/2025.09.25.678494",
+    "tags": ["meditation", "consciousness", "neuroscience"]
   },
   {
     "id": "colli-2025-implementation-cardiopsychiatry-clinic-cardiovascular",
@@ -264,7 +286,8 @@
     "core": true,
     "volume": "48",
     "issue": "1",
-    "doi": "10.1097/jhq.0000000000000500"
+    "doi": "10.1097/jhq.0000000000000500",
+    "tags": ["clinical"]
   },
   {
     "id": "de-la-salle-2025-acute-subanesthetic-ketamine-induced",
@@ -277,7 +300,8 @@
     "volume": "39",
     "issue": "6",
     "pages": "577–592",
-    "doi": "10.1177/02698811251319456"
+    "doi": "10.1177/02698811251319456",
+    "tags": ["ketamine", "neuroscience"]
   },
   {
     "id": "delli-colli-2025-cross-disciplinary-cardiovascular-psychiatric",
@@ -290,7 +314,8 @@
     "volume": "61",
     "issue": "6",
     "pages": "699–717",
-    "doi": "10.1177/00912174251348996"
+    "doi": "10.1177/00912174251348996",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "diehl-2025-psychedelic-assisted-psychotherapy-process",
@@ -300,7 +325,8 @@
     "title": "Psychedelic-Assisted Psychotherapy Using a Process Based Therapy Framework",
     "journal": "Center for Open Science",
     "core": false,
-    "doi": "10.31234/osf.io/2rpb5_v1"
+    "doi": "10.31234/osf.io/2rpb5_v1",
+    "tags": ["psychedelics", "clinical"]
   },
   {
     "id": "diep-2025-ketamine-chameleon-history-pharmacology",
@@ -313,7 +339,8 @@
     "volume": "18",
     "issue": "3",
     "pages": "109–129",
-    "doi": "10.1080/17512433.2025.2459377"
+    "doi": "10.1080/17512433.2025.2459377",
+    "tags": ["ketamine"]
   },
   {
     "id": "elkrief-2025-heart-transplant-outcomes-patients",
@@ -326,7 +353,8 @@
     "volume": "12",
     "issue": "1",
     "pages": "124–133",
-    "doi": "10.1093/ehjqcco/qcaf117"
+    "doi": "10.1093/ehjqcco/qcaf117",
+    "tags": ["addiction", "clinical"]
   },
   {
     "id": "estarellas-2025-taxonomy-neuroscientific-strategies-based",
@@ -339,7 +367,8 @@
     "volume": "61",
     "issue": "3",
     "pages": "e16676",
-    "doi": "10.1111/ejn.16676"
+    "doi": "10.1111/ejn.16676",
+    "tags": ["neuroscience", "methods"]
   },
   {
     "id": "fisher-2025-holy-spirit-holy-psyche",
@@ -352,7 +381,8 @@
     "volume": "16",
     "issue": "11",
     "pages": "1436",
-    "doi": "10.3390/rel16111436"
+    "doi": "10.3390/rel16111436",
+    "tags": ["meditation", "consciousness"]
   },
   {
     "id": "garel-2025-promise-challenges-psychedelic-assisted",
@@ -365,7 +395,8 @@
     "volume": "3",
     "issue": "7",
     "pages": "756–759",
-    "doi": "10.1038/s44220-025-00446-y"
+    "doi": "10.1038/s44220-025-00446-y",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "garel-2025-increased-risks-major-cardiac",
@@ -378,7 +409,8 @@
     "volume": "19",
     "issue": "5",
     "pages": "599–604",
-    "doi": "10.1097/adm.0000000000001461"
+    "doi": "10.1097/adm.0000000000001461",
+    "tags": ["addiction", "clinical"]
   },
   {
     "id": "greenway-2025-music-subanesthetic-infusions-ketamine",
@@ -389,7 +421,8 @@
     "journal": "The British Journal of Psychiatry",
     "core": true,
     "pages": "1–9",
-    "doi": "10.1192/bjp.2025.102"
+    "doi": "10.1192/bjp.2025.102",
+    "tags": ["ketamine", "context", "psychedelics"]
   },
   {
     "id": "laposa-2025-ontario-healthcare-workers-who",
@@ -402,7 +435,8 @@
     "volume": "45",
     "issue": "2",
     "pages": "98–107",
-    "doi": "10.24095/hpcdp.45.2.04"
+    "doi": "10.24095/hpcdp.45.2.04",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "laposa-2025-acc-s-direct-des",
@@ -415,7 +449,8 @@
     "volume": "45",
     "issue": "2",
     "pages": "109–119",
-    "doi": "10.24095/hpcdp.45.2.04f"
+    "doi": "10.24095/hpcdp.45.2.04f",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "mago-2025-meditative-absorption-shifts-brain",
@@ -425,7 +460,8 @@
     "title": "Meditative absorption shifts brain dynamics toward criticality",
     "journal": "PsyArXiv",
     "core": true,
-    "doi": "10.31234/osf.io/2hjq6_v1"
+    "doi": "10.31234/osf.io/2hjq6_v1",
+    "tags": ["meditation", "consciousness", "neuroscience"]
   },
   {
     "id": "nath-2025-heartbeat-evoked-potentials-neural",
@@ -435,7 +471,8 @@
     "title": "Heartbeat-Evoked Potentials as a Neural Marker of Meditative Depth",
     "journal": "Center for Open Science",
     "core": true,
-    "doi": "10.31219/osf.io/hpcgd_v2"
+    "doi": "10.31219/osf.io/hpcgd_v2",
+    "tags": ["meditation", "neuroscience"]
   },
   {
     "id": "nutt-2025-long-strange-trip-ketamine",
@@ -448,7 +485,8 @@
     "volume": "39",
     "issue": "10",
     "pages": "1039–1044",
-    "doi": "10.1177/02698811251379393"
+    "doi": "10.1177/02698811251379393",
+    "tags": ["ketamine"]
   },
   {
     "id": "pronovost-morgan-2025-international-delphi-consensus-reporting",
@@ -460,7 +498,8 @@
     "core": true,
     "volume": "31",
     "pages": "2186–2195",
-    "doi": "10.1038/s41591-025-03685-9"
+    "doi": "10.1038/s41591-025-03685-9",
+    "tags": ["psychedelics", "context", "policy"]
   },
   {
     "id": "signorelli-2025-transdisciplinary-consciousness-science",
@@ -470,7 +509,8 @@
     "title": "Transdisciplinary Consciousness Science",
     "journal": "Center for Open Science",
     "core": false,
-    "doi": "10.31219/osf.io/27vfk_v1"
+    "doi": "10.31219/osf.io/27vfk_v1",
+    "tags": ["consciousness"]
   },
   {
     "id": "brahinsky-2024-spiral-attention-arousal-release",
@@ -483,7 +523,8 @@
     "volume": "36",
     "issue": "12",
     "pages": "e24189",
-    "doi": "10.1002/ajhb.24189"
+    "doi": "10.1002/ajhb.24189",
+    "tags": ["meditation", "consciousness"]
   },
   {
     "id": "brahinsky-2024-steps-neurophenomenology-speaking-tongues",
@@ -493,7 +534,8 @@
     "title": "Steps Toward a Neurophenomenology of Speaking in Tongues",
     "journal": "The Oxford Handbook of Psychedelic, Religious, Spiritual, and Mystical Experiences",
     "core": true,
-    "doi": "10.1093/oxfordhb/9780192844064.013.18"
+    "doi": "10.1093/oxfordhb/9780192844064.013.18",
+    "tags": ["consciousness"]
   },
   {
     "id": "cernasov-2024-parallel-arm-randomized-trial",
@@ -505,7 +547,8 @@
     "core": false,
     "volume": "182",
     "pages": "104620",
-    "doi": "10.1016/j.brat.2024.104620"
+    "doi": "10.1016/j.brat.2024.104620",
+    "tags": ["mood", "meditation", "clinical"]
   },
   {
     "id": "de-la-salle-2024-longitudinal-experiences-canadians-receiving",
@@ -518,7 +561,8 @@
     "volume": "14",
     "issue": "1",
     "pages": "Article 16524",
-    "doi": "10.1038/s41598-024-66817-0"
+    "doi": "10.1038/s41598-024-66817-0",
+    "tags": ["psychedelics", "policy", "clinical"]
   },
   {
     "id": "de-la-salle-2024-auditory-p50-sensory-gating",
@@ -530,7 +574,8 @@
     "core": false,
     "volume": "341",
     "pages": "111813",
-    "doi": "10.1016/j.pscychresns.2024.111813"
+    "doi": "10.1016/j.pscychresns.2024.111813",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "de-la-salle-2024-influence-gabaa-gabab-receptor",
@@ -543,7 +588,8 @@
     "volume": "38",
     "issue": "6",
     "pages": "532–540",
-    "doi": "10.1177/02698811241246854"
+    "doi": "10.1177/02698811241246854",
+    "tags": ["neuroscience"]
   },
   {
     "id": "diehl-2024-exploring-optimal-factor-structure",
@@ -556,7 +602,8 @@
     "volume": "19",
     "issue": "12",
     "pages": "e0311733",
-    "doi": "10.1371/journal.pone.0311733"
+    "doi": "10.1371/journal.pone.0311733",
+    "tags": ["methods"]
   },
   {
     "id": "erritzoe-2024-effect-psilocybin-versus-escitalopram",
@@ -568,7 +615,8 @@
     "core": true,
     "volume": "76",
     "pages": "102799",
-    "doi": "10.1016/j.eclinm.2024.102799"
+    "doi": "10.1016/j.eclinm.2024.102799",
+    "tags": ["psychedelics", "mood", "clinical"]
   },
   {
     "id": "estarellas-2024-multimodal-subtypes-identified-alzheimer",
@@ -580,7 +628,8 @@
     "core": false,
     "volume": "6",
     "issue": "4",
-    "doi": "10.1093/braincomms/fcae219"
+    "doi": "10.1093/braincomms/fcae219",
+    "tags": ["aging", "neuroscience", "methods"]
   },
   {
     "id": "estarellas-garcia-2024-navigating-uncertainty-tripartite-creative",
@@ -590,7 +639,8 @@
     "title": "Navigating Uncertainty: A Tripartite Creative Knowledge Exchange Among Artists, Researchers, Carers and People with Lived Experience of Dementia, A co-Created Space for Living Uncertainty",
     "journal": "MDPI AG",
     "core": false,
-    "doi": "10.20944/preprints202409.0347.v1"
+    "doi": "10.20944/preprints202409.0347.v1",
+    "tags": ["nature"]
   },
   {
     "id": "gloeckler-2024-preferences-attitudes-music-nonclinical",
@@ -603,7 +653,8 @@
     "volume": "2",
     "issue": "4",
     "pages": "201–209",
-    "doi": "10.1089/psymed.2024.0003"
+    "doi": "10.1089/psymed.2024.0003",
+    "tags": ["psychedelics", "context"]
   },
   {
     "id": "gloeckler-2024-music-non-music-approaches",
@@ -616,7 +667,8 @@
     "volume": "8",
     "issue": "1",
     "pages": "45–56",
-    "doi": "10.1556/2054.2024.00421"
+    "doi": "10.1556/2054.2024.00421",
+    "tags": ["psychedelics", "context"]
   },
   {
     "id": "greenway-2024-music-intervention-improve-hemodynamic",
@@ -629,7 +681,8 @@
     "volume": "7",
     "issue": "2",
     "pages": "e2354719",
-    "doi": "10.1001/jamanetworkopen.2023.54719"
+    "doi": "10.1001/jamanetworkopen.2023.54719",
+    "tags": ["ketamine", "context", "mood"]
   },
   {
     "id": "guay-2024-rapid-improvement-post-partum",
@@ -642,7 +695,8 @@
     "volume": "44",
     "issue": "2",
     "pages": "196–198",
-    "doi": "10.1097/JCP.0000000000001780"
+    "doi": "10.1097/JCP.0000000000001780",
+    "tags": ["ketamine", "mood"]
   },
   {
     "id": "jaworska-2024-electrocortical-profiles-relation-childhood",
@@ -655,7 +709,8 @@
     "volume": "56",
     "issue": "3",
     "pages": "230–238",
-    "doi": "10.1177/15500594241294021"
+    "doi": "10.1177/15500594241294021",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "lieberman-2024-neurophysiological-mechanisms-focused-attention",
@@ -665,7 +720,8 @@
     "title": "Neurophysiological Mechanisms of Focused Attention Meditation: A Scoping Systematic Review",
     "journal": "Center for Open Science",
     "core": false,
-    "doi": "10.31234/osf.io/rg7w6"
+    "doi": "10.31234/osf.io/rg7w6",
+    "tags": ["meditation", "neuroscience"]
   },
   {
     "id": "peill-2024-psychedelics-inner-healer-myth",
@@ -678,7 +734,8 @@
     "volume": "38",
     "issue": "5",
     "pages": "417–424",
-    "doi": "10.1177/02698811241239206"
+    "doi": "10.1177/02698811241239206",
+    "tags": ["psychedelics"]
   },
   {
     "id": "potash-2024-integrated-phenomenology-brain-connectivity",
@@ -688,7 +745,8 @@
     "title": "Integrated phenomenology and brain connectivity demonstrate changes in nonlinear processing in jhana advanced meditation",
     "journal": "openRxiv",
     "core": false,
-    "doi": "10.1101/2024.11.29.626048"
+    "doi": "10.1101/2024.11.29.626048",
+    "tags": ["meditation", "consciousness", "neuroscience"]
   },
   {
     "id": "de-la-salle-2023-transcranial-alternating-current-stimulation",
@@ -701,7 +759,8 @@
     "volume": "55",
     "issue": "3",
     "pages": "329–339",
-    "doi": "10.1177/15500594231179679"
+    "doi": "10.1177/15500594231179679",
+    "tags": ["neuroscience"]
   },
   {
     "id": "estarellas-2023-neural-markers-reduced-arousal",
@@ -711,7 +770,8 @@
     "title": "Neural markers of reduced arousal and consciousness in Mild Cognitive Impairment",
     "journal": "openRxiv",
     "core": false,
-    "doi": "10.1101/2023.11.06.565886"
+    "doi": "10.1101/2023.11.06.565886",
+    "tags": ["aging", "neuroscience", "consciousness"]
   },
   {
     "id": "estarellas-2023-multimodal-modelling-early-neurodegeneration",
@@ -720,7 +780,8 @@
     "authors": "Estarellas, M.",
     "title": "Multimodal modelling of early neurodegeneration and Alzheimer's disease progression",
     "journal": "PhD thesis, UCL (University College London)",
-    "core": false
+    "core": false,
+    "tags": ["aging", "neuroscience", "methods"]
   },
   {
     "id": "garel-2023-imprinting-expanding-extra-pharmacological",
@@ -732,7 +793,8 @@
     "core": true,
     "volume": "17",
     "pages": "1200393",
-    "doi": "10.3389/fnhum.2023.1200393"
+    "doi": "10.3389/fnhum.2023.1200393",
+    "tags": ["psychedelics", "neuroscience", "context"]
   },
   {
     "id": "garel-2023-montreal-model-integrative-biomedical",
@@ -744,7 +806,8 @@
     "core": true,
     "volume": "14",
     "pages": "1268832",
-    "doi": "10.3389/fpsyt.2023.1268832"
+    "doi": "10.3389/fpsyt.2023.1268832",
+    "tags": ["ketamine", "psychedelics", "mood", "clinical"]
   },
   {
     "id": "garel-2023-intravenous-ketamine-benzodiazepine-deprescription",
@@ -757,7 +820,8 @@
     "volume": "48",
     "issue": "12",
     "pages": "1769–1777",
-    "doi": "10.1038/s41386-023-01689-y"
+    "doi": "10.1038/s41386-023-01689-y",
+    "tags": ["ketamine", "addiction", "clinical"]
   },
   {
     "id": "garel-2023-ketamine-depression-potential-role",
@@ -770,7 +834,8 @@
     "volume": "38",
     "issue": "1",
     "pages": "352–355",
-    "doi": "10.1097/YIC.0000000000000462"
+    "doi": "10.1097/YIC.0000000000000462",
+    "tags": ["ketamine", "mood", "policy"]
   },
   {
     "id": "girn-2023-trait-absorption-not-reliably",
@@ -783,7 +848,8 @@
     "volume": "3",
     "issue": "2",
     "pages": "100171",
-    "doi": "10.1016/j.ynirp.2023.100171"
+    "doi": "10.1016/j.ynirp.2023.100171",
+    "tags": ["consciousness", "neuroscience"]
   },
   {
     "id": "greenway-2023-context-critical-psychoactive-drug",
@@ -795,7 +861,8 @@
     "core": true,
     "volume": "37",
     "pages": "1065–1068",
-    "doi": "10.1007/s40263-023-01053-0"
+    "doi": "10.1007/s40263-023-01053-0",
+    "tags": ["context", "psychedelics"]
   },
   {
     "id": "khoury-2023-tri-process-model-interpersonal",
@@ -806,7 +873,8 @@
     "journal": "Frontiers in Psychology",
     "core": true,
     "volume": "14",
-    "doi": "10.3389/fpsyg.2023.1130959"
+    "doi": "10.3389/fpsyg.2023.1130959",
+    "tags": ["meditation"]
   },
   {
     "id": "la-torre-2023-expert-opinion-psychedelic-assisted",
@@ -819,7 +887,8 @@
     "volume": "22",
     "issue": "2",
     "pages": "913–937",
-    "doi": "10.1007/s11469-023-01149-0"
+    "doi": "10.1007/s11469-023-01149-0",
+    "tags": ["psychedelics", "mood", "clinical"]
   },
   {
     "id": "lake-2023-canadian-psychedelic-survey-characteristics",
@@ -829,7 +898,8 @@
     "title": "The Canadian Psychedelic Survey: Characteristics, Patterns of Use, and Access in a Large Sample of People Who Use Psychedelic Drugs",
     "journal": "Psychedelic Medicine",
     "core": false,
-    "doi": "10.1089/psymed.2023.0002"
+    "doi": "10.1089/psymed.2023.0002",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "lifshitz-2023-effects-virtual-reality-guided",
@@ -840,7 +910,8 @@
     "journal": "Frontiers in Psychology",
     "core": true,
     "volume": "14",
-    "pages": "1083219"
+    "pages": "1083219",
+    "tags": ["meditation", "aging", "clinical"]
   },
   {
     "id": "luhrmann-2023-learning-discern-voices-gods",
@@ -853,7 +924,8 @@
     "volume": "49",
     "issue": "Supplement_1",
     "pages": "S3-S12",
-    "doi": "10.1093/schbul/sbac005"
+    "doi": "10.1093/schbul/sbac005",
+    "tags": ["consciousness"]
   },
   {
     "id": "manson-2023-indigenous-voices-psychedelic-therapy",
@@ -866,7 +938,8 @@
     "volume": "5",
     "issue": "23",
     "pages": "539–548",
-    "doi": "10.1080/02791072.2023.2258120"
+    "doi": "10.1080/02791072.2023.2258120",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "pronovost-morgan-2023-harnessing-placebo-lessons-psychedelic",
@@ -879,7 +952,8 @@
     "volume": "37",
     "issue": "9",
     "pages": "866–875",
-    "doi": "10.1177/02698811231182602"
+    "doi": "10.1177/02698811231182602",
+    "tags": ["context", "psychedelics"]
   },
   {
     "id": "timmermann-2023-neurophenomenological-approach-non-ordinary",
@@ -892,7 +966,8 @@
     "volume": "27",
     "issue": "2",
     "pages": "139–159",
-    "doi": "10.1016/j.tics.2022.11.006"
+    "doi": "10.1016/j.tics.2022.11.006",
+    "tags": ["consciousness", "hypnosis", "meditation"]
   },
   {
     "id": "bein-2022-mindfulness-based-cognitive-therapy",
@@ -903,7 +978,8 @@
     "journal": "Frontiers in Aging Neuroscience",
     "core": true,
     "volume": "14",
-    "doi": "10.3389/fnagi.2022.976636"
+    "doi": "10.3389/fnagi.2022.976636",
+    "tags": ["meditation", "aging", "mood", "clinical"]
   },
   {
     "id": "damba-2022-psychotropic-drugs-adverse-kidney",
@@ -916,7 +992,8 @@
     "volume": "36",
     "issue": "10",
     "pages": "1049–1077",
-    "doi": "10.1007/s40263-022-00952-y"
+    "doi": "10.1007/s40263-022-00952-y",
+    "tags": ["clinical"]
   },
   {
     "id": "de-la-salle-2022-electrophysiological-correlates-predictors-antidepressant",
@@ -928,7 +1005,8 @@
     "core": false,
     "volume": "115",
     "pages": "110507",
-    "doi": "10.1016/j.pnpbp.2021.110507"
+    "doi": "10.1016/j.pnpbp.2021.110507",
+    "tags": ["ketamine", "neuroscience", "mood"]
   },
   {
     "id": "de-la-salle-2022-acute-enduring-effects-naturalistic",
@@ -941,7 +1019,8 @@
     "volume": "63",
     "issue": "4",
     "pages": "589",
-    "doi": "10.1037/cap0000338"
+    "doi": "10.1037/cap0000338",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "de-la-salle-2022-n-methyl-d-aspartate",
@@ -954,7 +1033,8 @@
     "volume": "239",
     "issue": "7",
     "pages": "2155–2169",
-    "doi": "10.1007/s00213-022-06090-z"
+    "doi": "10.1007/s00213-022-06090-z",
+    "tags": ["neuroscience"]
   },
   {
     "id": "de-la-salle-2022-synchronized-auditory-gamma-response",
@@ -967,7 +1047,8 @@
     "volume": "53",
     "issue": "6",
     "pages": "472–483",
-    "doi": "10.1177/15500594221098285"
+    "doi": "10.1177/15500594221098285",
+    "tags": ["neuroscience"]
   },
   {
     "id": "diehl-2022-emotion-regulation-difficulties-link",
@@ -980,7 +1061,8 @@
     "volume": "34",
     "issue": "4",
     "pages": "245–254",
-    "doi": "10.12788/acp.0086"
+    "doi": "10.12788/acp.0086",
+    "tags": ["mood"]
   },
   {
     "id": "garel-2022-efficacy-ketamine-intervention-decrease",
@@ -992,7 +1074,8 @@
     "core": true,
     "volume": "239",
     "pages": "109606",
-    "doi": "10.1016/j.drugalcdep.2022.109606"
+    "doi": "10.1016/j.drugalcdep.2022.109606",
+    "tags": ["ketamine", "addiction"]
   },
   {
     "id": "gobbi-2022-psychedelic-medicine-crossroads-advancing",
@@ -1005,7 +1088,8 @@
     "volume": "59",
     "issue": "5",
     "pages": "718–724",
-    "doi": "10.1177/13634615221119388"
+    "doi": "10.1177/13634615221119388",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "houle-2022-complex-interaction-lithium-kidney",
@@ -1018,7 +1102,8 @@
     "volume": "79",
     "issue": "9",
     "pages": "936",
-    "doi": "10.1001/jamapsychiatry.2022.1749"
+    "doi": "10.1001/jamapsychiatry.2022.1749",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "ibrahim-2022-kundalini-yoga-intervention-increases",
@@ -1031,7 +1116,8 @@
     "volume": "15",
     "issue": "2",
     "pages": "158–162",
-    "doi": "10.4103/ijoy.ijoy_25_22"
+    "doi": "10.4103/ijoy.ijoy_25_22",
+    "tags": ["meditation", "aging", "neuroscience"]
   },
   {
     "id": "levin-aspenson-2022-levels-anger-severity-psychiatric",
@@ -1044,7 +1130,8 @@
     "volume": "211",
     "issue": "1",
     "pages": "29–34",
-    "doi": "10.1097/nmd.0000000000001566"
+    "doi": "10.1097/nmd.0000000000001566",
+    "tags": ["methods", "mood"]
   },
   {
     "id": "michaels-2022-ethnoracial-inclusion-clinical-trials",
@@ -1057,7 +1144,8 @@
     "volume": "83",
     "issue": "4",
     "pages": "596–607",
-    "doi": "10.15288/jsad.2022.83.596"
+    "doi": "10.15288/jsad.2022.83.596",
+    "tags": ["ketamine", "policy", "mood"]
   },
   {
     "id": "ramstead-2022-generative-models-generative-passages",
@@ -1070,7 +1158,8 @@
     "volume": "13",
     "issue": "4",
     "pages": "829–857",
-    "doi": "10.1007/s13164-021-00604-y"
+    "doi": "10.1007/s13164-021-00604-y",
+    "tags": ["consciousness", "methods"]
   },
   {
     "id": "rosenblat-2022-canadian-network-mood-anxiety",
@@ -1082,7 +1171,8 @@
     "core": true,
     "volume": "68",
     "pages": "5–21",
-    "doi": "10.1177/07067437221111371"
+    "doi": "10.1177/07067437221111371",
+    "tags": ["psychedelics", "mood", "policy"]
   },
   {
     "id": "talbot-2022-paradigm-shift-trauma-treatment",
@@ -1095,7 +1185,8 @@
     "volume": "68",
     "issue": "4",
     "pages": "283–285",
-    "doi": "10.1177/07067437221142283"
+    "doi": "10.1177/07067437221142283",
+    "tags": ["mood"]
   },
   {
     "id": "de-la-salle-2021-n-methyl-aspartate-receptor",
@@ -1107,7 +1198,8 @@
     "core": false,
     "volume": "211",
     "pages": "173287",
-    "doi": "10.1016/j.pbb.2021.173287"
+    "doi": "10.1016/j.pbb.2021.173287",
+    "tags": ["neuroscience"]
   },
   {
     "id": "de-la-salle-2021-resting-state-functional-eeg",
@@ -1119,7 +1211,8 @@
     "core": false,
     "volume": "201",
     "pages": "173092",
-    "doi": "10.1016/j.pbb.2020.173092"
+    "doi": "10.1016/j.pbb.2020.173092",
+    "tags": ["neuroscience"]
   },
   {
     "id": "diehl-2021-exploring-optimal-factor-structure",
@@ -1132,7 +1225,8 @@
     "volume": "104",
     "issue": "6",
     "pages": "813–823",
-    "doi": "10.1080/00223891.2021.1998080"
+    "doi": "10.1080/00223891.2021.1998080",
+    "tags": ["methods", "meditation"]
   },
   {
     "id": "elbaz-2021-systematic-review-telemedicine-older",
@@ -1143,7 +1237,8 @@
     "journal": "Frontiers in Neurology",
     "core": true,
     "volume": "12",
-    "doi": "10.3389/fneur.2021.761965"
+    "doi": "10.3389/fneur.2021.761965",
+    "tags": ["aging", "clinical"]
   },
   {
     "id": "fogg-2021-ethnoracial-health-disparities-ethnopsychopharmacology",
@@ -1156,7 +1251,8 @@
     "volume": "29",
     "issue": "5",
     "pages": "539–554",
-    "doi": "10.1037/pha0000490"
+    "doi": "10.1037/pha0000490",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "garel-2021-antipsychotic-potential-cannabidiol-clinical",
@@ -1169,7 +1265,8 @@
     "volume": "46",
     "issue": "1",
     "pages": "E164–E165",
-    "doi": "10.1503/jpn.200114"
+    "doi": "10.1503/jpn.200114",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "garel-2021-serotonin-syndrome-ssris-not",
@@ -1182,7 +1279,8 @@
     "volume": "46",
     "issue": "3",
     "pages": "E369–E370",
-    "doi": "10.1503/jpn.210001"
+    "doi": "10.1503/jpn.210001",
+    "tags": ["clinical", "mood"]
   },
   {
     "id": "greenway-2021-adjunctive-music-improves-tolerability",
@@ -1195,7 +1293,8 @@
     "volume": "36",
     "issue": "4",
     "pages": "218–220",
-    "doi": "10.1097/YIC.0000000000000363"
+    "doi": "10.1097/YIC.0000000000000363",
+    "tags": ["ketamine", "context", "mood"]
   },
   {
     "id": "jahn-2021-racial-ethnic-differences-prevalence",
@@ -1208,7 +1307,8 @@
     "volume": "5",
     "issue": "2",
     "pages": "69–82",
-    "doi": "10.1556/2054.2021.00166"
+    "doi": "10.1556/2054.2021.00166",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "levin-aspenson-2021-clinically-useful-anger-outcome",
@@ -1219,7 +1319,8 @@
     "journal": "Journal of Psychiatric Research",
     "core": false,
     "volume": "141",
-    "pages": "160–166"
+    "pages": "160–166",
+    "tags": ["methods", "mood"]
   },
   {
     "id": "luhrmann-2021-sensing-presence-gods-spirits",
@@ -1231,7 +1332,8 @@
     "core": true,
     "volume": "118",
     "issue": "5",
-    "doi": "10.1073/pnas.2016649118"
+    "doi": "10.1073/pnas.2016649118",
+    "tags": ["consciousness"]
   },
   {
     "id": "luhrmann-2021-reply-terhune-jamieson-nature",
@@ -1243,7 +1345,8 @@
     "core": true,
     "volume": "118",
     "issue": "32",
-    "doi": "10.1073/pnas.2109120118"
+    "doi": "10.1073/pnas.2109120118",
+    "tags": ["consciousness"]
   },
   {
     "id": "michaud-2021-countertransference-suicidal-patients-systematic",
@@ -1256,7 +1359,8 @@
     "volume": "42",
     "issue": "1",
     "pages": "416–430",
-    "doi": "10.1007/s12144-021-01424-0"
+    "doi": "10.1007/s12144-021-01424-0",
+    "tags": ["mood", "clinical"]
   },
   {
     "id": "richard-devantoy-2021-low-moca-performances-correlate",
@@ -1268,7 +1372,8 @@
     "core": true,
     "volume": "301",
     "pages": "113957",
-    "doi": "10.1016/j.psychres.2021.113957"
+    "doi": "10.1016/j.psychres.2021.113957",
+    "tags": ["mood", "aging", "methods"]
   },
   {
     "id": "richard-devantoy-2021-psychological-pain-depression-it",
@@ -1281,7 +1386,8 @@
     "volume": "25",
     "issue": "2",
     "pages": "180–186",
-    "doi": "10.1080/13651501.2020.1836225"
+    "doi": "10.1080/13651501.2020.1836225",
+    "tags": ["mood"]
   },
   {
     "id": "strauss-2021-research-abuses-against-people",
@@ -1294,7 +1400,8 @@
     "volume": "48",
     "issue": "10",
     "pages": "728–737",
-    "doi": "10.1136/medethics-2021-107262"
+    "doi": "10.1136/medethics-2021-107262",
+    "tags": ["psychedelics", "policy"]
   },
   {
     "id": "thibault-lvesque-2021-drug-doesn-t-discriminate",
@@ -1307,7 +1414,8 @@
     "volume": "19",
     "issue": "1-2",
     "pages": "7",
-    "doi": "10.7202/1085167ar"
+    "doi": "10.7202/1085167ar",
+    "tags": ["addiction", "policy"]
   },
   {
     "id": "uyulan-2021-depression-diagnosis-modeling-advanced",
@@ -1320,7 +1428,8 @@
     "volume": "53",
     "issue": "1",
     "pages": "24–36",
-    "doi": "10.1177/15500594211018545"
+    "doi": "10.1177/15500594211018545",
+    "tags": ["mood", "neuroscience", "methods"]
   },
   {
     "id": "wolff-2021-it-s-timing-reduced",
@@ -1333,7 +1442,8 @@
     "volume": "32",
     "issue": "16",
     "pages": "3441–3456",
-    "doi": "10.1093/cercor/bhab425"
+    "doi": "10.1093/cercor/bhab425",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "de-la-salle-2020-prefrontal-midline-right-frontal",
@@ -1345,7 +1455,8 @@
     "core": false,
     "volume": "302",
     "pages": "111109",
-    "doi": "10.1016/j.pscychresns.2020.111109"
+    "doi": "10.1016/j.pscychresns.2020.111109",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "diehl-2020-emotion-regulation-accounts-associations",
@@ -1358,7 +1469,8 @@
     "volume": "32",
     "issue": "2",
     "pages": "97–105",
-    "doi": "10.1177/104012372003200205"
+    "doi": "10.1177/104012372003200205",
+    "tags": ["meditation", "mood"]
   },
   {
     "id": "duarte-2020-childhood-maltreatment-subtypes-bipolar",
@@ -1371,7 +1483,8 @@
     "volume": "42",
     "issue": "5",
     "pages": "558–567",
-    "doi": "10.1590/1516-4446-2019-0592"
+    "doi": "10.1590/1516-4446-2019-0592",
+    "tags": ["mood"]
   },
   {
     "id": "estarellas-2020-imaging-biomarkers-neurodegeneration-current",
@@ -1383,7 +1496,8 @@
     "core": false,
     "volume": "12",
     "issue": "1",
-    "pages": "49"
+    "pages": "49",
+    "tags": ["aging", "neuroscience"]
   },
   {
     "id": "greenway-2020-integrating-psychotherapy-psychopharmacology-psychedelic",
@@ -1396,7 +1510,8 @@
     "volume": "13",
     "issue": "6",
     "pages": "655–670",
-    "doi": "10.1080/17512433.2020.1772054"
+    "doi": "10.1080/17512433.2020.1772054",
+    "tags": ["psychedelics", "clinical"]
   },
   {
     "id": "greenway-2020-psychopharmacology-clinician",
@@ -1408,7 +1523,8 @@
     "core": true,
     "volume": "45",
     "issue": "5",
-    "pages": "370"
+    "pages": "370",
+    "tags": ["clinical"]
   },
   {
     "id": "knott-2020-change-neural-response-auditory",
@@ -1419,7 +1535,8 @@
     "journal": "Frontiers in Psychiatry",
     "core": false,
     "volume": "11",
-    "doi": "10.3389/fpsyt.2020.00555"
+    "doi": "10.3389/fpsyt.2020.00555",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "lifshitz-2020-understudied-side-contemplation-words",
@@ -1432,7 +1549,8 @@
     "volume": "68",
     "issue": "2",
     "pages": "183–199",
-    "doi": "10.1080/00207144.2020.1726180"
+    "doi": "10.1080/00207144.2020.1726180",
+    "tags": ["meditation", "consciousness"]
   },
   {
     "id": "lifshitz-2020-culture-plasticity-perception",
@@ -1442,7 +1560,8 @@
     "title": "Culture and the plasticity of perception",
     "journal": "Behavioral and Brain Sciences",
     "core": true,
-    "volume": "43"
+    "volume": "43",
+    "tags": ["consciousness"]
   },
   {
     "id": "lindahl-2020-progress-pathology-differential-diagnosis",
@@ -1453,7 +1572,8 @@
     "journal": "Frontiers in Psychology",
     "core": false,
     "volume": "11",
-    "doi": "10.3389/fpsyg.2020.01905"
+    "doi": "10.3389/fpsyg.2020.01905",
+    "tags": ["meditation", "clinical"]
   },
   {
     "id": "olson-2020-super-placebos-feasibility-study",
@@ -1463,7 +1583,8 @@
     "title": "Super placebos: A feasibility study combining contextual factors to promote placebo effects",
     "journal": "PsyArXiv",
     "core": true,
-    "doi": "10.31234/osf.io/sh4f6"
+    "doi": "10.31234/osf.io/sh4f6",
+    "tags": ["context"]
   },
   {
     "id": "olson-2020-tripping-nothing-placebo-psychedelics",
@@ -1476,7 +1597,8 @@
     "volume": "237",
     "issue": "5",
     "pages": "1371–1382",
-    "doi": "10.1007/s00213-020-05464-5"
+    "doi": "10.1007/s00213-020-05464-5",
+    "tags": ["context", "psychedelics"]
   },
   {
     "id": "rodriguez-seijas-2020-comparison-dimensionality-hamilton-rating",
@@ -1488,7 +1610,8 @@
     "core": false,
     "volume": "284",
     "pages": "112788",
-    "doi": "10.1016/j.psychres.2020.112788"
+    "doi": "10.1016/j.psychres.2020.112788",
+    "tags": ["methods", "mood"]
   },
   {
     "id": "thompson-2020-impact-anxiety-dropping-out",
@@ -1501,7 +1624,8 @@
     "volume": "32",
     "issue": "4",
     "pages": "249–255",
-    "doi": "10.12788/acp.0011"
+    "doi": "10.12788/acp.0011",
+    "tags": ["mood", "clinical"]
   },
   {
     "id": "zimmerman-2020-dsm-5-anxious-distress",
@@ -1513,7 +1637,8 @@
     "core": false,
     "volume": "286",
     "pages": "112859",
-    "doi": "10.1016/j.psychres.2020.112859"
+    "doi": "10.1016/j.psychres.2020.112859",
+    "tags": ["methods", "mood"]
   },
   {
     "id": "de-la-salle-2019-nmda-receptor-antagonist-effects",
@@ -1524,7 +1649,8 @@
     "journal": "Frontiers in Pharmacology",
     "core": false,
     "volume": "10",
-    "doi": "10.3389/fphar.2019.00455"
+    "doi": "10.3389/fphar.2019.00455",
+    "tags": ["neuroscience"]
   },
   {
     "id": "de-la-salle-2019-acute-separate-combined-effects",
@@ -1536,7 +1662,8 @@
     "core": false,
     "volume": "184",
     "pages": "172739",
-    "doi": "10.1016/j.pbb.2019.172739"
+    "doi": "10.1016/j.pbb.2019.172739",
+    "tags": ["neuroscience"]
   },
   {
     "id": "jaworska-2019-leveraging-machine-learning-approaches",
@@ -1547,7 +1674,8 @@
     "journal": "Frontiers in Psychiatry",
     "core": false,
     "volume": "9",
-    "doi": "10.3389/fpsyt.2018.00768"
+    "doi": "10.3389/fpsyt.2018.00768",
+    "tags": ["methods", "neuroscience", "mood"]
   },
   {
     "id": "knott-2019-effects-transcranial-alternating-current",
@@ -1560,7 +1688,8 @@
     "volume": "12",
     "issue": "2",
     "pages": "506",
-    "doi": "10.1016/j.brs.2018.12.659"
+    "doi": "10.1016/j.brs.2018.12.659",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2019-absorption-spiritual-experience-review",
@@ -1572,7 +1701,8 @@
     "core": true,
     "volume": "73",
     "pages": "102760",
-    "doi": "10.1016/j.concog.2019.05.008"
+    "doi": "10.1016/j.concog.2019.05.008",
+    "tags": ["consciousness"]
   },
   {
     "id": "lifshitz-2019-mindfulness-based-therapy-regulates",
@@ -1582,7 +1712,8 @@
     "title": "Mindfulness-based therapy regulates brain connectivity in major depression",
     "journal": "PsyArXiv",
     "core": true,
-    "doi": "10.31231/osf.io/ctkwq"
+    "doi": "10.31231/osf.io/ctkwq",
+    "tags": ["meditation", "neuroscience", "mood"]
   },
   {
     "id": "lifshitz-2019-what-s-wrong-mindful",
@@ -1593,7 +1724,8 @@
     "journal": "Casting Light on the Dark Side of Brain Imaging",
     "core": true,
     "pages": "123–128",
-    "doi": "10.1016/b978-0-12-816179-1.00021-9"
+    "doi": "10.1016/b978-0-12-816179-1.00021-9",
+    "tags": ["meditation", "consciousness"]
   },
   {
     "id": "mihalik-2019-abcd-neurocognitive-prediction-challenge",
@@ -1604,7 +1736,8 @@
     "journal": "Lecture Notes in Computer Science",
     "core": false,
     "pages": "133–142",
-    "doi": "10.1007/978-3-030-31901-4_16"
+    "doi": "10.1007/978-3-030-31901-4_16",
+    "tags": ["methods", "neuroscience"]
   },
   {
     "id": "oxtoby-2019-abcd-neurocognitive-prediction-challenge",
@@ -1615,7 +1748,8 @@
     "journal": "Lecture Notes in Computer Science",
     "core": false,
     "pages": "114–123",
-    "doi": "10.1007/978-3-030-31901-4_14"
+    "doi": "10.1007/978-3-030-31901-4_14",
+    "tags": ["methods", "neuroscience"]
   },
   {
     "id": "richard-devantoy-2019-childhood-cognitive-skill-trajectories",
@@ -1628,7 +1762,8 @@
     "volume": "49",
     "issue": "18",
     "pages": "1–8",
-    "doi": "10.1017/S0033291719003143"
+    "doi": "10.1017/S0033291719003143",
+    "tags": ["mood", "methods"]
   },
   {
     "id": "sporn-2019-longer-repetition-time-proton",
@@ -1641,7 +1776,8 @@
     "volume": "29",
     "issue": "5",
     "pages": "592–597",
-    "doi": "10.1111/jon.12648"
+    "doi": "10.1111/jon.12648",
+    "tags": ["neuroscience", "aging"]
   },
   {
     "id": "wolff-2019-atypical-temporal-dynamics-resting",
@@ -1652,7 +1788,8 @@
     "journal": "Frontiers in Psychiatry",
     "core": false,
     "volume": "10",
-    "doi": "10.3389/fpsyt.2019.00719"
+    "doi": "10.3389/fpsyt.2019.00719",
+    "tags": ["neuroscience", "mood"]
   },
   {
     "id": "cassani-2018-systematic-review-resting-state",
@@ -1664,7 +1801,8 @@
     "core": false,
     "volume": "2018",
     "pages": "1–26",
-    "doi": "10.1155/2018/5174815"
+    "doi": "10.1155/2018/5174815",
+    "tags": ["aging", "neuroscience", "methods"]
   },
   {
     "id": "hadjis-2018-effect-gad1-genotype-status",
@@ -1676,7 +1814,8 @@
     "core": false,
     "volume": "34",
     "issue": "1",
-    "doi": "10.1002/hup.2684"
+    "doi": "10.1002/hup.2684",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2018-cultural-neurophenomenology-psychedelic-thought",
@@ -1686,7 +1825,8 @@
     "title": "Cultural Neurophenomenology of Psychedelic Thought",
     "journal": "Oxford Handbooks Online",
     "core": true,
-    "doi": "10.1093/oxfordhb/9780190464745.013.4"
+    "doi": "10.1093/oxfordhb/9780190464745.013.4",
+    "tags": ["consciousness", "psychedelics"]
   },
   {
     "id": "lifshitz-2018-suggestion-potential-mechanism-meditation",
@@ -1695,7 +1835,8 @@
     "authors": "Lifshitz, M.",
     "title": "Suggestion as a potential mechanism in meditation",
     "journal": "PhD thesis, McGill University",
-    "core": true
+    "core": true,
+    "tags": ["hypnosis", "meditation", "consciousness"]
   },
   {
     "id": "moreau-2018-opening-black-box-sports",
@@ -1708,7 +1849,8 @@
     "volume": "10",
     "issue": "3",
     "pages": "291–305",
-    "doi": "10.1080/2159676x.2018.1430060"
+    "doi": "10.1080/2159676x.2018.1430060",
+    "tags": []
   },
   {
     "id": "thibault-2018-neurofeedback-fmri-critical-systematic",
@@ -1720,7 +1862,8 @@
     "core": true,
     "volume": "172",
     "pages": "786–807",
-    "doi": "10.1016/j.neuroimage.2017.12.071"
+    "doi": "10.1016/j.neuroimage.2017.12.071",
+    "tags": ["neuroscience"]
   },
   {
     "id": "thibault-lvesque-2018-l-intervention-en-contexte",
@@ -1733,7 +1876,8 @@
     "volume": "34",
     "issue": "2",
     "pages": "229–251",
-    "doi": "10.7202/1042890ar"
+    "doi": "10.7202/1042890ar",
+    "tags": []
   },
   {
     "id": "knott-2017-acute-effects-transcranial-direct",
@@ -1746,7 +1890,8 @@
     "volume": "10",
     "issue": "4",
     "pages": "e28",
-    "doi": "10.1016/j.brs.2017.04.031"
+    "doi": "10.1016/j.brs.2017.04.031",
+    "tags": ["neuroscience"]
   },
   {
     "id": "landry-2017-brain-correlates-hypnosis-systematic",
@@ -1758,7 +1903,8 @@
     "core": true,
     "volume": "81",
     "pages": "75–98",
-    "doi": "10.1016/j.neubiorev.2017.02.020"
+    "doi": "10.1016/j.neubiorev.2017.02.020",
+    "tags": ["hypnosis", "neuroscience"]
   },
   {
     "id": "lifshitz-2017-source-localization-brain-states",
@@ -1771,7 +1917,8 @@
     "volume": "29",
     "issue": "7",
     "pages": "1292–1301",
-    "doi": "10.1162/jocn_a_01107"
+    "doi": "10.1162/jocn_a_01107",
+    "tags": ["neuroscience", "methods"]
   },
   {
     "id": "lifshitz-2017-suggestibility-placebo-follow-up",
@@ -1784,7 +1931,8 @@
     "volume": "59",
     "issue": "4",
     "pages": "385–392",
-    "doi": "10.1080/00029157.2016.1225252"
+    "doi": "10.1080/00029157.2016.1225252",
+    "tags": ["hypnosis", "context"]
   },
   {
     "id": "lindahl-2017-varieties-contemplative-experience-mixed",
@@ -1797,7 +1945,8 @@
     "volume": "12",
     "issue": "5",
     "pages": "e0176239",
-    "doi": "10.1371/journal.pone.0176239"
+    "doi": "10.1371/journal.pone.0176239",
+    "tags": ["meditation", "consciousness"]
   },
   {
     "id": "thibault-2017-climate-neurofeedback-scientific-rigour",
@@ -1810,7 +1959,8 @@
     "volume": "141",
     "issue": "2",
     "pages": "e11-e11",
-    "doi": "10.1093/brain/awx330"
+    "doi": "10.1093/brain/awx330",
+    "tags": ["neuroscience"]
   },
   {
     "id": "thibault-2017-neurofeedback-neuroplacebo",
@@ -1823,7 +1973,8 @@
     "volume": "140",
     "issue": "4",
     "pages": "862–864",
-    "doi": "10.1093/brain/awx033"
+    "doi": "10.1093/brain/awx033",
+    "tags": ["neuroscience", "context"]
   },
   {
     "id": "de-la-salle-2016-effects-ketamine-resting-state",
@@ -1834,7 +1985,8 @@
     "journal": "Frontiers in Pharmacology",
     "core": false,
     "volume": "7",
-    "doi": "10.3389/fphar.2016.00348"
+    "doi": "10.3389/fphar.2016.00348",
+    "tags": ["ketamine", "neuroscience", "consciousness"]
   },
   {
     "id": "fox-2016-functional-neuroanatomy-meditation-review",
@@ -1846,7 +1998,8 @@
     "core": true,
     "volume": "65",
     "pages": "208–228",
-    "doi": "10.1016/j.neubiorev.2016.03.021"
+    "doi": "10.1016/j.neubiorev.2016.03.021",
+    "tags": ["meditation", "neuroscience"]
   },
   {
     "id": "hyde-2016-cholinergic-modulation-auditory-p3",
@@ -1858,7 +2011,8 @@
     "core": false,
     "volume": "623",
     "pages": "36–41",
-    "doi": "10.1016/j.neulet.2016.04.040"
+    "doi": "10.1016/j.neulet.2016.04.040",
+    "tags": ["neuroscience"]
   },
   {
     "id": "impey-2016-effects-nmda-antagonist-auditory",
@@ -1871,7 +2025,8 @@
     "volume": "31",
     "issue": "5",
     "pages": "614–624",
-    "doi": "10.1177/0269881116665336"
+    "doi": "10.1177/0269881116665336",
+    "tags": ["neuroscience"]
   },
   {
     "id": "impey-2016-assessment-anodal-cathodal-transcranial",
@@ -1883,7 +2038,8 @@
     "core": false,
     "volume": "105",
     "pages": "46–54",
-    "doi": "10.1016/j.bandc.2016.03.006"
+    "doi": "10.1016/j.bandc.2016.03.006",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2016-increasing-cognitive-emotional-flexibility",
@@ -1893,7 +2049,8 @@
     "title": "Increasing cognitive-emotional flexibility with meditation and hypnosis: The cognitive neuroscience of de-automatization",
     "journal": "arXiv",
     "core": true,
-    "doi": "10.48550/arXiv.1605.03553"
+    "doi": "10.48550/arXiv.1605.03553",
+    "tags": ["meditation", "hypnosis", "neuroscience"]
   },
   {
     "id": "lifshitz-2016-contemplative-experience-context-hypnosis",
@@ -1902,7 +2059,8 @@
     "authors": "Lifshitz, M., & Raz, A.",
     "title": "Contemplative experience in context: Hypnosis, meditation, and the transformation of consciousness",
     "journal": "In A. Raz & M. Lifshitz (Eds.), Hypnosis and meditation: Towards an integrative science of conscious planes (Oxford University Press)",
-    "core": true
+    "core": true,
+    "tags": ["meditation", "hypnosis", "consciousness"]
   },
   {
     "id": "raz-2016-hypnosis-meditation-integrative-science",
@@ -1911,7 +2069,8 @@
     "authors": "Raz, A., & Lifshitz, M. (Eds.)",
     "title": "Hypnosis and meditation: Towards an integrative science of conscious planes",
     "journal": "Oxford University Press",
-    "core": true
+    "core": true,
+    "tags": ["hypnosis", "meditation", "consciousness"]
   },
   {
     "id": "sheiner-2016-placebo-response-correlates-hypnotic",
@@ -1924,7 +2083,8 @@
     "volume": "3",
     "issue": "2",
     "pages": "146–153",
-    "doi": "10.1037/cns0000074"
+    "doi": "10.1037/cns0000074",
+    "tags": ["hypnosis", "context", "consciousness"]
   },
   {
     "id": "thibault-2016-self-regulating-brain-neurofeedback",
@@ -1936,7 +2096,8 @@
     "core": true,
     "volume": "74",
     "pages": "247–261",
-    "doi": "10.1016/j.cortex.2015.10.024"
+    "doi": "10.1016/j.cortex.2015.10.024",
+    "tags": ["neuroscience"]
   },
   {
     "id": "barnhofer-2015-how-mindfulness-training-may",
@@ -1949,7 +2110,8 @@
     "volume": "4",
     "issue": "2",
     "pages": "328–343",
-    "doi": "10.1177/2167702615595036"
+    "doi": "10.1177/2167702615595036",
+    "tags": ["meditation", "mood"]
   },
   {
     "id": "bowers-2015-comt-polymorphism-modulates-resting",
@@ -1962,7 +2124,8 @@
     "volume": "14",
     "issue": "6",
     "pages": "466–476",
-    "doi": "10.1111/gbb.12226"
+    "doi": "10.1111/gbb.12226",
+    "tags": ["neuroscience"]
   },
   {
     "id": "harris-2015-acupuncture-chronic-pain-clinical",
@@ -1975,7 +2138,8 @@
     "volume": "128",
     "issue": "4",
     "pages": "331–333",
-    "doi": "10.1016/j.amjmed.2014.10.042"
+    "doi": "10.1016/j.amjmed.2014.10.042",
+    "tags": ["clinical", "context"]
   },
   {
     "id": "knott-2015-neurocognitive-effects-acute-choline",
@@ -1987,7 +2151,8 @@
     "core": false,
     "volume": "131",
     "pages": "119–129",
-    "doi": "10.1016/j.pbb.2015.02.004"
+    "doi": "10.1016/j.pbb.2015.02.004",
+    "tags": ["neuroscience"]
   },
   {
     "id": "knott-2015-acute-dose-randomized-trial",
@@ -1999,7 +2164,8 @@
     "core": false,
     "volume": "1",
     "issue": "1",
-    "doi": "10.1186/s40810-014-0002-4"
+    "doi": "10.1186/s40810-014-0002-4",
+    "tags": ["neuroscience"]
   },
   {
     "id": "knott-2015-effects-acute-cdp-choline",
@@ -2011,7 +2177,8 @@
     "core": false,
     "volume": "591",
     "pages": "121–125",
-    "doi": "10.1016/j.neulet.2015.02.032"
+    "doi": "10.1016/j.neulet.2015.02.032",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2015-hypnotic-ability-baseline-attention",
@@ -2024,7 +2191,8 @@
     "volume": "2",
     "issue": "2",
     "pages": "134–143",
-    "doi": "10.1037/cns0000050"
+    "doi": "10.1037/cns0000050",
+    "tags": ["hypnosis", "neuroscience", "consciousness"]
   },
   {
     "id": "mohammadi-2015-data-mining-eeg-signals",
@@ -2036,7 +2204,8 @@
     "core": false,
     "volume": "15",
     "issue": "1",
-    "doi": "10.1186/s12911-015-0227-6"
+    "doi": "10.1186/s12911-015-0227-6",
+    "tags": ["neuroscience", "mood", "methods"]
   },
   {
     "id": "thibault-2015-body-position-alters-human",
@@ -2049,7 +2218,8 @@
     "volume": "10",
     "issue": "3",
     "pages": "772–780",
-    "doi": "10.1007/s11682-015-9447-8"
+    "doi": "10.1007/s11682-015-9447-8",
+    "tags": ["neuroscience"]
   },
   {
     "id": "thibault-2015-neurofeedback-self-regulation-brain",
@@ -2062,7 +2232,8 @@
     "volume": "84",
     "issue": "4",
     "pages": "193–207",
-    "doi": "10.1159/000371714"
+    "doi": "10.1159/000371714",
+    "tags": ["neuroscience", "clinical"]
   },
   {
     "id": "dry-2014-suggestion-overrides-automatic-audiovisual",
@@ -2074,7 +2245,8 @@
     "core": true,
     "volume": "24",
     "pages": "33–37",
-    "doi": "10.1016/j.concog.2013.12.010"
+    "doi": "10.1016/j.concog.2013.12.010",
+    "tags": ["hypnosis", "consciousness"]
   },
   {
     "id": "knott-2014-baseline-dependent-modulating-effects",
@@ -2086,7 +2258,8 @@
     "core": false,
     "volume": "122",
     "pages": "107–117",
-    "doi": "10.1016/j.pbb.2014.03.020"
+    "doi": "10.1016/j.pbb.2014.03.020",
+    "tags": ["neuroscience"]
   },
   {
     "id": "knott-2014-cdp-choline-effects-procholine",
@@ -2099,7 +2272,8 @@
     "volume": "28",
     "issue": "12",
     "pages": "1095–1108",
-    "doi": "10.1177/0269881114553254"
+    "doi": "10.1177/0269881114553254",
+    "tags": ["neuroscience"]
   },
   {
     "id": "knott-2014-modulation-auditory-deviance-detection",
@@ -2112,7 +2286,8 @@
     "volume": "29",
     "issue": "5",
     "pages": "446–458",
-    "doi": "10.1002/hup.2418"
+    "doi": "10.1002/hup.2418",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2014-empirical-neuroenchantment-reading-minds",
@@ -2123,7 +2298,8 @@
     "journal": "Frontiers in Human Neuroscience",
     "core": true,
     "volume": "8",
-    "pages": "357"
+    "pages": "357",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2014-suggestion-modulates-deeply-ingrained",
@@ -2132,7 +2308,8 @@
     "authors": "Lifshitz, M.",
     "title": "Suggestion modulates deeply ingrained processes",
     "journal": "Master's thesis, McGill University",
-    "core": true
+    "core": true,
+    "tags": ["hypnosis", "consciousness"]
   },
   {
     "id": "thibault-2014-posture-alters-human-resting",
@@ -2144,7 +2321,8 @@
     "core": true,
     "volume": "58",
     "pages": "199–205",
-    "doi": "10.1016/j.cortex.2014.06.014"
+    "doi": "10.1016/j.cortex.2014.06.014",
+    "tags": ["neuroscience"]
   },
   {
     "id": "de-la-salle-2013-effects-comt-genotype-sensory",
@@ -2156,7 +2334,8 @@
     "core": false,
     "volume": "241",
     "pages": "147–156",
-    "doi": "10.1016/j.neuroscience.2013.03.029"
+    "doi": "10.1016/j.neuroscience.2013.03.029",
+    "tags": ["neuroscience"]
   },
   {
     "id": "greenway-2013-influence-150-cavity-binders",
@@ -2169,7 +2348,8 @@
     "volume": "8",
     "issue": "3",
     "pages": "e59873",
-    "doi": "10.1371/journal.pone.0059873"
+    "doi": "10.1371/journal.pone.0059873",
+    "tags": []
   },
   {
     "id": "greenway-2013-experimental-theoretical-conformational-analysis",
@@ -2178,7 +2358,8 @@
     "authors": "Greenway, K. T.",
     "title": "Experimental and Theoretical Conformational Analysis: From Atoms to Proteins",
     "journal": "PhD thesis, Simon Fraser University",
-    "core": true
+    "core": true,
+    "tags": []
   },
   {
     "id": "knott-2013-baseline-dependency-nicotine-s",
@@ -2191,7 +2372,8 @@
     "volume": "27",
     "issue": "9",
     "pages": "790–800",
-    "doi": "10.1177/0269881113490449"
+    "doi": "10.1177/0269881113490449",
+    "tags": ["neuroscience"]
   },
   {
     "id": "lifshitz-2013-suggestion-modulate-automatic-processes",
@@ -2204,7 +2386,8 @@
     "volume": "49",
     "issue": "2",
     "pages": "463–473",
-    "doi": "10.1016/j.cortex.2012.08.007"
+    "doi": "10.1016/j.cortex.2012.08.007",
+    "tags": ["hypnosis", "consciousness"]
   },
   {
     "id": "lifshitz-2013-hypnosis-neurophenomenology",
@@ -2215,7 +2398,8 @@
     "journal": "Frontiers in Human Neuroscience",
     "core": true,
     "volume": "7",
-    "pages": "469"
+    "pages": "469",
+    "tags": ["hypnosis", "consciousness"]
   },
   {
     "id": "lifshitz-2013-meditation-hypnosis-intersection-between",
@@ -2226,7 +2410,8 @@
     "journal": "Studies in Neuroscience, Consciousness and Spirituality",
     "core": true,
     "pages": "211–226",
-    "doi": "10.1007/978-3-319-01634-4_12"
+    "doi": "10.1007/978-3-319-01634-4_12",
+    "tags": ["meditation", "hypnosis", "consciousness"]
   },
   {
     "id": "campbell-2012-converging-evidence-de-automatization",
@@ -2239,7 +2424,8 @@
     "volume": "21",
     "issue": "3",
     "pages": "1579–1581",
-    "doi": "10.1016/j.concog.2012.05.007"
+    "doi": "10.1016/j.concog.2012.05.007",
+    "tags": ["hypnosis", "consciousness"]
   },
   {
     "id": "greenway-2012-probing-hyperconjugation-experimentally-conformational",
@@ -2252,7 +2438,8 @@
     "volume": "77",
     "issue": "20",
     "pages": "9221–9226",
-    "doi": "10.1021/jo3017988"
+    "doi": "10.1021/jo3017988",
+    "tags": []
   },
   {
     "id": "lifshitz-2012-hypnosis-meditation-vehicles-attention",
@@ -2264,7 +2451,8 @@
     "core": true,
     "volume": "2",
     "issue": "1",
-    "pages": "3–11"
+    "pages": "3–11",
+    "tags": ["hypnosis", "meditation", "consciousness"]
   },
   {
     "id": "lifshitz-2012-varieties-attention-hypnosis-meditation",
@@ -2277,7 +2465,8 @@
     "volume": "21",
     "issue": "3",
     "pages": "1582–1585",
-    "doi": "10.1016/j.concog.2012.05.008"
+    "doi": "10.1016/j.concog.2012.05.008",
+    "tags": ["hypnosis", "meditation", "consciousness"]
   },
   {
     "id": "lifshitz-2012-can-expectation-enhance-response",
@@ -2290,7 +2479,8 @@
     "volume": "21",
     "issue": "2",
     "pages": "1001–1008",
-    "doi": "10.1016/j.concog.2012.02.002"
+    "doi": "10.1016/j.concog.2012.02.002",
+    "tags": ["hypnosis", "context", "consciousness"]
   },
   {
     "id": "lifshitz-2012-lengthy-expensive-why-future",
@@ -2303,7 +2493,8 @@
     "volume": "3",
     "issue": "4",
     "pages": "48–50",
-    "doi": "10.1080/21507740.2012.721466"
+    "doi": "10.1080/21507740.2012.721466",
+    "tags": ["neuroscience", "methods"]
   },
   {
     "id": "lifshitz-2012-perusing-clinician-s-perspective",
@@ -2314,6 +2505,7 @@
     "journal": "The Journal of Mind-Body Regulation",
     "core": true,
     "volume": "2",
-    "issue": "1"
+    "issue": "1",
+    "tags": ["hypnosis", "meditation"]
   }
 ]
