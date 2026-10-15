@@ -373,6 +373,11 @@ details.person__bio:hover { background: rgba(255, 255, 255, 0.16); }
   .person--director { grid-template-columns: minmax(0, 1fr) 10rem; }
 }
 @media (min-width: 72em) { .person--director .portrait { width: 12rem; height: 12rem; } .person--director { grid-template-columns: minmax(0, 1fr) 12rem; } }
+/* Alumni: the same purple/olive panel as everyone else, faded back so current, active members stand
+   out at a glance in the list. Hovering (or tabbing into) a card brings it back to full strength so
+   the name, role and bio are still easy to read up close. */
+.person--alumni { opacity: 0.6; transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.person--alumni:hover, .person--alumni:focus-within { opacity: 1; }
 
 /* --- Research pages ------------------------------------------------------------- */
 .research-figure { margin-bottom: var(--s-12); }
@@ -484,6 +489,7 @@ body.contemplative .band-header .marble__veil { background: var(--tint-contempla
 @media print {
   .cta, .playlists, .tab-row, .pub-filter, .pub-nav, .person__links, .marble__img, .marble__veil, .hero--marble::after { display: none !important; }
   .marble, .person, .band-header { background: none !important; color: var(--ink) !important; }
+  .person--alumni { opacity: 1 !important; }
   .marble h1, .marble p, .person h3, .person p, .person .prose, .band-header .lead { color: var(--ink) !important; }
   .person__bio[open] > summary { display: none; }
   .person__bio:not([open]) > *:not(summary) { display: block !important; }
